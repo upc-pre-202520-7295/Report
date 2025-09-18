@@ -763,32 +763,32 @@ En esta sección se presenta la relación de preguntas principales y complementa
 
 - **Preguntas generales para ambos segmentos:**
 
-  1. ¿Qué tipo de información revisas antes de ver un partido (alineaciones, historial, noticias, lesiones, forma reciente)?
-  2. ¿Usas más el móvil o la web para seguir probabilidades y apuestas? ¿Cuál te resulta más cómodo?
-  3. ¿Qué tan satisfecho estás con las aplicaciones o webs actuales que usas para predicciones?
-  4. ¿Prefieres probabilidades expresadas como porcentajes o cuotas (ej. 65% vs cuota 1.55)?
-  5. ¿Te interesaría un historial visual de rendimiento de tu equipo (racha de victorias/derrotas, goles a favor y en contra)?
+1. ¿Qué tipo de información revisas antes de ver un partido (alineaciones, historial, noticias, lesiones, forma reciente)?
+2. ¿Usas más el móvil o la web para seguir probabilidades y apuestas? ¿Cuál te resulta más cómodo?
+3. ¿Qué tan satisfecho estás con las aplicaciones o webs actuales que usas para predicciones?
+4. ¿Prefieres probabilidades expresadas como porcentajes o cuotas (ej. 65% vs cuota 1.55)?
+5. ¿Te interesaría un historial visual de rendimiento de tu equipo (racha de victorias/derrotas, goles a favor y en contra)?
 
 - **Preguntas para el segmento Apostadores frecuentes:**
 
-  1. ¿Qué deportes o equipos sigues más de cerca para apostar?
-  2. ¿Cuántas apuestas de fútbol realizas en promedio por semana?
-  3. ¿Qué tipo de apuestas prefieres (ganador, over/under, hándicap, combinadas)?
-  4. ¿Qué tan importante es para ti la rapidez en recibir pronósticos antes de un partido?
-  5. ¿Qué dificultades enfrentas al analizar varios partidos en poco tiempo? 
-  6. ¿Qué datos o métricas ayudan a mejorar tu presupuesto al momento de apostar y qué herramienta te ayudaría a controlarlo mejor?
-  7. ¿Qué mejorarías de las apps o servicios de predicciones que usas actualmente?
-  8. ¿Qué datos previos te interesan más (alineaciones, historial, noticias, lesiones)?
-  9. ¿Qué tan seguido apuestas solo por intuición o pasión, sin ver estadísticas
+1. ¿Qué deportes o equipos sigues más de cerca para apostar?
+2. ¿Cuántas apuestas de fútbol realizas en promedio por semana?
+3. ¿Qué tipo de apuestas prefieres (ganador, over/under, hándicap, combinadas)?
+4. ¿Qué tan importante es para ti la rapidez en recibir pronósticos antes de un partido?
+5. ¿Qué dificultades enfrentas al analizar varios partidos en poco tiempo? 
+6. ¿Qué datos o métricas ayudan a mejorar tu presupuesto al momento de apostar y qué herramienta te ayudaría a controlarlo mejor?
+7. ¿Qué mejorarías de las apps o servicios de predicciones que usas actualmente?
+8. ¿Qué datos previos te interesan más (alineaciones, historial, noticias, lesiones)?
+9. ¿Qué tan seguido apuestas solo por intuición o pasión, sin ver estadísticas
 
 
 - **Preguntas para el segmento Fanáticos del futbol:**
 
-  1. ¿Qué ligas, equipos o selecciones sigues más de cerca?
-  2. ¿Qué tan interesante te resulta conocer probabilidades de victoria o rendimiento de tu equipo, aunque no apuestes?
-  3. ¿Cómo reaccionas cuando los datos o predicciones muestran que tu equipo tiene pocas chances de ganar?
-  4. ¿Te interesa ver probabilidades en ligas menores o prefieres solo las más populares?
-  5. ¿Prefieres probabilidades objetivas, aunque contradigan lo que sientes como hincha?
+1. ¿Qué ligas, equipos o selecciones sigues más de cerca?
+2. ¿Qué tan interesante te resulta conocer probabilidades de victoria o rendimiento de tu equipo, aunque no apuestes?
+3. ¿Cómo reaccionas cuando los datos o predicciones muestran que tu equipo tiene pocas chances de ganar?
+4. ¿Te interesa ver probabilidades en ligas menores o prefieres solo las más populares?
+5. ¿Prefieres probabilidades objetivas, aunque contradigan lo que sientes como hincha?
 
 
 
@@ -869,7 +869,7 @@ En esta sección se presenta la relación de preguntas principales y complementa
 En esta sección se presenta el análisis basado en las entrevistas registradas para cada segmento objetivo. Se identifican los porcentajes que reflejan las características más comunes según los datos obtenidos, las cuales son fundamentales para la construcción de los arquetipos.
 
 | Característica                                     | % por entrevistados |   Observación   |
-|----------------------------------------------------|---------------------|-----------------|
+|----------------------------------------------------|:--------------------|-----------------|
 | Deporte principal: Fútbol                          | 100%                | Algunos también siguen el básquet (Gerson) |
 | Frecuencia de apuestas: 3-4 veces por semana       | 60%                 | Segmento “apostadores frecuentes” muy consistente. |
 | Tipo de apuesta preferida: combinadas / over-under | 60%                 | Confirman preferencia por pronósticos complejos pero rentables. |
@@ -916,13 +916,13 @@ Para Betalyze, se elaboraron dos User Personas en UXPressia: una para los aposta
 
 - Arquetipo de usuario que apuesta varias veces por semana, utiliza principalmente su móvil y busca pronósticos rápidos, datos confiables y visualización clara de estadísticas para optimizar sus decisiones.
 
-![](./assets/.png)
+![](./assets/.png) <!--FALTA IMAGEN-->
 
 **Segmento Fanáticos del fútbol:**
 
 - Arquetipo de hincha apasionado que sigue activamente ligas y selecciones, consulta estadísticas y probabilidades para entender el rendimiento de su equipo y enriquecer su experiencia, aunque no realice apuestas frecuentes.
 
-![](./assets/.png)
+![](./assets/.png) <!--FALTA IMAGEN-->
 
 <br>
 
@@ -1048,15 +1048,43 @@ Para la elaboración de nuestra solución se consideran dos segmentos objetivos 
 
 ### 2.3.3. Empathy Mapping
 
-<!-- Contenido de Empathy Mapping -->
+El Empathy Map es una herramienta que permite profundizar en la comprensión de cada segmento de usuario, sintetizando lo que ven, escuchan, piensan, sienten, dicen y hacen en relación con el problema identificado. Para Betalyze, se elaboraron mapas de empatía en la herramienta UXPressia, tomando como punto central a cada User Persona y discutiendo en equipo la información recolectada en el registro y análisis de entrevistas, así como en el análisis competitivo. Este ejercicio ayudó a identificar Pains  y Gains de los usuarios, los cuales guiarán la priorización de funcionalidades y decisiones de diseño de la solución.
+
+**Empathy Mapping Segmento 1: Apostadores frecuentes**
+
+![](./assets/.png) <!--FALTA IMAGEN-->
+
+<br>
+
+**Empathy Mapping Segmento 2: Fanáticos del fútbol**
+
+![](./assets/.png) <!--FALTA IMAGEN-->
+
+<br>
 
 ### 2.3.4. As-is Scenario Mapping
 
-<!-- Contenido de As-is Scenario Mapping -->
+En esta etapa, el equipo realizó un mapeo de escenarios actuales para ambos segmentos objetivo: apostadores frecuentes y fanáticos del fútbol. El proceso comenzó con una lluvia de ideas individual para identificar cómo los usuarios viven actualmente la experiencia de buscar información, analizar datos y tomar decisiones relacionadas con apuestas o seguimiento de partidos. Luego se organizaron las fases de la experiencia en columnas y se agruparon observaciones sobre lo que hacen, piensan y sienten en cada etapa. Finalmente, se identificaron los puntos de fricción, emociones negativas y vacíos de información que dificultan la experiencia actual.
+
+**As-is Scenario Mapping Segmento 1: Apostadores frecuentes**
+
+![](./assets/.png) <!--FALTA IMAGEN-->
+
+- Actualmente, el apostador frecuente se enfrenta a una experiencia fragmentada y saturada. Debe consultar múltiples fuentes de datos, comparar manualmente cuotas y estadísticas, y tomar decisiones en un entorno de presión de tiempo. Esto genera frustración, inseguridad y ansiedad, lo que impacta en la eficiencia de sus apuestas.
+
+<br>
+
+**As-is Scenario Mapping Segmento 2: Fanáticos del fútbol**
+
+![](./assets/.png) <!--FALTA IMAGEN-->
+
+- Para el fanático del fútbol, informarse antes de un partido implica revisar múltiples sitios y redes sociales sin una estructura clara. La experiencia se siente desordenada y poco amigable, lo que dificulta interpretar datos relevantes. Esto genera confusión, baja motivación y pérdida de oportunidad para enriquecer su experiencia antes y durante el partido.
+
+<br>
 
 ## 2.4. Ubiquitous Language
 
-<!-- Contenido de Ubiquitous Language -->
+
 
 <br>
 
@@ -1066,7 +1094,23 @@ Para la elaboración de nuestra solución se consideran dos segmentos objetivos 
 
 ## 3.1. To-Be Scenario Mapping
 
-<!-- Contenido de To-Be Scenario Mapping -->
+El equipo generó un escenario ideal para cada segmento, partiendo de los hallazgos del As-Is. Para lograrlo, se reorganizaron las fases de interacción pensando en un flujo simplificado, rápido y confiable. Se buscó que los usuarios tengan toda la información en un solo lugar, con visualizaciones claras y herramientas que reduzcan la sobrecarga cognitiva. El To-Be enfatiza en una experiencia positiva, emociones de confianza y satisfacción, así como puntos de valor agregados que facilitan la adopción de Betalyze.
+
+**To-Be Scenario Mapping Segmento 1: Apostador frecuente**
+
+![](./assets/.png) <!--FALTA IMAGEN-->
+
+- El escenario ideal del apostador frecuente centraliza todas las herramientas en una sola plataforma, con pronósticos en tiempo real, filtros intuitivos y métricas de precisión que fortalecen la confianza. El usuario puede enfocarse en decisiones estratégicas en lugar de invertir tiempo en recopilar información manualmente. 
+
+<br>
+
+**To-Be Scenario Mapping Mapping Segmento 2: Fanático del fútbol**
+
+![](./assets/.png) <!--FALTA IMAGEN-->
+
+- El To-Be del fanático del fútbol se enfoca en convertir la consulta de información en una experiencia simple y atractiva. Desde una sola plataforma puede ver el historial de rendimiento, las probabilidades y datos clave en formatos visuales, lo que lo motiva y mejora su disfrute del partido con mayor contexto y participación informada.
+
+<br>
 
 ## 3.2. User Stories
 
