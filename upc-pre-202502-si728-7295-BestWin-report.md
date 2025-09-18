@@ -916,13 +916,13 @@ Para Betalyze, se elaboraron dos User Personas en UXPressia: una para los aposta
 
 - Arquetipo de usuario que apuesta varias veces por semana, utiliza principalmente su móvil y busca pronósticos rápidos, datos confiables y visualización clara de estadísticas para optimizar sus decisiones.
 
-![](./assets/.png) <!--FALTA IMAGEN-->
+![](./assets/uxpressia/Jerson%20Ambrosio%20USER%20PERSONA.png) 
 
 **Segmento Fanáticos del fútbol:**
 
 - Arquetipo de hincha apasionado que sigue activamente ligas y selecciones, consulta estadísticas y probabilidades para entender el rendimiento de su equipo y enriquecer su experiencia, aunque no realice apuestas frecuentes.
 
-![](./assets/.png) <!--FALTA IMAGEN-->
+![](./assets/uxpressia/Rodrigo%20Chinos%20USER%20PERSONA.png) 
 
 <br>
 
@@ -1052,13 +1052,13 @@ El Empathy Map es una herramienta que permite profundizar en la comprensión de 
 
 **Empathy Mapping Segmento 1: Apostadores frecuentes**
 
-![](./assets/.png) <!--FALTA IMAGEN-->
+![](./assets/uxpressia/Jerson%20Ambrosio%20empathy%20map.png) 
 
 <br>
 
 **Empathy Mapping Segmento 2: Fanáticos del fútbol**
 
-![](./assets/.png) <!--FALTA IMAGEN-->
+![](./assets/uxpressia/Rodrigo%20Chinos%20empathy%20map.png)
 
 <br>
 
@@ -1068,7 +1068,7 @@ En esta etapa, el equipo realizó un mapeo de escenarios actuales para ambos seg
 
 **As-is Scenario Mapping Segmento 1: Apostadores frecuentes**
 
-![](./assets/.png) <!--FALTA IMAGEN-->
+![](./assets/scenario%20maps/apostador-as-is.png) 
 
 - Actualmente, el apostador frecuente se enfrenta a una experiencia fragmentada y saturada. Debe consultar múltiples fuentes de datos, comparar manualmente cuotas y estadísticas, y tomar decisiones en un entorno de presión de tiempo. Esto genera frustración, inseguridad y ansiedad, lo que impacta en la eficiencia de sus apuestas.
 
@@ -1076,7 +1076,7 @@ En esta etapa, el equipo realizó un mapeo de escenarios actuales para ambos seg
 
 **As-is Scenario Mapping Segmento 2: Fanáticos del fútbol**
 
-![](./assets/.png) <!--FALTA IMAGEN-->
+![](./assets/scenario%20maps/fanatico-as-is.png) 
 
 - Para el fanático del fútbol, informarse antes de un partido implica revisar múltiples sitios y redes sociales sin una estructura clara. La experiencia se siente desordenada y poco amigable, lo que dificulta interpretar datos relevantes. Esto genera confusión, baja motivación y pérdida de oportunidad para enriquecer su experiencia antes y durante el partido.
 
@@ -1098,7 +1098,7 @@ El equipo generó un escenario ideal para cada segmento, partiendo de los hallaz
 
 **To-Be Scenario Mapping Segmento 1: Apostador frecuente**
 
-![](./assets/.png) <!--FALTA IMAGEN-->
+![](./assets/scenario%20maps/apostador-to-be.png) 
 
 - El escenario ideal del apostador frecuente centraliza todas las herramientas en una sola plataforma, con pronósticos en tiempo real, filtros intuitivos y métricas de precisión que fortalecen la confianza. El usuario puede enfocarse en decisiones estratégicas en lugar de invertir tiempo en recopilar información manualmente. 
 
@@ -1106,7 +1106,7 @@ El equipo generó un escenario ideal para cada segmento, partiendo de los hallaz
 
 **To-Be Scenario Mapping Mapping Segmento 2: Fanático del fútbol**
 
-![](./assets/.png) <!--FALTA IMAGEN-->
+![](./assets/scenario%20maps/fanatico-to-be.png)
 
 - El To-Be del fanático del fútbol se enfoca en convertir la consulta de información en una experiencia simple y atractiva. Desde una sola plataforma puede ver el historial de rendimiento, las probabilidades y datos clave en formatos visuales, lo que lo motiva y mejora su disfrute del partido con mayor contexto y participación informada.
 
