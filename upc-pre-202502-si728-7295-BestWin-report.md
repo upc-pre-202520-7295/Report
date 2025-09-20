@@ -1175,19 +1175,30 @@ El equipo generó un escenario ideal para cada segmento, partiendo de los hallaz
 
 ## 4.3. Software Architecture
 
+
 ### 4.3.1. Software Architecture System Landscape Diagram
-<!-- Contenido de Software Architecture System Landscape Diagram -->
+
+Este diagrama muestra la arquitectura general de Betalyze, destacando los principales componentes del sistema, como el motor de predicciones basado en Machine Learning, la base de datos de estadísticas deportivas y la interfaz de usuario. También ilustra cómo estos interactúan con servicios externos, como APIs deportivas y plataformas de mensajería.
+
+![](./assets/c4%20model%20y%20uml/landscape.png)
 
 ### 4.3.2. Software Architecture Context Level Diagrams
-<!-- Contenido de Software Architecture Context Level Diagrams -->
+
+El diagrama de nivel de contexto de Betalyze detalla las interacciones entre el sistema y sus actores externos, como apostadores frecuentes, fanáticos del fútbol, y proveedores de datos deportivos. Este nivel ayuda a identificar las dependencias clave y los límites del sistema.
+
+![](./assets/c4%20model%20y%20uml/context.png)
 
 ### 4.3.3. Software Architecture Container Level Diagrams
-<!-- Contenido de Software Architecture Container Level Diagrams -->
+
+El diagrama de nivel de contenedores de Betalyze describe los principales contenedores de software, como el backend para procesamiento de predicciones, el frontend para visualización de datos y el módulo de notificaciones. También muestra cómo estos contenedores se comunican entre sí y con servicios externos.
+
+![](./assets/c4%20model%20y%20uml/containers.png)
 
 ### 4.3.4. Software Architecture Deployment Diagrams
-<!-- Contenido de Software Architecture Deployment Diagrams -->
 
+El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software se asignan a la infraestructura, como servidores en la nube, contenedores Docker y servicios de mensajería. Este diagrama es crucial para planificar la implementación y garantizar la escalabilidad del sistema.
 
+![](./assets/c4%20model%20y%20uml/deployment.png)
 
 
 <br>
