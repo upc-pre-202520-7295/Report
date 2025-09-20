@@ -1184,9 +1184,36 @@ El equipo generó un escenario ideal para cada segmento, partiendo de los hallaz
 
 ## 3.4. Product Backlog
 
-<!-- Contenido de Product Backlog -->
+|  # Orden  |  User Story Id  |  Título  |  Descripción  |  Story Points (1/2/3/5/8)  |
+|:----------|:----------------|:---------|:--------------|:---------------------------|
+| 1 | US24 | Ver información general | Como visitante quiero ver información de qué es Betalyze para entender el valor de la plataforma. | 1 |
+| 2 | US25 | Ver precios de suscripción | Como visitante quiero ver planes y precios de suscripción para considerar la adquisición. | 1 |
+| 3 | US26 | Consultar FAQ y contacto | Como visitante quiero acceder a FAQ y datos de contacto para resolver dudas antes de comprar. | 1 |
+| 4 | US01 | Visualizar probabilidades en el Dashboard | Como apostador frecuente quiero ver en un solo lugar las probabilidades de los partidos del día para ahorrar tiempo en mi análisis. | 5 |
+| 5 | US02 | Identificar apuestas de valor | Como apostador frecuente quiero que el sistema marque las apuestas de valor para detectar oportunidades de mayor rentabilidad. | 8 |
+| 6 | US22 | Integración con API de casas de apuestas | Como usuario quiero que las cuotas se actualicen automáticamente al menos una vez al día. | 5 |
+| 7 | US17 | Comparar cuotas de distintas casas | Como apostador quiero ver comparativa de cuotas para elegir la más rentable. | 8 |
+| 8 | US12 | Guardar equipos favoritos | Como usuario quiero marcar equipos como favoritos para acceder rápido a sus partidos. | 3 |
+| 9 | US13 | Configurar ligas preferidas | Como usuario quiero elegir mis ligas preferidas para personalizar mi dashboard. | 3 |
+| 10 | US03 | Ordenar partidos | Como usuario quiero ordenar los partidos por hora o probabilidad para priorizar en qué apostar primero. | 2 |
+| 11 | US05 | Filtrar por liga o torneo | Como usuario quiero filtrar partidos por liga para ver solo los torneos que sigo. | 2 |
+| 12 | US06 | Buscar partidos por nombre | Como usuario quiero escribir el nombre del equipo para ubicar rápido el partido que me interesa. | 2 |
+| 13 | US18 | Ver detalles de partido | Como usuario quiero abrir ficha de partido para ver datos específicos. | 5 |
+| 14 | US07 | Ver historial visual | Como fanático del fútbol quiero ver un gráfico con los últimos resultados para analizar el estado de forma. | 5 |
+| 15 | US08 | Ver métricas de desempeño | Como usuario quiero ver métricas de goles, tiros y córners para entender el rendimiento. | 5 |
+| 16 | US09 | Recibir alertas antes del partido | Como usuario quiero recibir notificaciones 15 min antes para revisar alineaciones y probabilidades. | 5 |
+| 17 | US10 | Notificación de apuestas de valor | Como usuario quiero que me avisen de apuestas de valor en mis equipos favoritos para no perder oportunidades. | 5 |
+| 18 | US11 | Configurar alertas personalizadas | Como usuario quiero configurar alertas por tipo de apuesta para recibir solo notificaciones relevantes. | 3 |
+| 19 | US14 | Ver explicaciones del modelo | Como usuario quiero entender cómo se generan las probabilidades para confiar en la plataforma. | 2 |
+| 20 | US15 | Ver métricas de precisión | Como apostador quiero ver el histórico de aciertos para evaluar si confiar en la predicción. | 5 |
+| 21 | US16 | Consultar alineaciones oficiales | Como usuario quiero ver alineaciones confirmadas en para ajustar mi apuesta. | 3 |
+| 22 | US04 | Filtrar por condición de juego | Como apostador quiero filtrar partidos por local/visitante para enfocarme en los que me interesan. | 2 |
+| 23 | US20 | Configurar nivel de detalle | Como usuario quiero elegir si ver solo datos básicos o estadísticas avanzadas para personalizar la experiencia. | 3 |
+| 24 | US21 | Simular combinadas | Como apostador quiero simular apuestas combinadas para estimar posibles ganancias antes de apostar. | 8 |
+| 25 | US19 | Exportar dashboard de predicciones | Como usuario quiero exportar dashboard de probabilidades en CSV o Excel para analizar mis resultados de manera externa. | 3 |
+| 26 | US23 | Conexión con Google Calendar | Como usuario quiero agregar partidos importantes a mi calendario para recibir recordatorios. | 3 |
 
-
+<br>
 
 ---
 
@@ -1195,28 +1222,338 @@ El equipo generó un escenario ideal para cada segmento, partiendo de los hallaz
 ## 4.1. Strategic-Level Attribute-Driven Design
 
 ### 4.1.1. Design Purpose
-<!-- Contenido de Design Purpose -->
+
+El diseño arquitectónico de Betalyze busca definir un sistema robusto, escalable y de alta disponibilidad que soporte el procesamiento de datos requerido utilizando un modelo de Machine Learning, garantizando la entrega de probabilidades y alertas para nuestros segmentos objetivos apostadores frecuentes y fanáticos del fútbol, además también considerando un equilibrio entre rendimiento y facilidad de mantenimiento en el proceso de diseño de nuestra arquitectura, al mismo tiempo de asegurar entregar una interfaz intuitiva.
+
+<br>
 
 ### 4.1.2. Attribute-Driven Design Inputs
-<!-- Contenido de Attribute-Driven Design Inputs -->
+
+El proceso ADD comienza con la recopilación y análisis de atributos de calidad y requisitos funcionales, identificando la prioridad de atributos como escalabilidad para procesar grandes volúmenes de datos, disponibilidad para entrega de probabilidades y alertas, seguridad para protección de datos del usuario, y usabilidad para brindar una experiencia óptima a ambos segmentos de usuarios. A partir de estos recursos, se identifican decisiones arquitectónicas claves que guiarán la construcción del sistema.
+
+<br>
 
 #### 4.1.2.1. Primary Functionality (Primary User Stories)
-<!-- Contenido de Primary Functionality (Primary User Stories) -->
+
+- Las historias de usuario identificadas a continuación representan la funcionalidad principal del sistema y tienen un impacto directo en la arquitectura de la solución. Abordan la recolección y procesamiento de datos, la lógica central de negocio y la entrega de la información relevante a los usuarios, elementos que se consideran importantes para complir con el propósito de diseño de arquitectura de Betalyze.
+
+| **Epic / User Story ID** | **Título** | **Descripción** | **Criterios de Aceptación** | **Relacionado con (Epic ID)** |
+|:-------------------------|:-----------|:----------------|:----------------------------|:------------------------------|
+| US01 | Visualizar probabilidades en el Dashboard | Como apostador frecuente quiero ver en un solo lugar las probabilidades de los partidos del día para ahorrar tiempo en mi análisis.            | Scenario 1: Carga exitosa – Dado que estoy en el dashboard, cuando se cargan los partidos, entonces veo probabilidades en tiempo real.<br><br>Scenario 2: Falla de conexión – Dado que no hay conexión, cuando intento cargar datos, entonces se muestra mensaje de error. | EP01 |
+| US02                     | Identificar apuestas de valor    | Como apostador frecuente quiero que el sistema marque las apuestas de valor para detectar oportunidades de mayor rentabilidad.                | Scenario 1: Detección correcta – Dado que hay cuotas con valor, cuando abro el dashboard, entonces se resaltan los partidos.<br><br>Scenario 2: Sin datos – Dado que no se pueden calcular, cuando entro, entonces aparece aviso de “sin información disponible”. | EP01 |
+| US08                     | Ver métricas de desempeño        | Como usuario quiero ver métricas de goles, tiros y córners para entender el rendimiento.                                                        | Scenario 1: Métricas mostradas – Dado que selecciono últimos partidos, cuando carga, entonces se muestran promedios.<br><br>Scenario 2: Datos no encontrados – Dado que no hay métricas, cuando abro la sección, entonces aparece alerta. | EP03 |
+| US10                     | Notificación de apuestas de valor | Como usuario quiero que me avisen de apuestas de valor en mis equipos favoritos para no perder oportunidades.                                  | Scenario 1: Notificación enviada – Dado que hay apuesta de valor, cuando se detecta, entonces recibo aviso en tiempo real.<br><br>Scenario 2: Falla de sistema – Dado que el sistema está en mantenimiento, cuando debería llegar la alerta, entonces recibo mensaje de indisponibilidad.| EP04 |
+| US15                     | Ver métricas de precisión         | Como apostador quiero ver el histórico de aciertos para evaluar si confiar en la predicción.                                                    | Scenario 1: Datos mostrados – Dado que entro a métricas, cuando carga, entonces veo % de acierto por liga.<br><br>Scenario 2: Sin información – Dado que no hay suficientes datos, cuando abro, entonces se muestra “no disponible”. | EP06 |
+| US17                     | Comparar cuotas de distintas casas | Como apostador quiero ver comparativa de cuotas para elegir la más rentable.                                                                   | Scenario 1: Comparativa exitosa – Dado que hay varias casas, cuando abro la sección, entonces veo tabla comparativa.<br><br>Scenario 2: Faltan datos – Dado que una casa no responde, cuando cargo, entonces aparece nota “datos incompletos”. | EP07 |
+| US22                     | Integración con API de casas de apuestas | Como usuario quiero que las cuotas se actualicen automáticamente al menos una vez al día.                                     | Scenario 1: Actualización automática – Dado que hay cambio, cuando recargo, entonces se reflejan nuevas cuotas.<br><br>Scenario 2: Falla de API – Dado que la API no responde, cuando cargo, entonces se muestra mensaje de error. | EP09 |
+
+
+<br>
 
 #### 4.1.2.2. Quality attribute Scenarios
-<!-- Contenido de Quality attribute Scenarios -->
+
+- En esta sección realizamos la descripción de los escenarios de atributos de calidad que tienen un impacto significativo en la arquitectura, identificados a partir de las historias de usuario clave. Estos escenarios, centrados en el rendimiento, la disponibilidad y la modificabilidad, servirán como guía para la toma de decisiones de diseño. 
+
+|  Atributo      |  Fuente  |  Estímulo  |  Artefacto  |  Entorno  |  Respuesta  |  Medida  |
+|:---------------|:---------|:-----------|:------------|:----------|:------------|:---------|
+| Rendimiento    | Usuario apostador frecuente | Solicitud de visualización de probabilidades | Sistema de procesamiento de probabilidades | Plataforma en operación continua | Responde con probabilidades actualizadas en máximo 9 segundos | Tiempo de respuesta ≤ 9 segundos |
+| Disponibilidad | Usuario y sistema | Fallo en la conexión a API externa de cuotas | Módulo de integración API | Durante uso normal | Continúa operando con datos de otros proveedores y alerta al usuario sobre la interrupción | El sistema sigue operativo en un 99.9% del tiempo |
+| Mantenibilidad | Un desarrollador. | Cambios en algoritmos de Machine Learning y UI | Módulo de Machine Learning (ML) y la base de datos de entrenamiento. | Entorno de desarrollo y despliegue | Cambios aplicados con mínimo impacto | Tiempo de despliegue ≤ 2 horas |
+| Seguridad | Usuario | Intento de acceso no autorizado o manipulación de datos | Servicios de autenticación y base de datos | Cualquier acceso al sistema | Deniega acceso no autorizado | 0 incidentes de acceso no autorizado |
+| Usabilidad | Usuarios | Interacción para visualizar probabilidades y cuotas | Interfaz de usuario | Uso en dispositivos móviles y web | Interfaz clara, accesible y responsiva, con notificaciones visibles | Nivel de satisfacción usuario > 80% |
+| Robustez | Plataforma en producción | Fallas temporales en APIs externas | Todo el sistema | Uso regular y alta demanda | Maneja fallos sin caída total y recupera datos cuando posible | Tiempo medio de resputas a solicitudes < 1 minuto |
+| Escalabilidad | Usuarios | Incremento en volumen de partidos y usuarios | Todo el sistema | Carga pico de usuarios y datos | Escala horizontal para atender carga adicional sin degradación perceptible | Capacidad de aumentar usuarios en x2 |
+
+<br>
 
 #### 4.1.2.3. Constraints
-<!-- Contenido de Constraints -->
+
+- Para el desarrollo de Betalyze, las restricciones definen los límites no negociables dentro de los cuales debe operar la solución, en nuestro contexto son impuestas por las necesidades del negocio. Las principales restricciones que consideramos son la obligatoriedad de operar en plataformas web y móviles, el tiempo de respuesta en el módulo de probabilidades y la necesidad para asegurar la disponibilidad de nuestra solución. A continuación se describe la especificación de las restricciones identificadas.
+
+| Constraint ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
+|:--------------|:-------|:------------|:------------------------|:--------------------------|
+| CON-1 | Topología de la red | La arquitectura debe garantizar baja latencia y alta disponibilidad mediante una red distribuida en la nube, con balanceadores de carga y redundancia geográfica para evitar cuellos de botella y garantizar atender todas las solicitudes. | Dado que la plataforma Betalyze está operando bajo una alta carga de usuarios simultáneos, cuando un usuario solicita la visualización de probabilidades, entonces la red dirige la solicitud a un servidor disponible, garantizando una respuesta en menos de 9 segundos y manteniendo la disponibilidad. | EP01, EP04 |
+| CON-2 | Desarrollo | Uso de Angular Framework del lado frontend web, Flutter para el desarrollo móvil y Spring Boot y servicios de terceros del lado backend, por la afinidad del equipo de desarrollo con estas tecnologías y las necesidades para la implementación que nos aseguren cumplir procesos del negocio. | Dado que el equipo de desarrollo necesita implementar una nueva funcionalidad, cuando se inicia la fase de codificación, entonces se utilizará Angular para la interfaz web, Flutter para la aplicación móvil y Spring Boot para los servicios del backend. | EP03, EP04, EP06, EP08 |
+| CON-3 | Base de datos | PostgreSQL para la implementación de nuestra base de datos relacional, dada la afinidad del equipo de desarrollo y que nos permita asegurar el almacenamiento y consulta de datos de forma práctica. | Dado que una nueva funcionalidad requiere persistencia de datos relacionales, cuando el equipo de desarrollo diseña el modelo de datos, entonces la implementación debe realizarse exclusivamente sobre una base de datos PostgreSQL. | EP08 |
+| CON-4 | Servidores | Uso de Servicios en la nube para montar nuestra infraestructura, que tenga las características y rendimiento necesario para garantizar la disponibilidad de la aplicación. | Dado que la aplicación Betalyze debe ser desplegada para producción, cuando el equipo de operaciones configura el entorno, entonces toda la infraestructura de servidores debe ser provisionada utilizando un proveedor de servicios en la nube. | EP08 |
+| CON-5 | Software o servicios de terceros | Integración con APIs de terceros y uso de servicios de terceros para realizar el scrapeo de datos necesarios para cumplir con la adecuada actualización de la información y recolección de datos necesarios de fuentes externas. | Dado que el sistema requiere datos actualizados de cuotas y partidos, cuando el módulo de recolección de datos se ejecuta, entonces debe integrarse con las APIs de proveedores externos y servicios de web scraping definidos. | EP01, EP08, EP09 |
+| CON-6 | Cumplimiento de normas | La aplicación debe cumplir con regulaciones y normativas legales para la protección de datos, publicidad y tratamiento de información. | Dado que la plataforma maneja datos personales de los usuarios, cuando se diseña o modifica cualquier funcionalidad que procese esta información, entonces se deben implementar todos los controles de seguridad y privacidad. | EP06, EP09 |
+
+<br>
 
 ### 4.1.3. Architectural Drivers Backlog
-<!-- Contenido de Architectural Drivers Backlog -->
+
+- Para diseñar la arquitectura de Betalyze, el primer paso es identificar y priorizar los Architectural Drivers. Estos son los requisitos funcionales, atributos de calidad y restricciones técnicas que más influirán en las decisiones de diseño. El proceso consiste en analizar las historias de usuario clave, los escenarios de atributos de calidad y las restricciones impuestas por el negocio. Luego, cada uno de los drivers se evalúa según su importancia para los stakeholders y su impacto en la complejidad técnica de la arquitectura. A continuación, se presenta el backlog priorizado que sirve para asegurar que el diseño arquitectónico se centre en resolver los problemas más críticos y de mayor valor para nuestra solución.
+
+| Driver ID | Título de Driver | Descripción | Importancia para Stakeholders (High, Medium, Low) | Impacto en Architecture Technical Complexity (High, Medium, Low) |
+|:----------|:-----------------|:------------|:--------------------------------------------------|:-----------------------------------------------------------------|
+| AD-01 | Rendimiento | El sistema debe responder con probabilidades actualizadas en tiempo definido tras la solicitud de un usuario. | High | High |
+| AD-02 | Identificar apuestas de valor | El sistema debe procesar datos y usar Machine Learning para responder con la identificación de apuestas de valor. | High | High |
+| AD-03 | Disponibilidad | El sistema debe mantenerse disponible y operativo la mayor parte del tiempo del tiempo, incluso si falla la conexión con APIs externas. | High | High |
+| AD-04 | Integración con API y datos de terceros | El sistema debe ser capaz de recolectar datos y actualizar automáticamente las cuotas desde múltiples fuentes externas. | High | High |
+| AD-05 | Topología de la red | La arquitectura debe usar una red en la nube que permita garantizar baja latencia y alta disponibilidad. | High | High |
+| AD-06 | Escalabilidad | La arquitectura debe poder escalar horizontalmente para soportar el doble de usuarios y solicitudes de información sin decaer en el rendimiento. | High | Medium |
+| AD-07 | Mantenibilidad | Los cambios en los algoritmos de Machine Learning o en la UI deben poder desplegarse en producción en un tiempo definido. | Medium | High |
+| AD-08 | Desarrollo | El uso de Angular, Flutter y Spring Boot como tecnologías para la implementación de la solución. | Medium | High |
+| AD-09 | Seguridad | El sistema debe ser capaz de mitigar intentos de acceso no autorizado y gestionar el acceso por roles. | Medium | Medium |
+
+
+<br>
 
 ### 4.1.4. Architectural Design Decisions
-<!-- Contenido de Architectural Design Decisions -->
+
+**Iteración 1:**
+
+- Como primera iteración para el diseño de arquitectura para Betalyze nos efocamos en definir la base para la primera versión de la solución. Teniendo como objetivo tomar decisiones que equilibren velocidad de desarrollo, simplicidad para la primera fase de implementación y alineación con los drivers más críticos de negocio y calidad, sentando las bases para futuras iteraciones del sistema.
+
+- **Drivers Considerados**<br>
+En esta fase inicial se consideran los siguientes drivers identificados con mayor relevancia para nuestra solución, tomando la identificación realizada en el Architectural Drivers Backlog:
+
+  - AD-01 Rendimiento: Interacciones rápidas para una experiencia de usuario fluida.
+  - AD-02 Identificar apuestas de valor: Núcleo de la lógica del sistema, basado en modelos de Machine Learning.
+  - AD-03 Disponibilidad: El sistema debe ser tolerante a fallos, particularmente en componentes de terceros.
+  - AD-04 Integración con APIs y datos de terceros: La plataforma depende de datos externos.
+  - AD-05 Topología de red: Requiere desplegarse en una infraestructura cloud.
+  - AD-06 Escalabilidad: Capacidad para manejar más carga sin degradar el rendimiento.
+
+- **Tácticas y Patrones Evaluados**<br>
+Para el la arquitectura de Betalyze hemos considerado dos estilos arquitectónicos principales:
+
+  - Arquitectura Monolítica:
+    - Toda la lógica del sistema como procesamiento, Machine Learning, recolección de datos y notificaciones reside en una base de código.
+    - Considerar la modularidad y desacoplamiento interno.
+    - Se despliega como una única unidad.
+
+  - Arquitectura de Microservicios:
+    - Se plantea dividir el sistema en servicios especializados.
+    - Cada servicio se comunica de forma sincrónica a través de APIs REST.
+    - Infraestructura más compleja, con múltiples bases de datos y despliegues.
+
+<br>
+
+**Candidate Pattern Evaluation Matrix**
+
+<table>
+  <tr>
+    <th> Driver ID </th>
+    <th> Título de Driver </th>
+    <th colspan=2> Pattern 1: <br> <b>Monolito<b> </th>
+    <th colspan=2> Pattern 2: <br> <b>Microservicios<b> </th>
+  </tr>
+  <tr>
+    <td> AD-01, AD-03 </td>
+    <td> Rendimiento y Disponibilidad </td>
+    <td> Pro: <br> - Comunicación directa sin sobrecarga de red. <br> - Simplicidad de monitoreo y desarrollo en etapas iniciales. </td>
+    <td> Con: <br> - Fallo de un componente afecta a todo el sistema. <br> - Escalado implica duplicar toda la aplicación. </td>
+    <td> Pro: <br> - Fallos aislados por servicio. <br> - Servicios críticos pueden escalarse individualmente. </td>
+    <td> Con: <br> - Comunicación sincrónica entre servicios puede introducir latencia. <br> - Mayor complejidad operativa y de despliegue. </td>
+  </tr>
+  <tr>
+    <td> AD-02, AD-07 </td>
+    <td> Machine Learning y Mantenibilidad </td>
+    <td> Pro: <br> - Acceso directo a datos y lógica de negocio en una misma base. <br> - Permite colaboración más sencilla entre equipos. </td>
+    <td> Con: <br> - El cambio en lógica de ML requiere desplegar todo. <br> - Dificultad para escalar la lógica de ML por separado. </td>
+    <td> Pro: <br> - El servicio de ML puede desplegarse de forma independiente. <br> - Aislamiento promueve separación por equipos específicos. </td>
+    <td> Con: <br> - Mayor complejidad en coordinación de cambios entre servicios. <br> - Necesita estrategia clara de gestión de comunicación entre APIs. </td>
+  </tr>
+  <tr>
+    <td> AD-04, AD-05 </td>
+    <td> Integración con APIs externas </td>
+    <td> Pro: <br> Manejo de fallos centralizado en una misma base accesible al equipo. </td>
+    <td> Con: <br> Fallo de una integración afecta a todo el sistema. </td>
+    <td> Pro: <br> Cada integración puede implementarse y escalarse por separado. </td>
+    <td> Con: <br> Riesgo de fallos en cascada si una API dependiente falla. </td>
+  </tr>
+  <tr>
+    <td> AD-06 </td>
+    <td> Escalabilidad </td>
+    <td> Pro: <br> Puede escalar verticalmente o por réplicas completas. </td>
+    <td> Con: <br> No es eficiente escalar solo una parte del sistema. </td>
+    <td> Pro: <br> Escalado granular por servicio. </td>
+    <td> Con: <br> Aumenta la complejidad de despliegue y monitoreo. </td>
+  </tr>
+</table>
+
+
+- **Criterios de Decisión**<br>
+Como primera iteración para la definición del diseño de arquitectura para Betalyze como equipo se optó por una arquitectura monolítica como punto de partida para el desarrollo, debido a que nos permite agilizar la primera fase de desarrollo MVP, disminuye la complejidad y facilita el desarrollo colaborativo en etapas tempranas del producto.
+
+<br>
 
 ### 4.1.5. Quality Attribute Scenario Refinements
-<!-- Contenido de Quality Attribute Scenario Refinements -->
+
+En el contexto de desarrollo de Betalyze, las decisiones tomadas al finalizar el Quality Attribute Workshop se centraron en refinar los escenarios de calidad para asegurar que la arquitectura del sistema estuviera alineada con los objetivos de negocio y las expectativas de los usuarios. Se priorizaron los atributos de rendimiento, disponibilidad y escalabilidad siendo parte de la primera iteración en los drivers considerados para las decisiones de diseño de arquitectura. A continuación, se presenta la versión final de los escenarios refinados.
+
+1. **QAS: Rendimiento**
+
+<table>
+  <tr>
+    <th colspan=3> Scenario Refinement for Scenario Rendimiento </th>
+  </tr>
+  <tr>
+    <td colspan=2> Scenario(s): </td>
+    <td> El usuario apostador frecuente solicita visualizar las probabilidades de un partido, y el sistema responde en un tiempo máximo de 9 segundos. </td>
+  </tr>
+  <tr>
+    <td colspan=2> Business Goals: </td>
+    <td> Asegurar la satisfacción del cliente y la competitividad del sistema al ofrecer información actualizada de manera rápida y eficiente. </td>
+  </tr>
+  <tr>
+    <td colspan=2> Relevant Quality Attributes:  </td>
+    <td> Rendimiento (tiempo de respuesta). </td>
+  </tr>
+  <tr>
+    <td rowspan=7> Scenario Components </td>
+  </tr>
+  <tr>
+    <td> Stimulus: </td>
+    <td> Solicitud de visualización de probabilidades. </td>
+  </tr>
+  <tr>
+    <td> Stimulus Source: </td>
+    <td> Usuario apostador frecuente. </td>
+  </tr>
+  <tr>
+    <td> Environment: </td>
+    <td> La plataforma se encuentra en operación continua. </td>
+  </tr>
+  <tr>
+    <td> Artifact (if Known) </td>
+    <td> Módulo de procesamiento de probabilidades. </td>
+  </tr>
+  <tr>
+    <td> Response: </td>
+    <td> El sistema responde con las probabilidades actualizadas en un tiempo máximo de 9 segundos. </td>
+  </tr>
+  <tr>
+    <td> Response Measure:  </td>
+    <td> Tiempo de respuesta ≤ 9 segundos. </td>
+  </tr>
+  <tr>
+    <td colspan=2> Questions:  </td>
+    <td> ¿Cuál es la carga máxima esperada? ¿Qué factores pueden afectar la latencia? </td>
+  </tr>
+  <tr>
+    <td colspan=2> Issues:  </td>
+    <td> La latencia de las API externas y la optimización de la base de datos son puntos importantes a considerar. </td>
+  </tr>
+</table>
+
+<br>
+
+2. **QAS: Disponibilidad**
+
+<table>
+  <tr>
+    <th colspan=3> Scenario Refinement for Scenario Disponibilidad </th>
+  </tr>
+  <tr>
+    <td colspan=2> Scenario(s): </td>
+    <td> Un fallo en la conexión a una API externa de cuotas provoca que el sistema siga operando con datos de otros proveedores. </td>
+  </tr>
+  <tr>
+    <td colspan=2> Business Goals: </td>
+    <td> Mantener la continuidad del servicio y la confiabilidad del sistema, minimizando el impacto de los fallos externos. </td>
+  </tr>
+  <tr>
+    <td colspan=2> Relevant Quality Attributes:  </td>
+    <td> Disponibilidad (tolerancia a fallos). </td>
+  </tr>
+  <tr>
+    <td rowspan=7> Scenario Components </td>
+  </tr>
+  <tr>
+    <td> Stimulus: </td>
+    <td> Fallo en la conexión a una API externa de cuotas. </td>
+  </tr>
+  <tr>
+    <td> Stimulus Source: </td>
+    <td> Usuario y el propio sistema. </td>
+  </tr>
+  <tr>
+    <td> Environment: </td>
+    <td> Durante el uso normal del sistema. </td>
+  </tr>
+  <tr>
+    <td> Artifact (if Known) </td>
+    <td> El módulo de integración de API y datos. </td>
+  </tr>
+  <tr>
+    <td> Response: </td>
+    <td> El sistema continúa operando con datos de otros proveedores. </td>
+  </tr>
+  <tr>
+    <td> Response Measure:  </td>
+    <td> El sistema sigue operativo, sin presentar una mayor interrupción en su funcionamiento. </td>
+  </tr>
+  <tr>
+    <td colspan=2> Questions:  </td>
+    <td> ¿Se necesita un sistema de monitoreo? ¿Cómo se gestionará la redundancia de datos entre los proveedores? </td>
+  </tr>
+  <tr>
+    <td colspan=2> Issues:  </td>
+    <td> La dependencia de terceros y la sincronización de datos entre múltiples fuentes son los principales desafíos. </td>
+  </tr>
+</table>
+
+<br>
+
+3. **QAS: Escalabilidad**
+
+<table>
+  <tr>
+    <th colspan=3> Scenario Refinement for Scenario Escalabilidad </th>
+  </tr>
+  <tr>
+    <td colspan=2> Scenario(s): </td>
+    <td> Un incremento en el volumen de usuarios durante un evento pico hace que el sistema escale. </td>
+  </tr>
+  <tr>
+    <td colspan=2> Business Goals: </td>
+    <td> Apoyar el crecimiento de la solución manteniendo un rendimiento estable en alta demanda. </td>
+  </tr>
+  <tr>
+    <td colspan=2> Relevant Quality Attributes:  </td>
+    <td> Escalabilidad </td>
+  </tr>
+  <tr>
+    <td rowspan=7> Scenario Components </td>
+  </tr>
+  <tr>
+    <td> Stimulus: </td>
+    <td> Incremento en el volumen de partidos y usuarios. </td>
+  </tr>
+  <tr>
+    <td> Stimulus Source: </td>
+    <td> Usuarios </td>
+  </tr>
+  <tr>
+    <td> Environment: </td>
+    <td> Carga pico de usuarios y datos. </td>
+  </tr>
+  <tr>
+    <td> Artifact (if Known) </td>
+    <td> Todo el sistema. </td>
+  </tr>
+  <tr>
+    <td> Response: </td>
+    <td> El sistema escala horizontalmente para atender la carga adicional sin una degradación notable del servicio. </td>
+  </tr>
+  <tr>
+    <td> Response Measure:  </td>
+    <td> Capacidad para soportar el doble de la cantidad de usuarios habituales. </td>
+  </tr>
+  <tr>
+    <td colspan=2> Questions:  </td>
+    <td> ¿Qué componentes son más susceptibles a la carga? ¿Cómo se distribuirán las solicitudes? </td>
+  </tr>
+  <tr>
+    <td colspan=2> Issues:  </td>
+    <td> La gestión de sesiones y la coherencia de la base de datos en nuestro contexto. </td>
+  </tr>
+</table>
+
+<br>
 
 ## 4.2. Strategic-Level Domain-Driven Design
 
