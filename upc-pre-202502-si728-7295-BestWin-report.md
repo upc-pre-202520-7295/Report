@@ -1182,6 +1182,9 @@ El equipo generó un escenario ideal para cada segmento, partiendo de los hallaz
 
 <!-- Contenido de Impact Mapping -->
 
+![Impact Apostador Frecuente](./assets/impact_apostador_frecuente.png)
+![Impact Fanatico Futbol](./assets/impact_fanatico_futbol.png)
+
 ## 3.4. Product Backlog
 
 |  # Orden  |  User Story Id  |  Título  |  Descripción  |  Story Points (1/2/3/5/8)  |
