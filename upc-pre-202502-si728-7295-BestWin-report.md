@@ -200,7 +200,7 @@ Visión:
 |   Photo   |   Description    |
 | :-------: | :--------------: |
 | [![bernaola.jpg](https://i.postimg.cc/PxhJpyCd/bernaola.jpg)](https://postimg.cc/hJycN98Y) | **Bernaola Pérez, André Arturo** <br> Estoy cursando la carrera de Ingeniería de Software, me gusta jugar videojuegos y aprender cosas nuevas en mis ratos libres. Aspiro a trabajar como desarrollador fullstack y me interesa mantenerme actualizado en nuevas tecnologías, buenas prácticas de programación y metodologías ágiles. |
-| [![renzo.jpg]()]() | **Loli Ruiz, Renzo Javier** <br>  . |
+| ![renzo.jpg](./assets/foto_renzo.png) | **Loli Ruiz, Renzo Javier** <br>  Soy Renzo Loli, tengo 26 años y soy de la carrera de Ingeniería de Software. Curso el 8vo ciclo. Tengo conocimientos en lenguages como javascript y python y base en arquitecturas cloud como aws. Me desemboco mejor en el ambito de identificar y resolver problemas. |
 | [![foto-upc.jpg](https://i.postimg.cc/jSpQ1pFv/foto-upc.jpg)](https://postimg.cc/TKcDL4GW) | **Soriano Medrano, Diego** <br>  Estudio la carrera de ingeniería de software. Me considero una persona creativa y paciente. Tengo conocimiento en el uso de diferentes herramientas informáticas y lenguajes de programación. que ayudan a realizar distintos tipos de trabajo y a resolver problemas. Parte de mis habilidades blandas es siempre tomar en cuenta la opinión de mis compañeros, lo cual me facilita el poder trabajar en equipo, para agilizar diferentes actividades. |
 
 
@@ -1556,21 +1556,139 @@ En el contexto de desarrollo de Betalyze, las decisiones tomadas al finalizar el
 <br>
 
 ## 4.2. Strategic-Level Domain-Driven Design
+El objetivo de este capítulo es documentar de manera formal el **descubrimiento de dominio** realizado para la plataforma Betalyze, orientada a proporcionar predicciones, métricas y alertas de apuestas deportivas en tiempo real.  
+Se describe el proceso seguido, los eventos de dominio identificados, los contextos delimitados y la forma en que interactúan, así como las relaciones de dependencia y los mensajes que circulan entre ellos.
 
 ### 4.2.1. EventStorming
 <!-- Contenido de EventStorming -->
+Se realizaron varias sesiones colaborativas de **EventStorming**, en las cuales se convocó a expertos de negocio, analistas de datos, desarrolladores y representantes de operaciones.  
+El objetivo fue **capturar todos los eventos significativos** que ocurren dentro del sistema, sin filtrar ni priorizar en la primera etapa.  
+Estos eventos constituyen la materia prima para identificar los *bounded contexts* y las integraciones necesarias.
+
+Los eventos detectados se agrupan a continuación según la naturaleza del proceso que representan:
+
+| Categoría | Eventos Identificados |
+|-----------|-----------------------|
+| **Adquisición de Datos** | PartidoImportado, PartidoActualizado, PartidoFinalizado, CuotaImportada, CuotaActualizada, EstadisticaEquipoImportada, EstadisticaEquipoActualizada, ErrorProveedorRegistrado |
+| **Análisis y Predicción** | PrediccionGenerada, PrediccionActualizada, ModeloEntrenado, ModeloActualizado |
+| **Alertas y Métricas** | ApuestaDeValorDetectada, HistorialGenerado, MetricaActualizada |
+| **Comunicación** | AlertaProgramada, NotificacionEnviada, NotificacionFallida |
+| **Gestión de Usuario** | UsuarioRegistrado, UsuarioAutenticado, PreferenciasGuardadas, FavoritoAgregado, LigaPreferidaConfigurada, ConfiguracionDetalleAplicada |
+| **Servicios Complementarios** | IntegracionAPIExitosa, EventoCalendarioCreado, FAQConsultada, PrecioSuscripcionConsultado, InformacionGeneralConsultada |
 
 ### 4.2.2. Candidate Context Discovery
 <!-- Contenido de Candidate Context Discovery -->
+A partir del mapeo de eventos se evaluó la criticidad de cada uno en la cadena de valor.  
+Se priorizaron aquellos que impactan directamente la experiencia del usuario y la capacidad predictiva del sistema:
+
+* **PartidoImportado / CuotaImportada**: Entrada primaria de datos, sin ellos no existe predicción.  
+* **PrediccionGenerada**: Resultado central de la plataforma, motor de todas las métricas.  
+* **ApuestaDeValorDetectada**: Determina las oportunidades más rentables.  
+* **NotificacionEnviada**: Entrega la propuesta de valor al usuario en tiempo real.  
+* **UsuarioRegistrado / PreferenciasGuardadas**: Permiten personalización y filtrado.  
+* **MetricaActualizada / ModeloEntrenado**: Garantizan transparencia y calidad del algoritmo.
+
+La segmentación resultante generó los **Bounded Contexts** principales:
+
+1. **Data Retrieval** – adquisición de datos externos de partidos, cuotas y estadísticas.  
+2. **Prediction & Analytics** – entrenamiento de modelos y generación de predicciones.  
+3. **Betting Insights** – cálculo de métricas y detección de apuestas de valor.  
+4. **Notification Context** – envío de alertas y notificaciones.  
+5. **User Management** – registro, autenticación y manejo de preferencias.  
+6. **Transparency & Trust** – exposición de métricas de precisión y explicaciones del modelo.
 
 ### 4.2.3. Domain Message Flows Modeling
 <!-- Contenido de Domain Message Flows Modeling -->
+Los eventos y comandos se organizaron en **flujos de mensajes** que describen cómo la información se mueve entre contextos.  
+Cada fila indica origen, destino y el mensaje que dispara la interacción.
+
+| Origen | Destino | Mensaje | Propósito |
+|-------|---------|---------|-----------|
+| Data Retrieval | Prediction & Analytics | PartidoImportado, CuotaImportada, EstadisticaEquipoImportada | Alimentar datos crudos para el motor de predicciones |
+| Prediction & Analytics | Betting Insights | PrediccionGenerada | Permitir el cálculo de métricas y apuestas de valor |
+| Betting Insights | Notification Context | ApuestaDeValorDetectada | Generar notificaciones de oportunidades |
+| Prediction & Analytics | Transparency & Trust | ModeloEntrenado, MetricaActualizada | Publicar métricas de desempeño y evolución del modelo |
+| User Management | Notification Context | PreferenciasGuardadas | Configurar filtros y canales de notificación |
+| User Management | Todos | UsuarioAutenticado | Autorización de consultas y acciones |
+| Notification Context | Dispositivos de Usuario | NotificacionEnviada | Entrega de alertas en tiempo real |
 
 ### 4.2.4. Bounded Context Canvases
 <!-- Contenido de Bounded Context Canvases -->
+Cada contexto se detalla en un **Context Canvas**, que documenta sus responsabilidades, mensajes y lenguaje ubicuo.
+
+#### Data Retrieval
+| Campo | Descripción |
+|------|-------------|
+| **Responsabilidad** | Recolectar, validar y almacenar datos de partidos, cuotas y estadísticas desde proveedores externos. |
+| **Mensajes Entrantes** | Command: `FetchMatches`, `FetchOdds`. |
+| **Mensajes Salientes** | Event: `PartidoImportado`, `CuotaImportada`, `EstadisticaEquipoImportada`. |
+| **Decisiones Clave** | Políticas de frecuencia de actualización, manejo de inconsistencias de API. |
+| **Lenguaje Ubicuo** | Partido, Cuota, Estadística, Proveedor. |
+| **Relaciones** | Proveedor de datos → Customer–Supplier con Prediction & Analytics. |
+
+#### Prediction & Analytics
+| Campo | Descripción |
+|------|-------------|
+| **Responsabilidad** | Entrenar modelos de Machine Learning y generar predicciones de probabilidad de resultados. |
+| **Mensajes Entrantes** | Event: `PartidoImportado`, `CuotaImportada`. |
+| **Mensajes Salientes** | Event: `PrediccionGenerada`, `ModeloEntrenado`. |
+| **Decisiones Clave** | Selección de variables, criterios de reentrenamiento. |
+| **Lenguaje Ubicuo** | Predicción, Modelo, Probabilidad. |
+| **Relaciones** | Customer de Data Retrieval; Supplier de Betting Insights y Transparency & Trust. |
+
+#### Betting Insights
+| Campo | Descripción |
+|------|-------------|
+| **Responsabilidad** | Evaluar predicciones y calcular métricas de valor esperado para identificar apuestas rentables. |
+| **Mensajes Entrantes** | Event: `PrediccionGenerada`. |
+| **Mensajes Salientes** | Event: `ApuestaDeValorDetectada`, `MetricaActualizada`. |
+| **Decisiones Clave** | Algoritmos de valor esperado, reglas de filtrado. |
+| **Lenguaje Ubicuo** | Apuesta de Valor, Métrica, Historial. |
+| **Relaciones** | Customer de Prediction & Analytics; Supplier de Notification Context y Transparency & Trust. |
+
+#### Notification Context
+| Campo | Descripción |
+|------|-------------|
+| **Responsabilidad** | Enviar notificaciones en tiempo real según las preferencias de usuario y la detección de oportunidades. |
+| **Mensajes Entrantes** | Event: `ApuestaDeValorDetectada`, `PreferenciasGuardadas`. |
+| **Mensajes Salientes** | Event: `NotificacionEnviada`, `NotificacionFallida`. |
+| **Decisiones Clave** | Priorización de alertas, selección de canal (push, correo). |
+| **Lenguaje Ubicuo** | Alerta, Notificación, Canal, Preferencia. |
+| **Relaciones** | Publisher–Subscriber con Betting Insights; Shared Kernel con User Management. |
+
+#### User Management
+| Campo | Descripción |
+|------|-------------|
+| **Responsabilidad** | Gestionar el ciclo de vida del usuario, autenticación y almacenamiento de preferencias. |
+| **Mensajes Entrantes** | Command: `RegisterUser`, `UpdatePreferences`. |
+| **Mensajes Salientes** | Event: `UsuarioRegistrado`, `PreferenciasGuardadas`. |
+| **Decisiones Clave** | Validación de identidad, políticas de privacidad. |
+| **Lenguaje Ubicuo** | Usuario, Preferencia, Suscripción. |
+| **Relaciones** | ACL hacia todos los contextos para autenticación. |
+
+#### Transparency & Trust
+| Campo | Descripción |
+|------|-------------|
+| **Responsabilidad** | Publicar métricas de precisión y explicaciones del modelo para generar confianza en las predicciones. |
+| **Mensajes Entrantes** | Event: `MetricaActualizada`, `ModeloEntrenado`. |
+| **Mensajes Salientes** | Event: `ExplicacionPublicada`. |
+| **Decisiones Clave** | Nivel de detalle de las métricas, retención de información histórica. |
+| **Lenguaje Ubicuo** | Métrica de Precisión, Explicación de Modelo. |
+| **Relaciones** | Open Host Service de Prediction & Analytics y Betting Insights. |
 
 ### 4.2.5. Context Mapping
 <!-- Contenido de Context Mapping -->
+El siguiente cuadro resume las **relaciones estratégicas** entre los contextos.
+
+| Downstream | Upstream | Tipo de Relación | Observaciones |
+|------------|----------|------------------|---------------|
+| Prediction & Analytics | Data Retrieval | Customer–Supplier | Dependencia directa de datos externos. |
+| Betting Insights | Prediction & Analytics | Customer–Supplier | Consumo de predicciones como contrato. |
+| Transparency & Trust | Prediction & Analytics | Open Host Service | Exposición pública de métricas. |
+| Transparency & Trust | Betting Insights | Open Host Service | Publicación de métricas de valor. |
+| Notification Context | Betting Insights | Publisher–Subscriber | Comunicación asíncrona de alertas. |
+| Notification Context | User Management | Shared Kernel | Uso compartido de esquema de preferencias. |
+| Todos | User Management | ACL | Control de acceso a operaciones. |
 
 ## 4.3. Software Architecture
 
