@@ -87,7 +87,14 @@ Se utilizaron Git y Github para el versionamiento y gestión del proyecto, lo cu
 | Organización del proyecto        | https://github.com/upc-pre-202520-7295             |
 | Repositorio de la documentación  | https://github.com/upc-pre-202520-7295/Report      |
 
-<!--COMPLETAR -->
+<br>
+
+- Evidencia en imagen de los analíticos de colaboración y commits en GitHub:
+
+  - **TB1:**
+  
+  ![](./assets/insights1.png)
+
 
 <br>
 
@@ -171,7 +178,12 @@ Se utilizaron Git y Github para el versionamiento y gestión del proyecto, lo cu
 
 # Student Outcome
 
+Criterio: Capacidad de comunicarse efectivamente con un rango de audiencias. En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 3.
 
+| **Criterio específico** | **Acciones realizadas** | **Conclusiones** |
+|---------------------|---------------------|--------------|
+| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerarquicos, en el marco del desarrollo de un proyecto en ingeniería. | **Bernaola Pérez, André Arturo**<br>*TB1*<br>  Durante el proyecto comuniqué de forma oral mis ideas y resultados al equipo, presentando los diagramas de arquitectura y explicando los hallazgos de las entrevistas. Esto permitió que todos comprendieran las decisiones técnicas y de análisis, facilitando la coordinación y el trabajo en conjunto.  <br><br> **Loli Ruiz, Renzo Javier**<br>*TB1*<br> En esta fase del proyecto comuniqué de forma oral las decisiones de diseño basadas en el proceso de DDD a todo el equipo detallando los contextos delimitados y los Lenguajes Ubicuos para modelar el dominio del negocio. <br><br> **Soriano Medrano, Diego**<br>*TB1*<br>  En esta primera fase del proyecto comuniqué en reuniones del equipo temas relacionados a los escenarios de atributos de calidad, permitiendo que el equipo pueda plantear el diseño arquitectónico.  <br><br> | En el desarrollo de estos primeros capítulos, la comunicación oral fue fundamental para alinear al equipo y realizar el proceso de Domain-Driven Design (DDD) y detallar los escenarios de calidad clave. Explicar conceptos complejos como los Contextos Delimitados, el proceso de ADD y la elaboración de la arquitectura de nuestra solución aseguró que todos comprendieran y apoyaran el planteamiento de la solución, facilitando así una ejecución más fluida del proyecto.  |
+| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerarquicos, en el marco del desarrollo de un proyecto en ingeniería. | **Bernaola Pérez, André Arturo**<br>*TB1*<br> Aporté en la comunicación escrita mediante la redacción de los primeros capítulos del informe, donde incluí el análisis del problema y el registro de entrevistas, además de documentar los diagramas de arquitectura. Con ello aseguré que la información se presentara de manera clara y objetiva para distintos públicos. <br><br> **Loli Ruiz, Renzo Javier**<br>*TB1*<br> Aporté a la comunicación escrita en el proyecto redacción de los contextos delimitados y sus mapas de contexto, aporté con el equipo describiendo las entidades, agregados y servicios de cada módulo clave para el negocio. <br><br> **Soriano Medrano, Diego**<br>*TB1*<br> Aporté en la documentación de los escenarios de calidad, redacté información relacionada y los cuadros necesarios para el análisis de atributos de calidad, aportando a las decisiones arquitectónicas. <br><br> | A través de una comunicación escrita clara y objetiva, se aseguró que el equipo comprenda la información más importante y crítica del nuestra solución. La documentación detallada de los escenarios de calidad y los mapas de contexto de DDD sirvieron como una referencia, garantizando que las desiciones arquitectónicas estuvieran alineadas con los objetivos de nuestra solución. |
 
 <br>
 
@@ -1579,6 +1591,12 @@ Los eventos detectados se agrupan a continuación según la naturaleza del proce
 | **Gestión de Usuario** | UsuarioRegistrado, UsuarioAutenticado, PreferenciasGuardadas, FavoritoAgregado, LigaPreferidaConfigurada, ConfiguracionDetalleAplicada |
 | **Servicios Complementarios** | IntegracionAPIExitosa, EventoCalendarioCreado, FAQConsultada, PrecioSuscripcionConsultado, InformacionGeneralConsultada |
 
+<br>
+
+![](./assets/eventstorming.jpg)
+
+<br>
+
 ### 4.2.2. Candidate Context Discovery
 <!-- Contenido de Candidate Context Discovery -->
 A partir del mapeo de eventos se evaluó la criticidad de cada uno en la cadena de valor.  
@@ -1600,6 +1618,12 @@ La segmentación resultante generó los **Bounded Contexts** principales:
 5. **User Management** – registro, autenticación y manejo de preferencias.  
 6. **Transparency & Trust** – exposición de métricas de precisión y explicaciones del modelo.
 
+<br>
+
+![](./assets/candidateContextDiscovery.jpeg)
+
+<br>
+
 ### 4.2.3. Domain Message Flows Modeling
 <!-- Contenido de Domain Message Flows Modeling -->
 Los eventos y comandos se organizaron en **flujos de mensajes** que describen cómo la información se mueve entre contextos.  
@@ -1615,11 +1639,20 @@ Cada fila indica origen, destino y el mensaje que dispara la interacción.
 | User Management | Todos | UsuarioAutenticado | Autorización de consultas y acciones |
 | Notification Context | Dispositivos de Usuario | NotificacionEnviada | Entrega de alertas en tiempo real |
 
+<br>
+
+- **User Management**
+
+  ![](./assets/message-flows-modeling/messageFlows1.jpg)  
+
+<br>
+
 ### 4.2.4. Bounded Context Canvases
 <!-- Contenido de Bounded Context Canvases -->
 Cada contexto se detalla en un **Context Canvas**, que documenta sus responsabilidades, mensajes y lenguaje ubicuo.
 
-#### Data Retrieval
+- **Data Retrieval**
+
 | Campo | Descripción |
 |------|-------------|
 | **Responsabilidad** | Recolectar, validar y almacenar datos de partidos, cuotas y estadísticas desde proveedores externos. |
@@ -1629,7 +1662,12 @@ Cada contexto se detalla en un **Context Canvas**, que documenta sus responsabil
 | **Lenguaje Ubicuo** | Partido, Cuota, Estadística, Proveedor. |
 | **Relaciones** | Proveedor de datos → Customer–Supplier con Prediction & Analytics. |
 
-#### Prediction & Analytics
+![](./assets/bounded-context-canvases/canvases1.jpg)
+
+<br>
+
+- **Prediction & Analytics**
+
 | Campo | Descripción |
 |------|-------------|
 | **Responsabilidad** | Entrenar modelos de Machine Learning y generar predicciones de probabilidad de resultados. |
@@ -1639,7 +1677,12 @@ Cada contexto se detalla en un **Context Canvas**, que documenta sus responsabil
 | **Lenguaje Ubicuo** | Predicción, Modelo, Probabilidad. |
 | **Relaciones** | Customer de Data Retrieval; Supplier de Betting Insights y Transparency & Trust. |
 
-#### Betting Insights
+![](./assets/bounded-context-canvases/canvases2.jpg)
+
+<br>
+
+- **Betting Insights**
+
 | Campo | Descripción |
 |------|-------------|
 | **Responsabilidad** | Evaluar predicciones y calcular métricas de valor esperado para identificar apuestas rentables. |
@@ -1649,7 +1692,12 @@ Cada contexto se detalla en un **Context Canvas**, que documenta sus responsabil
 | **Lenguaje Ubicuo** | Apuesta de Valor, Métrica, Historial. |
 | **Relaciones** | Customer de Prediction & Analytics; Supplier de Notification Context y Transparency & Trust. |
 
-#### Notification Context
+![](./assets/bounded-context-canvases/canvases3.jpg)
+
+<br>
+
+- **Notification Context**
+
 | Campo | Descripción |
 |------|-------------|
 | **Responsabilidad** | Enviar notificaciones en tiempo real según las preferencias de usuario y la detección de oportunidades. |
@@ -1659,7 +1707,12 @@ Cada contexto se detalla en un **Context Canvas**, que documenta sus responsabil
 | **Lenguaje Ubicuo** | Alerta, Notificación, Canal, Preferencia. |
 | **Relaciones** | Publisher–Subscriber con Betting Insights; Shared Kernel con User Management. |
 
-#### User Management
+![](./assets/bounded-context-canvases/canvases4.jpg)
+
+<br>
+
+- **User Management**
+
 | Campo | Descripción |
 |------|-------------|
 | **Responsabilidad** | Gestionar el ciclo de vida del usuario, autenticación y almacenamiento de preferencias. |
@@ -1669,7 +1722,12 @@ Cada contexto se detalla en un **Context Canvas**, que documenta sus responsabil
 | **Lenguaje Ubicuo** | Usuario, Preferencia, Suscripción. |
 | **Relaciones** | ACL hacia todos los contextos para autenticación. |
 
-#### Transparency & Trust
+![](./assets/bounded-context-canvases/canvases5.jpg)
+
+<br>
+
+- **Transparency & Trust**
+
 | Campo | Descripción |
 |------|-------------|
 | **Responsabilidad** | Publicar métricas de precisión y explicaciones del modelo para generar confianza en las predicciones. |
@@ -1679,9 +1737,28 @@ Cada contexto se detalla en un **Context Canvas**, que documenta sus responsabil
 | **Lenguaje Ubicuo** | Métrica de Precisión, Explicación de Modelo. |
 | **Relaciones** | Open Host Service de Prediction & Analytics y Betting Insights. |
 
+![](./assets/bounded-context-canvases/canvases6.jpg)
+
+<br>
+
 ### 4.2.5. Context Mapping
-<!-- Contenido de Context Mapping -->
-El siguiente cuadro resume las **relaciones estratégicas** entre los contextos.
+
+- Para esta fase del proyecto, creamos mapas visuales que nos ayudaron a entender cómo se conectan las diferentes áreas del sistema. A partir de estos mapas, exploramos y evaluamos varias opciones de diseño, probando diferentes formas de organizar, dividir o agrupar las funcionalidades. Finalmente, para elegir la mejor arquitectura para Betalyze, analizamos cada propuesta usando estrategias de diseño conocidas, como la Capa Anticorrupción. A continuación, mostramos las alternativas que consideramos.
+
+
+- **Opción 1:**
+
+  ![](./assets/contextMapping1.png)
+
+<br>
+
+- **Opción 2:**
+
+  ![](./assets/contextMapping2.png)
+
+<br>
+
+- El siguiente cuadro resume las **relaciones estratégicas** entre los contextos.
 
 | Downstream | Upstream | Tipo de Relación | Observaciones |
 |------------|----------|------------------|---------------|
@@ -1692,6 +1769,8 @@ El siguiente cuadro resume las **relaciones estratégicas** entre los contextos.
 | Notification Context | Betting Insights | Publisher–Subscriber | Comunicación asíncrona de alertas. |
 | Notification Context | User Management | Shared Kernel | Uso compartido de esquema de preferencias. |
 | Todos | User Management | ACL | Control de acceso a operaciones. |
+
+<br>
 
 ## 4.3. Software Architecture
 
@@ -1726,7 +1805,7 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 ---
 # Conclusiones
 
-<!-- Contenido de las conclusiones -->
+- Como fase inicial del proyecto, nos hemos descrito la problemática de nuestro producto y diseñado la arquitectura correspondiente siguiendo los métodos pertinentes centrandonos en los atributos de calidad más importantes para el negocio, como el rendimiento, la disponibilidad y la escalabilidad. Al aplicar el enfoque de Domain-Driven Design (DDD), pudimos modelar la complejidad del negocio de las apuestas en un sistema más manejable y robusto. Todo este proceso se comunicó de forma clara a diferentes niveles. Usamos un lenguaje técnico para el equipo de desarrollo, lo que permitió que todos entendieran la arquitectura y los objetivos de diseño. Al mismo tiempo, tradujimos estos conceptos considerando a nuestros stakeholders y segmentos objetivos, asegurando su apoyo y alineación con la propuesta de solución. En resumen, al planificar con el usuario y el negocio en mente y al comunicarnos de manera efectiva, logramos sentar las bases para un sistema que estará preparado para un correcto desarrollo e implementación.
 
 
 
@@ -1744,3 +1823,6 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 ---
 # Anexos
 
+- **URL video de entrevistas:**
+
+  - [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
