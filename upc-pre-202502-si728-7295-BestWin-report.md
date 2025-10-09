@@ -7,9 +7,9 @@
     1ASI0728
     <br><strong>NRC: 7295</strong><br>
     <br><strong>Profesor: Royer Edelwer Rojas Malasquez</strong><br>
-    <br><strong>"Informe de Trabajo Final"</strong><br>
+    <br><strong>"Informe de Trabajo Parcial"</strong><br>
     <br><strong>BestWin Startup</strong><br>
-    <!--<strong>Nombre del Producto</strong>-->
+    <strong>Betalyze</strong>
     <br><h3> Integrantes: </h3>
 </div>
 
@@ -167,6 +167,82 @@ Se utilizaron Git y Github para el versionamiento y gestión del proyecto, lo cu
   - [4.3.2. Software Architecture Context Level Diagrams](#432-software-architecture-context-level-diagrams)
   - [4.3.3. Software Architecture Container Level Diagrams](#433-software-architecture-container-level-diagrams)
   - [4.3.4. Software Architecture Deployment Diagrams](#434-software-architecture-deployment-diagrams)
+
+### [Capítulo V: Tactical-Level Software Design](#capítulo-v-tactical-level-software-design)
+- [5.1. Bounded Context: Data Retrieval](#51-bounded-context-data-retrieval)
+  - [5.1.1. Domain Layer](#511-domain-layer)
+  - [5.1.2. Interface Layer](#512-interface-layer)
+  - [5.1.3. Application Layer](#513-application-layer)
+  - [5.1.4. Infrastructure Layer](#514-infrastructure-layer)
+  - [5.1.6. Bounded Context Software Architecture Component Level Diagrams](#516-bounded-context-software-architecture-component-level-diagrams)
+  - [5.1.7. Bounded Context Software Architecture Code Level Diagrams](#517-bounded-context-software-architecture-code-level-diagrams)
+    - [5.1.7.1. Bounded Context Domain Layer Class Diagrams](#5171-bounded-context-domain-layer-class-diagrams)
+    - [5.1.7.2. Bounded Context Database Design Diagram](#5172-bounded-context-database-design-diagram)
+- [5.2. Bounded Context: Prediction & Analytics](#52-bounded-context-prediction-analytics)
+  - [5.2.1. Domain Layer](#521-domain-layer)
+  - [5.2.2. Interface Layer](#522-interface-layer)
+  - [5.2.3. Application Layer](#523-application-layer)
+  - [5.2.4. Infrastructure Layer](#524-infrastructure-layer)
+  - [5.2.6. Bounded Context Software Architecture Component Level Diagrams](#526-bounded-context-software-architecture-component-level-diagrams)
+  - [5.2.7. Bounded Context Software Architecture Code Level Diagrams](#527-bounded-context-software-architecture-code-level-diagrams)
+    - [5.2.7.1. Bounded Context Domain Layer Class Diagrams](#5271-bounded-context-domain-layer-class-diagrams)
+    - [5.2.7.2. Bounded Context Database Design Diagram](#5272-bounded-context-database-design-diagram)
+- [5.3. Bounded Context: Betting Insights](#53-bounded-context-betting-insights)
+  - [5.3.1. Domain Layer](#531-domain-layer)
+  - [5.3.2. Interface Layer](#532-interface-layer)
+  - [5.3.3. Application Layer](#533-application-layer)
+  - [5.3.4. Infrastructure Layer](#534-infrastructure-layer)
+  - [5.3.6. Bounded Context Software Architecture Component Level Diagrams](#536-bounded-context-software-architecture-component-level-diagrams)
+  - [5.3.7. Bounded Context Software Architecture Code Level Diagrams](#537-bounded-context-software-architecture-code-level-diagrams)
+    - [5.3.7.1. Bounded Context Domain Layer Class Diagrams](#5371-bounded-context-domain-layer-class-diagrams)
+    - [5.3.7.2. Bounded Context Database Design Diagram](#5372-bounded-context-database-design-diagram)
+- [5.4. Bounded Context: Notification](#54-bounded-context-notification)
+  - [5.4.1. Domain Layer](#541-domain-layer)
+  - [5.4.2. Interface Layer](#542-interface-layer)
+  - [5.4.3. Application Layer](#543-application-layer)
+  - [5.4.4. Infrastructure Layer](#544-infrastructure-layer)
+  - [5.4.6. Bounded Context Software Architecture Component Level Diagrams](#546-bounded-context-software-architecture-component-level-diagrams)
+  - [5.4.7. Bounded Context Software Architecture Code Level Diagrams](#547-bounded-context-software-architecture-code-level-diagrams)
+    - [5.4.7.1. Bounded Context Domain Layer Class Diagrams](#5471-bounded-context-domain-layer-class-diagrams)
+    - [5.4.7.2. Bounded Context Database Design Diagram](#5472-bounded-context-database-design-diagram)
+- [5.5. Bounded Context: User Management](#55-bounded-context-user-management)
+  - [5.5.1. Domain Layer](#551-domain-layer)
+  - [5.5.2. Interface Layer](#552-interface-layer)
+  - [5.5.3. Application Layer](#553-application-layer)
+  - [5.5.4. Infrastructure Layer](#554-infrastructure-layer)
+  - [5.5.6. Bounded Context Software Architecture Component Level Diagrams](#556-bounded-context-software-architecture-component-level-diagrams)
+  - [5.5.7. Bounded Context Software Architecture Code Level Diagrams](#557-bounded-context-software-architecture-code-level-diagrams)
+    - [5.5.7.1. Bounded Context Domain Layer Class Diagrams](#5571-bounded-context-domain-layer-class-diagrams)
+    - [5.5.7.2. Bounded Context Database Design Diagram](#5572-bounded-context-database-design-diagram)
+- [5.6. Bounded Context: Favorite User Teams](#56-bounded-context-favorite-user-teams)
+  - [5.6.1. Domain Layer](#561-domain-layer)
+  - [5.6.2. Interface Layer](#562-interface-layer)
+  - [5.6.3. Application Layer](#563-application-layer)
+  - [5.6.4. Infrastructure Layer](#564-infrastructure-layer)
+  - [5.6.6. Bounded Context Software Architecture Component Level Diagrams](#566-bounded-context-software-architecture-component-level-diagrams)
+  - [5.6.7. Bounded Context Software Architecture Code Level Diagrams](#567-bounded-context-software-architecture-code-level-diagrams)
+    - [5.6.7.1. Bounded Context Domain Layer Class Diagrams](#5671-bounded-context-domain-layer-class-diagrams)
+    - [5.6.7.2. Bounded Context Database Design Diagram](#5672-bounded-context-database-design-diagram)
+
+### [Capítulo VI: Solution UX Design](#capítulo-vi-solution-ux-design)
+- [6.1. Style Guidelines](#61-style-guidelines)
+  - [6.1.1. General Style Guidelines](#611-general-style-guidelines)
+  - [6.1.2. Web, Mobile & Devices Style Guidelines](#612-web-mobile-devices-style-guidelines)
+- [6.2. Information Architecture](#62-information-architecture)
+  - [6.2.2. Labeling Systems](#622-labeling-systems)
+  - [6.2.3. Searching Systems](#623-searching-systems)
+  - [6.2.4. SEO Tags and Meta Tags](#624-seo-tags-and-meta-tags)
+  - [6.2.5. Navigation Systems](#625-navigation-systems)
+- [6.3. Landing Page UI Design](#63-landing-page-ui-design)
+  - [6.3.1. Landing Page Wireframe](#631-landing-page-wireframe)
+  - [6.3.2. Landing Page Mock-up](#632-landing-page-mock-up)
+- [6.4. Applications UX/UI Design](#64-applications-uxui-design)
+  - [6.4.1. Applications Wireframes](#641-applications-wireframes)
+  - [6.4.2. Applications Wireflow Diagrams](#642-applications-wireflow-diagrams)
+  - [6.4.2. Applications Mock-ups](#642-applications-mock-ups)
+  - [6.4.3. Applications User Flow Diagrams](#643-applications-user-flow-diagrams)
+- [6.5. Applications Prototyping](#65-applications-prototyping)
+
 
 <br>
 
@@ -819,7 +895,7 @@ En esta sección se presenta la relación de preguntas principales y complementa
 | Inicio de entrevista | Minuto 0:00 |
 | Duración             | 3:19 minutos |
 | Resumen              |  Prefiere apuestas combinadas. Considera fundamental la rapidez de pronósticos. Usa móvil como principal canal, consulta alineaciones y estadísticas previas. Personalidad racional y metódica.  |
-| URL del video       | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D> |
 
 |     Entrevistado     |    Gerson Chanel     |
 |:---------------------|----------------------|
@@ -829,7 +905,7 @@ En esta sección se presenta la relación de preguntas principales y complementa
 | Inicio de entrevista | Minuto 3:19 |
 | Duración             | 11:23 minutos |
 | Resumen              |  Apuesta 3-4 veces por semana, en fútbol y basket. Prefiere combinadas, revisa alineaciones, usa móvil y PC pero prioriza móvil. Prefiere cuotas sobre porcentajes. Valora apps rápidas y simples.   |
-| URL del video       | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D> |
 
 |     Entrevistado     |    Angelo Carrasco    |
 |:---------------------|----------------------|
@@ -839,7 +915,7 @@ En esta sección se presenta la relación de preguntas principales y complementa
 | Inicio de entrevista | Minuto 14:42 |
 | Duración             | 3:41 minutos |
 | Resumen              |  Realiza 3-4 apuestas semanales, evalúa rápido, no siente gran dificultad en análisis. Usa móvil. Prefiere porcentajes. Apasionado, apuesta por intuición en algunos casos.  |
-| URL del video       | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D> |
 
 <br>
 
@@ -853,7 +929,7 @@ En esta sección se presenta la relación de preguntas principales y complementa
 | Inicio de entrevista | Minuto 18:23 |
 | Duración             | 4:46 minutos |
 | Resumen              |  Usa Inkabet y Stake. Quiere métricas objetivas e historial visual. Busca estadísticas detalladas de equipos. Usa móvil para análisis.  |
-| URL del video       | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D> |
 
 |     Entrevistado     |    Daniel Sebastián    |
 |:---------------------|----------------------|
@@ -863,7 +939,7 @@ En esta sección se presenta la relación de preguntas principales y complementa
 | Inicio de entrevista | Minuto 23:09 |
 | Duración             | 4:46 minutos |
 | Resumen              |  No apuesta frecuentemente, pero quiere probabilidades objetivas y simples. Usa móvil. Considera las plataformas actuales complejas. Busca datos claros y alineaciones antes de ver un partido.  |
-| URL del video       | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D> |
 
 |     Entrevistado     |    Rodrigo Chirinos    |
 |:---------------------|----------------------|
@@ -873,7 +949,7 @@ En esta sección se presenta la relación de preguntas principales y complementa
 | Inicio de entrevista | Minuto 27:55 |
 | Duración             | 4:66 minutos |
 | Resumen              |  Sigue ligas europeas principales. Prefiere cuotas. Usa móvil para consumir datos. Quiere historial visual de desempeño.  |
-| URL del video       | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D> |
 
 <br>
 
@@ -1580,20 +1656,33 @@ Se realizaron varias sesiones colaborativas de **EventStorming**, en las cuales 
 El objetivo fue **capturar todos los eventos significativos** que ocurren dentro del sistema, sin filtrar ni priorizar en la primera etapa.  
 Estos eventos constituyen la materia prima para identificar los *bounded contexts* y las integraciones necesarias.
 
-Los eventos detectados se agrupan a continuación según la naturaleza del proceso que representan:
+- Los eventos detectados se agrupan a continuación según la naturaleza del proceso que representan.
 
-| Categoría | Eventos Identificados |
-|-----------|-----------------------|
-| **Adquisición de Datos** | PartidoImportado, PartidoActualizado, PartidoFinalizado, CuotaImportada, CuotaActualizada, EstadisticaEquipoImportada, EstadisticaEquipoActualizada, ErrorProveedorRegistrado |
-| **Análisis y Predicción** | PrediccionGenerada, PrediccionActualizada, ModeloEntrenado, ModeloActualizado |
-| **Alertas y Métricas** | ApuestaDeValorDetectada, HistorialGenerado, MetricaActualizada |
-| **Comunicación** | AlertaProgramada, NotificacionEnviada, NotificacionFallida |
-| **Gestión de Usuario** | UsuarioRegistrado, UsuarioAutenticado, PreferenciasGuardadas, FavoritoAgregado, LigaPreferidaConfigurada, ConfiguracionDetalleAplicada |
-| **Servicios Complementarios** | IntegracionAPIExitosa, EventoCalendarioCreado, FAQConsultada, PrecioSuscripcionConsultado, InformacionGeneralConsultada |
+<p align="center">
+    <img src="./assets/event-storming/1.jpg"/>
+</p>
+
+- Una vez registrados los eventos, se procedió a su refinamiento dentro del dominio. Esto resultó en la identificación y la secuenciación lógica de eventos faltantes, lo cual proporcionó resultados consolidados.
+
+<p align="center">
+    <img src="./assets/event-storming/2.jpg"/>
+</p>
+
+- Tras finalizar el refinamiento de los eventos, se procedió al registro de los factores desencadenantes, especificando los usuarios y sistemas involucrados en la generación de dichos eventos.
+
+<p align="center">
+    <img src="./assets/event-storming/3.jpg"/>
+</p>
+
+- Finalmente, se identificaron los agregados, se reordenaron y se delimitaron dentro de un contexto acotado que fue aplicado de manera específica a cada uno de ellos.
+
+<p align="center">
+    <img src="./assets/event-storming/4.jpg"/>
+</p>
 
 <br>
 
-![](./assets/eventstorming.jpg)
+**URL Desarrollo de Event Storming en Miro:** <https://miro.com/app/board/uXjVM5kwB68=/?share_link_id=734768237007>
 
 <br>
 
@@ -1635,15 +1724,23 @@ Cada fila indica origen, destino y el mensaje que dispara la interacción.
 | Prediction & Analytics | Betting Insights | PrediccionGenerada | Permitir el cálculo de métricas y apuestas de valor |
 | Betting Insights | Notification Context | ApuestaDeValorDetectada | Generar notificaciones de oportunidades |
 | Prediction & Analytics | Transparency & Trust | ModeloEntrenado, MetricaActualizada | Publicar métricas de desempeño y evolución del modelo |
-| User Management | Notification Context | PreferenciasGuardadas | Configurar filtros y canales de notificación |
+| Favorite User Teams | Notification Context | PreferenciasGuardadas | Configurar filtros y canales de notificación |
 | User Management | Todos | UsuarioAutenticado | Autorización de consultas y acciones |
 | Notification Context | Dispositivos de Usuario | NotificacionEnviada | Entrega de alertas en tiempo real |
 
 <br>
 
-- **User Management**
+- **Escenario: Registro de nuevo usuario**
 
-  ![](./assets/message-flows-modeling/messageFlows1.jpg)  
+  ![](./assets/message-flows-modeling/1.jpg)
+
+- **Escenario: Generar un pronóstico de los partidos diarios**
+
+  ![](./assets/message-flows-modeling/2.jpg)
+
+- **Escenario: Enviar notificación del partido de tu equipo favorito**
+
+  ![](./assets/message-flows-modeling/3.jpg)
 
 <br>
 
@@ -1803,6 +1900,427 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 <br>
 
 ---
+
+# Capítulo V: Tactical-Level Software Design
+
+## 5.1. Bounded Context: Data Retrieval
+
+### 5.1.1. Domain Layer
+
+### 5.1.2. Interface Layer
+
+### 5.1.3. Application Layer
+
+### 5.1.4. Infrastructure Layer
+
+### 5.1.6. Bounded Context Software Architecture Component Level Diagrams
+
+### 5.1.7. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.1.7.1. Bounded Context Domain Layer Class Diagrams
+
+#### 5.1.7.2. Bounded Context Database Design Diagram
+
+
+
+<br>
+
+---
+
+## 5.2. Bounded Context: Prediction & Analytics
+
+### 5.2.1. Domain Layer
+
+### 5.2.2. Interface Layer
+
+### 5.2.3. Application Layer
+
+### 5.2.4. Infrastructure Layer
+
+### 5.2.6. Bounded Context Software Architecture Component Level Diagrams
+
+### 5.2.7. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.2.7.1. Bounded Context Domain Layer Class Diagrams
+
+#### 5.2.7.2. Bounded Context Database Design Diagram
+
+
+
+<br>
+
+---
+
+## 5.3. Bounded Context: Betting Insights
+
+### 5.3.1. Domain Layer
+
+### 5.3.2. Interface Layer
+
+### 5.3.3. Application Layer
+
+### 5.3.4. Infrastructure Layer
+
+### 5.3.6. Bounded Context Software Architecture Component Level Diagrams
+
+### 5.3.7. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.3.7.1. Bounded Context Domain Layer Class Diagrams
+
+#### 5.3.7.2. Bounded Context Database Design Diagram
+
+
+
+
+<br>
+
+---
+
+## 5.4. Bounded Context: Notification
+
+### 5.4.1. Domain Layer
+
+### 5.4.2. Interface Layer
+
+### 5.4.3. Application Layer
+
+### 5.4.4. Infrastructure Layer
+
+### 5.4.6. Bounded Context Software Architecture Component Level Diagrams
+
+### 5.4.7. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.4.7.1. Bounded Context Domain Layer Class Diagrams
+
+#### 5.4.7.2. Bounded Context Database Design Diagram
+
+
+
+
+<br>
+
+---
+
+
+## 5.6. Bounded Context: Favorite User Teams
+
+### 5.6.1. Domain Layer
+
+### 5.6.2. Interface Layer
+
+### 5.6.3. Application Layer
+
+### 5.6.4. Infrastructure Layer
+
+### 5.6.6. Bounded Context Software Architecture Component Level Diagrams
+
+### 5.6.7. Bounded Context Software Architecture Code Level Diagrams
+
+#### 5.6.7.1. Bounded Context Domain Layer Class Diagrams
+
+#### 5.6.7.2. Bounded Context Database Design Diagram
+
+
+
+
+<br>
+
+---
+
+# Capítulo VI: Solution UX Design
+
+## 6.1. Style Guidelines
+
+Después de investigar y recopilar información de nuestros usuarios objetivo apostadores frecuentes y fanáticos del fútbol, definiremos las pautas de estilo para nuestra aplicación. Estas guías servirán como un repositorio central y organizado para todo el equipo, garantizando una presentación consistente y coherente. 
+
+Nuestro objetivo es crear una aplicación que mejore la experiencia del usuario al visualizar probabilidades y recibir alertas informativas. De esta manera, buscamos satisfacer las necesidades de nuestros usuarios y cumplir con los objetivos del proyecto.
+
+<br>
+
+### 6.1.1. General Style Guidelines
+
+Nuestra solución, Betalyze, busca proporcionar a nuestros usuarios apostadores frecuentes y fanáticos del fútbol una aplicación accesible, usable y fácil de navegar. El diseño se enfoca en facilitar el acceso rápido y claro a la información esencial generada por nuestro Machine Learning: la predicción de resultados, la visualización de cuotas de valor, y los datos relevantes de partidos de fútbol. 
+
+Para lograrlo, hemos definido cuidadosamente una guía de estilos que enfatiza los elementos visuales clave y un alto contraste, reforzando el enfoque en la objetividad y la ventaja estratégica. Nuestro diseño será minimalista y visualmente accesible en todos los productos, garantizando una experiencia coherente y de alta calidad. 
+
+Los siguientes principios guiarán la experiencia del usuario tanto en web como en móvil, asegurando la consistencia y una apariencia profesional que refleja la seriedad de nuestro análisis de datos.
+
+**Branding:**
+
+- **Visión de Marca**
+
+  Betalyze nace para llenar el vacío de soluciones especializadas en ofrecer predicciones objetivas y datos de partidos de fútbol impulsadas por Machine Learning. Nos centramos en la confiabilidad de los datos, su visualización clara y la información relevante de los encuentros. Nuestra propuesta integra atractivo visual con accesibilidad, adaptándose a las necesidades de apostadores y fanáticos. Buscamos ser la fuente de información más intuitiva y significativa para impulsar la toma de decisiones informadas y la rentabilidad a largo plazo.
+
+- **Nombre: Betalyze**
+
+  El nombre fusiona "Bet" (apuesta) con "Analyze" (analizar), reflejando nuestro enfoque central en el análisis de datos para apuestas de fútbol.
+
+- **Logotipo:**
+
+  El logotipo, diseñado por el equipo, expresa visualmente la fusión de análisis y predicción a través de la representación gráfica del nombre y los colores de la marca.
+
+<p align="center">
+    <img src="./assets/cap-6/logos.png"/>
+</p>
+
+- **Tipografía:**
+
+  Hemos seleccionado la tipografía Roboto como fuente principal para todos los productos de Betalyze. Roboto es una tipografía moderna y profesional optimizada para interfaces digitales. Su claridad y legibilidad en diversos dispositivos y tamaños de pantalla garantizan una presentación coherente y un acceso a la información sin esfuerzo, lo cual es crucial para la visualización de datos. 
+  A continuación, se especifican las pautas de tamaño, altura de línea y espaciado entre letras para componentes clave.
+
+<p align="center">
+    <img src="./assets/cap-6/typography.png"/>
+</p>
+
+- **Colores:**
+
+  Utilizaremos una paleta de colores estratégicamente seleccionada para asegurar la accesibilidad y la coherencia de la marca. Los colores de Betalyze reforzarán la identidad visual enfocada en el dato y la objetividad, facilitando una navegación intuitiva y agradable. Los tonos serán clave para resaltar las "apuestas de valor" y las métricas importantes.
+
+<p align="center">
+    <img src="./assets/cap-6/paleta-colores.png"/>
+</p>
+
+- **Iconografía:**
+
+  Adoptaremos el set de Material Icons debido a su naturaleza minimalista, reconocible y su óptima adaptación a interfaces de datos. Los iconos serán utilizados para representar de forma clara elementos esenciales como estadísticas, partidos, equipos y perfil de usuario.
+
+<p align="center">
+    <img src="./assets/cap-6/iconos.png"/>
+</p>
+
+- **Dimensiones del tono de comunicación y lenguaje aplicado:**
+
+  El lenguaje de Betalyze debe reflejar nuestro compromiso con la objetividad y la precisión del análisis de datos. Nuestro tono de comunicación se define como Serio y Entusiasta: 
+
+  - Serio: Para generar confianza y credibilidad en el análisis que ofrecemos a los apostadores frecuentes. El lenguaje técnico (al explicar el modelo o las métricas) será preciso, pero siempre acompañado de claridad. 
+
+  - Entusiasta: Para mantener la conexión con los fanáticos del fútbol. Esto se reflejará en la forma de presentar la información de partidos y las narrativas de los datos, manteniendo siempre un tono que invite al análisis objetivo. 
+
+  Todos los productos mantendrán una estructura clara en la visualización de la información y expresarán las métricas en un lenguaje directo y accesible, apoyando de forma efectiva la toma de decisiones del usuario.
+
+<br>
+
+### 6.1.2. Web, Mobile & Devices Style Guidelines
+
+**Diseño Visual:**
+
+La coherencia visual en todas las plataformas es crucial para Betalyze. Nuestro Diseño Visual prioriza un layout limpio y modular con amplio espacio para reducir la carga cognitiva y asegurar que las métricas de Machine Learning y las cuotas de valor sean el foco principal. Las acciones clave deben ser inmediatas; por ello, los botones para funciones serán prominentes, y todos los elementos interactivos contarán con estados claros como hover, activo, deshabilitado para una interacción fluida.
+
+**Web Style Guidelines:**
+
+La interfaz web está diseñada para mostrar datos en profundidad y visualización eficiente de gran cantidad de datos. Utilizaremos un sistema de Grid de columnas, optimizando la visualización de Tablas y Cards que despliegan partidos, métricas y predicciones. El Header será Fijo para mantener la navegación principal y la búsqueda siempre accesibles, y ofreceremos una Sidebar para el acceso a funcionalidades adicionales. Los Puntos de Ruptura para un diseño responsivo eficaz se definen en: Móvil menor igual a 768px, Tableta de 769 a 1024px y Escritorio mayor a 1024px.
+
+<p align="center">
+    <img src="./assets/cap-6/styleGuidelines1.png"/>
+</p>
+
+**Mobile Style Guidelines:**
+
+La experiencia móvil se centra en la inmediatez y la consulta rápida, adhiriéndose a los principios del Material Design para un rendimiento nativo. La navegación se concentra en una Barra Fija, que da acceso directo a las secciones de Inicio, Predicciones, Alerrtas y Perfil. La información se presentará en Cards apilables de fácil acceso. Para optimizar la interacción táctil, se integrarán Gestos intuitivos, como el swipe down para actualizar datos o el swipe lateral para gestionar notificaciones y listas de partidos de forma ágil. 
+
+<p align="center">
+    <img src="./assets/cap-6/Mobile-Style-Guidelines.png"/>
+</p>
+
+<br>
+
+## 6.2. Information Architecture
+
+En esta sección se exponen las decisiones y fundamentos que guían la organización del contenido en las experiencias web y móvil, abarcando tanto la Landing Page, Aplicación Web y Aplicación Móvil. El diseño se orienta a facilitar la navegación y el acceso intuitivo a las funcionalidades de cada producto, asegurando que nuestros usuarios puedan encontrar de manera rápida y sencilla la información y las herramientas que requieren para una experiencia eficiente y satisfactoria.
+
+<br>
+
+### 6.2.2. Labeling Systems
+
+En Betalyze, la claridad y precisión en el lenguaje son fundamentales para un producto basado en datos. Utilizaremos etiquetas y símbolos que garanticen una navegación intuitiva y una comprensión inmediata de la información generada por nuestro Machine Learning. El etiquetado debe reflejar el objetivo de la aplicación: proporcionar una ventaja estratégica objetiva a los apostadores e información relevante a los fanáticos. 
+
+El objetivo de la Landing Page es comunicar el valor de la **inteligencia artificial** de Betalyze y dirigir al usuario a la acción principal (Iniciar Análisis/Registro). 
+
+| Componente | Etiqueta (Label) | Asociación (Función) |
+|:---:|:---|:---|
+| **Cabecera** | **Ventaja Estratégica en Apuestas** | Presenta el propósito central de la solución: ganar a largo plazo con datos. |
+| **Botón (Nav)** | **Análisis** | Dirige a la sección intermedia sobre cómo funciona el Machine Learning. |
+| **Botón (Nav)** | **Ventajas** | Dirige a la sección sobre los beneficios y características clave para el usuario. |
+| **Botón (Nav)** | **Nosotros** | Dirige a la sección de la empresa, equipo o la tecnología. |
+| **Botón (Nav)** | **Contacto** | Dirige al pie de página (Footer) para información de soporte. |
+| **Sección Intermedia** | **Descubre las Apuestas de Valor** | Descripción concisa del problema que resuelve Betalyze y la detección de cuotas infladas. |
+| **Título de Sección** | **Cómo Funciona Nuestro ML** | Presenta información y características clave sobre el modelo de Inteligencia Artificial. |
+| **Botón CTA (Principal)** | **Comenzar a Ganar** / **Acceder al Análisis** | Presenta la propuesta de valor y dirige a la acción principal (Registro/Dashboard). |
+| **Sección Desarrolladores**| **Detrás del Análisis** | Etiqueta que presenta al equipo y la tecnología. |
+| **Subetiqueta** | **Nuestra Misión** | Presenta el compromiso con la objetividad y la rentabilidad del usuario. |
+| **Footer (Nav)** | **Soporte y Ayuda** | Acceso a preguntas frecuentes o documentación. |
+| **Footer (Nav)** | **Contacto** | Información de contacto y redes sociales. |
+
+**Sistema de Etiquetado para la Aplicación Web/Móvil**
+
+El sistema de etiquetado en la aplicación se basa en los principios de claridad y consistencia para la visualización de infomración, manteniendo una **jerarquía visual clara**. 
+
+**Navegación Principal**
+
+| Componente | Etiqueta (Label) |
+|:---:|:---|
+| **Botón (Nav)** | **Dashboard** | 
+| **Botón (Nav)** | **Apuestas de Valor** | 
+| **Botón (Nav)** | **Mi Perfil** |
+| **Etiqueta** | **Partidos** |
+| **Botón (Nav)** | **Estadísticas** |
+| **Etiqueta** | **Alertas** | 
+
+**Etiquetado por Segmento (Contenido y Funciones)**
+
+El etiquetado se adapta para reflejar el beneficio clave para cada segmento, diferenciando entre la acción de apostar y el consumo de información. 
+
+| Segmento | Etiqueta (Label) | Asociación (Función) |
+|:---:|:---|:---|
+| **Apostadores Frecuentes** | **Panel de Oportunidades** | Visualización directa de las "apuestas de valor" calculadas por el ML (Cuota vs. Probabilidad Real). |
+| **Apostadores Frecuentes** | **Historial y Rentabilidad** | Seguimiento del rendimiento y las métricas clave de sus apuestas a largo plazo. |
+| **Apostadores Frecuentes** | **Configurar Alertas** | Herramienta para personalizar notificaciones sobre oportunidades o partidos específicos. |
+| **Fanáticos del Fútbol** | **Partidos del Día** | Exploración y visualización de todos los encuentros programados con datos pre-partido. |
+| **Fanáticos del Fútbol** | **Estadísticas Avanzadas** | Acceso a datos detallados de equipos, jugadores, lesiones y tendencias históricas. |
+| **Fanáticos del Fútbol** | **Informes de Tendencia** | Sección de análisis y resúmenes generados por el ML sobre ligas, equipos o tendencias. |
+
+<br>
+
+### 6.2.3. Searching Systems
+
+A continuación, se describen los sistemas de búsqueda para las plataformas web y móvil de **Betalyze** para garantizar que tanto apostadores como fanáticos puedan acceder de forma rápida y eficiente a los de datos, partidos y predicciones. 
+
+**Búsqueda Global y Filtros**
+
+Una `Barra de Búsqueda Global` estará accesible de forma en el `Header` de la aplicación web y en el `Header` principal de la aplicación móvil. 
+
+| Componente | Descripción y Funcionalidad |
+|:---:|:---|
+| **Búsqueda Global** | Permite a los usuarios buscar y acceder directamente a información. |
+| **Filtros Avanzados** | Disponibles en secciones clave como *Apuestas de Valor* y *Partidos del Día*. Los filtros clave incluyen **Liga/Competición** y **Métricas de Oportunidad**. |
+ 
+
+**Sistemas de Búsqueda por Segmento**
+
+Los sistemas de búsqueda específicos están diseñados para optimizar el acceso a la información dentro de los flujos de cada usuario. 
+
+- **Para Apostadores Frecuentes**
+
+| Componente | Descripción y Funcionalidad |
+|:---:|:---|
+| **Panel de Oportunidades** | Incorpora una barra de búsqueda con **Opciones de Indexación** para localizar rápidamente funciones de análisis y otras secciones clave de la plataforma. |
+| **Historial de Rentabilidad** | Dispone de una barra de búsqueda para indexar y localizar fácilmente por nombre de equipo, liga o fecha. | 
+
+- **Para Fanáticos del Fútbol**
+
+| Componente | Descripción y Funcionalidad |
+|:---:|:----|
+| **Estadísticas Avanzadas** | Incluye una barra de búsqueda con opciones de indexación para buscar métricas específicas, tablas de datos y herramientas de visualización. |
+| **Partidos del Día** | Dispone de una barra de búsqueda para indexar y localizar fácilmente **encuentros programados** o **resultados pasados** dentro de la plataforma. |
+| **Informes de Tendencia** | Incorpora una barra de búsqueda para indexar y acceder rápidamente a información sobre ligas o equipos específicos. |
+
+<br>
+
+### 6.2.4. SEO Tags and Meta Tags
+
+A continuación, se especifican las etiquetas de optimización para motores de búsqueda **SEO Tags**, **Meta Tags** y los elementos de optimización de tiendas de aplicaciones **ASO Elements** para la aplicación móvil de Betalyze.
+
+- **SEO Tags y Meta Tags para Landing Page y Web Application**
+
+  Estas etiquetas están diseñadas para maximizar la visibilidad de Betalyze en motores de búsqueda como Google, enfocándose en **Machine Learning** y las **Apuestas de Valor**.
+
+| Etiqueta | Aplicación | Valor Asignado |
+|:---:|:---|:---|
+| **Title Tag** | Landing Page | Betalyze, Fútbol, Encuentra Apuestas de Valor |
+| **Meta Description** | Landing Page | **Betalyze** utiliza Machine Learning para identificar las mejores apuestas de valor en fútbol. Obtén probabilidades objetivas y mejora tu rentabilidad. |
+| **Meta Keywords** | Landing Page | apuestas de futbol, machine learning, apuestas de valor, predicciones futbol, IA, estadisticas futbol, rentabilidad apuestas, cuotas |
+| **Title Tag** | Web Application | Betalyze Dashboard, Análisis de Apuestas de Valor |
+| **Meta Description** | Web Application | Accede al dashboard de Betalyze para análisis de partidos, cuotas y oportunidades de apuesta de valor generadas. |
+| **Meta Keywords** | Web Application | dashboard apuestas, analisis futbol, panel apuestas, predicciones en vivo, herramientas apuestas |
+
+- **ASO Elements (Optimización para App Stores)**
+
+  Estos elementos están diseñados para mejorar la clasificación y la tasa de conversión en tiendas de aplicaciones como App Store y Google Play, atrayendo tanto a apostadores como a fanáticos.
+
+| Elemento ASO | Valor Asignado | Segmento Objetivo Principal |
+|:---:|:---|:---|
+| **App Title** | Betalyze | Apostadores / Fanáticos |
+| **App Subtitle** | Análisis de Valor por Machine Learning. Predicciones Objetivas. | Apostadores |
+| **App Keywords** | apuestas futbol, machine learning, IA, predicciones, cuotas, valor, futbol, estadisticas, pronosticos, rentabilidad | Apostadores / Fanáticos |
+| **App Description** | **Betalyze** es tu ventaja estratégica en las apuestas de fútbol. Nuestro modelo de machine learning analiza datos (lesiones, rendimiento, historial) para generar probabilidades más precisas, revelando las **"apuestas de valor"** donde las cuotas están infladas. Descarga la app para: <ul><li>Acceder a predicciones objetivas y estadísticas detalladas.</li><li>Identificar oportunidades para mejorar tu rentabilidad.</li><li>Obtener información relevante de partidos para tomar decisiones informadas.</li></ul> | Apostadores / Fanáticos |
+
+<br>
+
+### 6.2.5. Navigation Systems
+
+Los sistemas de navegación están diseñados para guiar a los usuarios apostadores y fanáticos del fútbol de manera eficiente a través de nuestras plataformas de Betalyze, buscando ofrecer un acceso rápido y sencillo a información como predicciones, estadísticas y apuestas de valor.
+
+- **Landing Page (Sitio Público):**
+
+  La navegación de la Landing Page busca informar al usuario visitante sobre la propuesta de valor y dirigirlo a la acción principal de Registro y Acceso a la aplicación web. El recorrido es principalmente vertical y seccional.
+
+| Componente | Técnica de Navegación | Recorrido y Objetivo |
+|:---:|:---|:---|
+| **Menú Fijo** | **Navegación Global Fija** con anclas internas | Permite saltar entre secciones principales como Ventajas, Nosotros, Contacto y mantiene el **Botón CTA** (Acceder o Descargar App) visible permanentemente. |
+| **Secciones** | **Navegación Seccional Vertical** | El contenido se divide en bloques lógicos y secuenciales que explican Betalyze, los beneficiosel, el funcionamiento, la interfaz y el equipo. La progresión guía al usuario hacia la confianza en el producto. |
+| **CTAs** | **Llamadas a la Acción Repetidas** | Botones destacados colocados en el *Hero* inicial y al final de secciones clave para impulsar la conversión hacia la aplicación. |
+
+- **Aplicación Web (Web Application):**
+
+  La aplicación web está diseñada para la visualización y el análisis, utilizando una estructura de navegación que optimiza la visualización de datos complejos en pantallas grandes.
+
+| Componente | Técnica de Navegación | Recorrido y Objetivo |
+|:---:|:---|:---|
+| **Menú Principal**| **Barra de Navegación Lateral Fija** como Sidebar | Contiene los enlaces principales y secciones como **Dashboard**, **Apuestas de Valor**, **Partidos**, **Estadísticas**, **Alertas**. Es la herramienta primaria para el cambio de contexto y se mantiene visible para acceso rápido. |
+| **Navegación Secundaria** | **Pestañas (Tabs)** | Se utilizan *Tabs* dentro de las páginas principales. |
+| **Interacción** | **Filtros y Búsqueda Global** | Herramientas clave para reducir el contenido como filtrar por liga, fecha y localizar contenido específico sin cambiar de contexto. |
+
+- **Aplicación Móvil (Mobile Application):**
+
+  La aplicación móvil se enfoca en la inmediatez y el acceso rápido a la información, utilizando patrones de navegación para dispositivos táctiles y pantallas pequeñas.
+
+| Componente | Técnica de Navegación | Recorrido y Objetivo |
+|:---:|:---|:---|
+| **Menú Principal**| **Barra de Navegación Inferior Fija** | Proporciona acceso directo e inmediato a las secciones más utilizadas y es el punto central de navegación rápida. |
+| **Menú de Utilidades** | **Menú de Hamburguesa** | Aloja funciones y configuraciones secundarias o menos frecuentes, manteniendo la barra inferior despejada para las acciones primarias. |
+| **Recorrido de Datos**| Cards Apilables y Vistas de Detalle | El usuario recorre las listas de partidos y oportunidades verticalmente y toca una card para acceder a más detalles, que luego puede cerrar o retroceder para volver a la lista. |
+
+<br>
+
+## 6.3. Landing Page UI Design
+
+En esta sección, el equipo presenta la propuesta de Interfaz de Usuario UI para el Landing Page del proyecto. Para la creación de este diseño, hemos tomado como punto de partida las decisiones de diseño y arquitectura de información previamente establecidas. A través de este desarrollo, buscamos traducir la estructura lógica del contenido y las jerarquías definidas en la arquitectura a elementos visuales concretos, tangibles y funcionales. Esto garantiza que la experiencia del usuario (UX) sea intuitiva, coherente y que la navegación hacia la información clave se realice de la manera más eficiente posible.
+
+### 6.3.1. Landing Page Wireframe
+
+Este apartado presentamos los Wireframe de nuestra Landing Page que muestra cómo se organizan los principales contenidos y cómo navegará el usuario. En este diseño solo nos enfocamos en la lógica, la jerarquía y la disposición de la información, sin incluir elementos visuales como colores, imágenes o estilos gráficos.
+
+<p align="center">
+    <img src="./assets/cap-6/Landing-Page-Wireframe.png"/>
+</p>
+
+<br>
+
+### 6.3.2. Landing Page Mock-up
+
+Este apartado muestra los Mockups de la Landing Page de Betalyze, la culminación de nuestro diseño visual. Siguiendo las guías de estilo, aplicamos la paleta de colores y tipografía definidas para crear una experiencia coherente y profesional. La arquitectura de la información está optimizada para que el usuario comprenda rápidamente el valor de nuestra solución. El contenido se presenta de forma clara y secuencial, detallando características y funcionalidad, e incluye llamadas a la acción efectivas para facilitar el acceso a la solución.
+
+<p align="center">
+    <img src="./assets/cap-6/Landing-Page-Mockup.png"/>
+</p>
+
+<br>
+
+## 6.4. Applications UX/UI Design
+
+### 6.4.1. Applications Wireframes
+
+### 6.4.2. Applications Wireflow Diagrams
+
+### 6.4.2. Applications Mock-ups
+
+### 6.4.3. Applications User Flow Diagrams
+
+## 6.5. Applications Prototyping
+
+<br>
+
+---
 # Conclusiones
 
 - Como fase inicial del proyecto, nos hemos descrito la problemática de nuestro producto y diseñado la arquitectura correspondiente siguiendo los métodos pertinentes centrandonos en los atributos de calidad más importantes para el negocio, como el rendimiento, la disponibilidad y la escalabilidad. Al aplicar el enfoque de Domain-Driven Design (DDD), pudimos modelar la complejidad del negocio de las apuestas en un sistema más manejable y robusto. Todo este proceso se comunicó de forma clara a diferentes niveles. Usamos un lenguaje técnico para el equipo de desarrollo, lo que permitió que todos entendieran la arquitectura y los objetivos de diseño. Al mismo tiempo, tradujimos estos conceptos considerando a nuestros stakeholders y segmentos objetivos, asegurando su apoyo y alineación con la propuesta de solución. En resumen, al planificar con el usuario y el negocio en mente y al comunicarnos de manera efectiva, logramos sentar las bases para un sistema que estará preparado para un correcto desarrollo e implementación.
@@ -1814,8 +2332,27 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 ---
 # Bibliografía
 
-<!-- Contenido de la bibliografía -->
+- Angular. (s. f.). Angular. <https://angular.dev/>
 
+- Betmines. (s. f.). FAQ. <https://betmines.com/es/faq>
+
+- Canchari, D., & Canchari, D. (2025, 2 septiembre). Apuestas deportivas en Perú implican un gasto en promedio de S/82 por jugada. La República.pe. <https://larepublica.pe/economia/2025/09/02/apuestas-deportivas-en-peru-implican-un-gasto-en-promedio-de-s82-por-jugada-hnews-27230>
+
+- Castro, A. P., & Castro, A. P. (2025, 2 septiembre). Cuatro de cada diez peruanos apuestan en deportes y gastan en promedio S/82 por jugada. Mercado Negro. <https://www.mercadonegro.pe/economia/cuatro-de-cada-diez-peruanos-apuestan-en-deportes-y-gastan-en-promedio-s-82-por-jugada/>
+
+- CCR Cuore: Empresa de Investigación de Mercado en Perú. (s. f.). CCR – Cuore. <https://www.ccrlatam.com.pe/blog/estudio-sobre-casas-de-apuestas-online-y-fisicas-en-el-peru>
+
+- Elcomercio. (2024, 14 marzo). Análisis del fenómeno de las apuestas deportivas en Perú. El Comercio Perú. <https://elcomercio.pe/publirreportaje/analisis-del-fenomeno-de-las-apuestas-deportivas-en-peru-noticia/>
+
+- Forebet. (s. f.). ¿Qué es Forebet? <https://www.forebet.com/es/what-is-forebet>
+
+- Nexos, R. (2025, 25 septiembre). ¿Diversión u obsesión?: el auge de las apuestas deportivas en los jóvenes - Nexos. Nexos. <https://nexos.ulima.edu.pe/2024/04/18/diversion-u-obsesion-el-auge-de-las-apuestas-deportivas-en-los-jovenes/>
+
+- PredictZ. (s. f.). About PredictZ.com. <https://www.predictz.com/information/about/>
+
+- Team, A. C. (s. f.). Angular material. Angular Material. <https://material.angular.dev/>
+
+- Yogonet. (2025, 4 septiembre). Cuatro de cada diez peruanos realizan apuestas deportivas e invierten en promedio USD 23 por jugada | Yogonet Latinoamérica. Cuatro de Cada Diez Peruanos Realizan Apuestas Deportivas E Invierten En Promedio USD 23 Por Jugada. <https://www.yogonet.com/latinoamerica/noticias/2025/09/04/105685-cuatro-de-cada-diez-peruanos-realizan-apuestas-deportivas-e-invierten-en-promedio-usd-23-por-jugada>
 
 
 <br>
@@ -1825,4 +2362,8 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 
 - **URL video de entrevistas:**
 
-  - [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D)
+  - <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/Ef5DB_6fv8RJi2odu1mgzFYBugr47Cs1b4XkvWy6UbCYjA?e=yiuKEv&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D>
+
+- **URL Desarrollo de Event Storming en Miro:**
+
+  - <https://miro.com/app/board/uXjVM5kwB68=/?share_link_id=734768237007>
