@@ -51,13 +51,13 @@ En esta sección se resumen los avances y modificaciones realizadas durante el c
       <td>BestWin</td>
       <td>Desarrollo de la primera versión del informe e inicio de la documentación para el desarrollo de nuestra solución elaborando la presentación, obtención de requisitos, especificación de requerimientos y diseño de nuestra solución. </td>
     </tr>
-    <!--
     <tr>
       <td>2.0</td>
       <td>Fecha</td>
       <td>BestWin</td>
-      <td>...</td>
+      <td> Elaboración de la segunda versión del informe que comprende el diseño, para la estandarización y calidad de la interfaz de usuario. Se cubre el Diseño de Software Táctico y la creación de las directrices clave como guías de estilo, de diseño y de arquitectura de información. Describiendo las guías visuales para la producción de los wireframes y mockups de los productos de la solución. </td>
     </tr>
+    <!--
     <tr>
       <td>3.0</td>
       <td>Fecha</td>
@@ -95,6 +95,11 @@ Se utilizaron Git y Github para el versionamiento y gestión del proyecto, lo cu
   
   ![](./assets/insights1.png)
 
+- Evidencia en imagen de los analíticos de colaboración y commits en GitHub:
+
+  - **TB2:**
+  
+  ![](./assets/insights2.png)
 
 <br>
 
@@ -258,8 +263,8 @@ Criterio: Capacidad de comunicarse efectivamente con un rango de audiencias. En 
 
 | **Criterio específico** | **Acciones realizadas** | **Conclusiones** |
 |---------------------|---------------------|--------------|
-| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerarquicos, en el marco del desarrollo de un proyecto en ingeniería. | **Bernaola Pérez, André Arturo**<br>*TB1*<br>  Durante el proyecto comuniqué de forma oral mis ideas y resultados al equipo, presentando los diagramas de arquitectura y explicando los hallazgos de las entrevistas. Esto permitió que todos comprendieran las decisiones técnicas y de análisis, facilitando la coordinación y el trabajo en conjunto.  <br><br> **Loli Ruiz, Renzo Javier**<br>*TB1*<br> En esta fase del proyecto comuniqué de forma oral las decisiones de diseño basadas en el proceso de DDD a todo el equipo detallando los contextos delimitados y los Lenguajes Ubicuos para modelar el dominio del negocio. <br><br> **Soriano Medrano, Diego**<br>*TB1*<br>  En esta primera fase del proyecto comuniqué en reuniones del equipo temas relacionados a los escenarios de atributos de calidad, permitiendo que el equipo pueda plantear el diseño arquitectónico.  <br><br> | En el desarrollo de estos primeros capítulos, la comunicación oral fue fundamental para alinear al equipo y realizar el proceso de Domain-Driven Design (DDD) y detallar los escenarios de calidad clave. Explicar conceptos complejos como los Contextos Delimitados, el proceso de ADD y la elaboración de la arquitectura de nuestra solución aseguró que todos comprendieran y apoyaran el planteamiento de la solución, facilitando así una ejecución más fluida del proyecto.  |
-| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerarquicos, en el marco del desarrollo de un proyecto en ingeniería. | **Bernaola Pérez, André Arturo**<br>*TB1*<br> Aporté en la comunicación escrita mediante la redacción de los primeros capítulos del informe, donde incluí el análisis del problema y el registro de entrevistas, además de documentar los diagramas de arquitectura. Con ello aseguré que la información se presentara de manera clara y objetiva para distintos públicos. <br><br> **Loli Ruiz, Renzo Javier**<br>*TB1*<br> Aporté a la comunicación escrita en el proyecto redacción de los contextos delimitados y sus mapas de contexto, aporté con el equipo describiendo las entidades, agregados y servicios de cada módulo clave para el negocio. <br><br> **Soriano Medrano, Diego**<br>*TB1*<br> Aporté en la documentación de los escenarios de calidad, redacté información relacionada y los cuadros necesarios para el análisis de atributos de calidad, aportando a las decisiones arquitectónicas. <br><br> | A través de una comunicación escrita clara y objetiva, se aseguró que el equipo comprenda la información más importante y crítica del nuestra solución. La documentación detallada de los escenarios de calidad y los mapas de contexto de DDD sirvieron como una referencia, garantizando que las desiciones arquitectónicas estuvieran alineadas con los objetivos de nuestra solución. |
+| Comunica oralmente sus ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerarquicos, en el marco del desarrollo de un proyecto en ingeniería. | **Bernaola Pérez, André Arturo**<br>*TB1*<br>  Durante el proyecto comuniqué de forma oral mis ideas y resultados al equipo, presentando los diagramas de arquitectura y explicando los hallazgos de las entrevistas. Esto permitió que todos comprendieran las decisiones técnicas y de análisis, facilitando la coordinación y el trabajo en conjunto.  <br><br>*TB2*<br> Aseguré la coordinación entre el diseño de software y la implementación al documentar los diagramas de arquitectura de componentes y de código, facilitando la comunicación técnica con el equipo de desarrollo. <br><br> **Loli Ruiz, Renzo Javier**<br>*TB1*<br> En esta fase del proyecto comuniqué de forma oral las decisiones de diseño basadas en el proceso de DDD a todo el equipo detallando los contextos delimitados y los Lenguajes Ubicuos para modelar el dominio del negocio.  <br><br>*TB2*<br>   Para esta entrega establecí los sistemas de búsqueda, etiquetado y navegación como parte de la Arquitectura de Información de la solución.  <br><br> **Soriano Medrano, Diego**<br>*TB1*<br>  En esta primera fase del proyecto comuniqué en reuniones del equipo temas relacionados a los escenarios de atributos de calidad, permitiendo que el equipo pueda plantear el diseño arquitectónico. <br><br>*TB2*<br> Para esta entrega se coordinó los wireframes y mock-ups tanto para la Landing Page como para las pantallas principales de las Aplicaciones.   <br><br> | <br><br>*TB1*<br> En el desarrollo de estos primeros capítulos, la comunicación oral fue fundamental para alinear al equipo y realizar el proceso de Domain-Driven Design (DDD) y detallar los escenarios de calidad clave. Explicar conceptos complejos como los Contextos Delimitados, el proceso de ADD y la elaboración de la arquitectura de nuestra solución aseguró que todos comprendieran y apoyaran el planteamiento de la solución, facilitando así una ejecución más fluida del proyecto.  <br><br>*TB2*<br> La comunicación oral fue esencial para alinear al equipo y asegurar el avance del proyecto. Se presentaron y explicaron de forma clara los diagramas de arquitectura, el enfoque DDD y las decisiones de diseño UX/UI, logrando que todo el equipo entendiera y validara la estructura y el progreso de la solución. <br><br> |
+| Comunica en forma escrita ideas y/o resultados con objetividad a público de diferentes especialidades y niveles jerarquicos, en el marco del desarrollo de un proyecto en ingeniería. | **Bernaola Pérez, André Arturo**<br>*TB1*<br> Aporté en la comunicación escrita mediante la redacción de los primeros capítulos del informe, donde incluí el análisis del problema y el registro de entrevistas, además de documentar los diagramas de arquitectura. Con ello aseguré que la información se presentara de manera clara y objetiva para distintos públicos. <br><br>*TB2*<br>  Para esta entrega aporté con la definición de las Guías de Estilo visuales y para dispositivos para la futura aplicación web y móvil.  <br><br> **Loli Ruiz, Renzo Javier**<br>*TB1*<br> Aporté a la comunicación escrita en el proyecto redacción de los contextos delimitados y sus mapas de contexto, aporté con el equipo describiendo las entidades, agregados y servicios de cada módulo clave para el negocio.   <br><br>*TB2*<br> Presenté oralmente los diagramas de arquitectura de software y las decisiones técnicas basadas en Domain-Driven Design (DDD) para alinear la estrategia de desarrollo con el equipo. <br><br> **Soriano Medrano, Diego**<br>*TB1*<br> Aporté en la documentación de los escenarios de calidad, redacté información relacionada y los cuadros necesarios para el análisis de atributos de calidad, aportando a las decisiones arquitectónicas. <br><br>*TB2*<br>  Facilité la comprensión de conceptos complejos como los Contextos Delimitados y los escenarios de atributos de calidad mediante presentaciones orales, asegurando el apoyo del equipo al planteamiento arquitectónico.  <br><br> | <br><br>*TB1*<br>  A través de una comunicación escrita clara y objetiva, se aseguró que el equipo comprenda la información más importante y crítica del nuestra solución. La documentación detallada de los escenarios de calidad y los mapas de contexto de DDD sirvieron como una referencia, garantizando que las desiciones arquitectónicas estuvieran alineadas con los objetivos de nuestra solución.   <br><br>*TB2*<br> La documentación escrita del informe técnico fue clave para comunicar con objetividad los resultados del proyecto. Al formalizar el Diseño Táctico y las Guías de Estilo y Arquitectura, se estableció una referencia única y clara que alineó al equipo, asegurando la consistencia y la toma de decisiones informada. <br><br> |
 
 <br>
 
@@ -1953,23 +1958,101 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 
 ## 5.3. Bounded Context: Betting Insights
 
+El bounded context **Betting Insights** se encarga de analizar los datos de los eventos deportivos para generar probabilidades y recomendaciones de apuestas basadas en diferentes mercados (1X2, total de goles, córners, faltas, etc.).  
+Este módulo permite a los apostadores obtener *insights* cuantitativos a partir de información de mercado y probabilidades derivadas de diferentes *bookmakers*.  
+El contexto aplica una arquitectura basada en **DDD (Domain-Driven Design)**, con el patrón **CQRS (Command Query Responsibility Segregation)** y una **arquitectura en capas** (Domain, Application, Infrastructure e Interface).
+
+---
+
 ### 5.3.1. Domain Layer
+
+La **capa de dominio** representa el núcleo del conocimiento de negocio y define los modelos conceptuales y reglas que gobiernan el contexto.  
+Incluye:
+
+- **Aggregates:**
+  - `BettingInsight`: raíz del agregado que agrupa probabilidades, mercados y cuotas.
+  - `Match`: representa un evento deportivo.
+  - `Market`: define un tipo de apuesta (1X2, Over/Under, etc.).
+  - `Outcome`: representa un posible resultado dentro de un mercado.
+
+- **Value Objects:**
+  - `ProbabilityValue`: representa el valor de una probabilidad calculada.
+  - `OddValue`: representa una cuota asignada por un *bookmaker*.
+
+- **Domain Services:**
+  - `BettingInsightCommandService`
+  - `BettingInsightQueryService`
+
+- **Commands:**
+  - `CreateBettingInsightCommand`
+  - `CalculateProbabilitiesCommand`
+
+- **Queries:**
+  - `GetInsightsByMatchQuery`
+  - `GetBestOddsByMarketQuery`
+
+Estos elementos se definen de manera independiente a la infraestructura, manteniendo la lógica de negocio pura y reutilizable.
+
+---
 
 ### 5.3.2. Interface Layer
 
+La **capa de interfaz** (presentation layer) actúa como punto de entrada del bounded context, exponiendo las funcionalidades del dominio a través de APIs REST o eventos de mensajería.  
+Sus responsabilidades incluyen:
+
+- Recepción de peticiones externas y conversión a comandos o consultas.
+- Validación de datos de entrada y salida (DTOs).
+- Exposición de endpoints REST para registrar y consultar *betting insights*.
+- Coordinación con la capa de aplicación para ejecutar los *use cases*.
+
+
+
 ### 5.3.3. Application Layer
+
+La **capa de aplicación** orquesta los casos de uso de negocio, implementando el patrón CQRS para separar las operaciones de lectura y escritura.  
+Define:
+
+- **Command Handlers:** gestionan las operaciones de modificación del estado del dominio.
+- **Query Handlers:** ejecutan operaciones de lectura o proyección de datos.
+- **Application Services:** encapsulan la lógica de orquestación entre dominio e infraestructura.
+- **Transactional Boundaries:** aseguran la consistencia de las operaciones dentro de un caso de uso.
+
+Ejemplo: `CalculateProbabilitiesCommandHandler` puede invocar a `BettingInsightCommandService` y luego persistir los resultados mediante un repositorio de dominio.
+
 
 ### 5.3.4. Infrastructure Layer
 
+La **capa de infraestructura** implementa los mecanismos de persistencia, comunicación y acceso a recursos externos.  
+Incluye:
+
+- **Repositories:** implementaciones concretas (por ejemplo, JPA/Hibernate) para las entidades del dominio.
+- **Data Sources:** conexión con APIs deportivas o de *bookmakers*.
+- **Adapters:** conversión entre modelos externos y del dominio.
+- **Configuration:** definición de beans, contextos y servicios de persistencia.
+
+Esta capa no contiene lógica de negocio, sino las implementaciones que soportan el funcionamiento del dominio y la aplicación.
+
+
+
 ### 5.3.6. Bounded Context Software Architecture Component Level Diagrams
+
+El siguiente diagrama de componentes muestra la interacción entre las capas del contexto *Betting Insights*, evidenciando la separación de responsabilidades entre dominio, aplicación, infraestructura e interfaz.
+
+[![bet-c4-components.png](https://i.postimg.cc/yxDqSZLp/bet-c4-components.png)](https://postimg.cc/dZcNbLPG)
 
 ### 5.3.7. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.3.7.1. Bounded Context Domain Layer Class Diagrams
 
+El siguiente diagrama UML representa las clases de la capa de dominio, incluyendo agregados, objetos de valor, servicios de dominio, comandos y consultas, según el enfoque DDD y CQRS.
+
+[![bet-uml.png](https://i.postimg.cc/fy6Kqn5K/bet-uml.png)](https://postimg.cc/ctBw6zpg)
+
 #### 5.3.7.2. Bounded Context Database Design Diagram
 
+El siguiente diagrama muestra el diseño de la base de datos del contexto *Betting Insights*, con las tablas normalizadas para almacenar partidos, mercados, resultados, probabilidades y cuotas asociadas a *bookmakers*.
 
+[![bet-erd.png](https://i.postimg.cc/BvQVK3zb/bet-erd.png)](https://postimg.cc/mPJwvvBW)
 
 
 <br>
@@ -1978,23 +2061,90 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 
 ## 5.4. Bounded Context: Notification
 
+El bounded context **Notification** tiene como propósito gestionar las notificaciones personalizadas de los usuarios sobre partidos o eventos deportivos, según sus preferencias de fecha y hora (`preferred_time`).  
+Permite generar enlaces dinámicos de recordatorios compatibles con Google Calendar, sin depender de servicios externos.  
+Se implementa bajo el enfoque **DDD + CQRS + arquitectura en capas**.
+
+
 ### 5.4.1. Domain Layer
+
+La **capa de dominio** concentra la lógica de negocio y los modelos del contexto de notificaciones.  
+Incluye:
+
+- **Aggregates:**
+  - `Notification`: raíz del agregado que representa una notificación programada.
+  - `UserPreference`: define la configuración personal del usuario respecto a las alertas.
+
+- **Value Objects:**
+  - `PreferredTime`: representa el momento deseado por el usuario para recibir la notificación.
+  - `NotificationMessage`: define el contenido del recordatorio.
+  - `NotificationStatus`: indica el estado de la notificación (PENDING, SENT, FAILED).
+
+- **Domain Services:**
+  - `NotificationCommandService`
+  - `NotificationQueryService`
+
+- **Commands:**
+  - `CreateNotificationCommand`
+  - `MarkNotificationAsSentCommand`
+
+- **Queries:**
+  - `GetNotificationsByUserQuery`
+  - `GetPendingNotificationsQuery`
+
+---
 
 ### 5.4.2. Interface Layer
 
+Esta capa actúa como punto de entrada para las operaciones de creación y consulta de notificaciones.  
+Sus responsabilidades incluyen:
+
+- Exponer endpoints RESTful.
+- Transformar DTOs hacia comandos y consultas del dominio.
+- Validar los datos de entrada.
+- Gestionar las respuestas y excepciones de la capa de aplicación.
+
+---
+
 ### 5.4.3. Application Layer
+
+La **capa de aplicación** implementa la coordinación de los casos de uso, aplicando el patrón CQRS:
+- **Command Handlers:** procesan las solicitudes de creación o actualización.
+- **Query Handlers:** consultan notificaciones pendientes o enviadas.
+- **Schedulers:** permiten ejecutar servicios de dominio en momentos específicos (según `preferred_time`).
+- **Transactional Contexts:** aseguran la integridad del flujo de negocio.
+
+---
 
 ### 5.4.4. Infrastructure Layer
 
+Provee los mecanismos técnicos que soportan el dominio y la aplicación, incluyendo:
+
+- Repositorios implementados con JPA o similar.
+- Persistencia de datos en base relacional.
+- Configuración de schedulers o cron jobs internos.
+- Adaptadores para la generación de enlaces dinámicos a Google Calendar.
+
+
 ### 5.4.6. Bounded Context Software Architecture Component Level Diagrams
+
+El siguiente diagrama ilustra la interacción de componentes internos (domain, application, infrastructure, interface) dentro del bounded context *Notification*.
+
+[![notif-c4-components.png](https://i.postimg.cc/kGz2x7w6/notif-c4-components.png)](https://postimg.cc/PvbfHsgT)
 
 ### 5.4.7. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.4.7.1. Bounded Context Domain Layer Class Diagrams
 
+El diagrama UML muestra la estructura de clases de la capa de dominio, incluyendo agregados, objetos de valor y servicios de dominio.
+
+[![noti-uml.png](https://i.postimg.cc/RZm8vKQT/noti-uml.png)](https://postimg.cc/ZCfjc9Q9)
+
 #### 5.4.7.2. Bounded Context Database Design Diagram
 
+El diagrama siguiente representa el diseño de la base de datos del bounded context *Notification*, mostrando las tablas y relaciones necesarias para la gestión de notificaciones, preferencias y estados.
 
+[![notif-erd.png](https://i.postimg.cc/7h7skZC8/notif-erd.png)](https://postimg.cc/QK8kgsk0)
 
 
 <br>
