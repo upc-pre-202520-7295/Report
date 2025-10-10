@@ -2001,27 +2001,387 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 
 ---
 
+## 5.5. Bounded Context: User Management
+
+Este bounded context agrupa todo lo necesario del usuario dentro del sistema como el registro **signup**, autenticación **login**, gestión y persistencia de preferencias, manejo de errores y eventos asociados, y la integración con base de datos. Su objetivo es encapsular las reglas de negocio centradas en el agregado User que contiene **identidad**, **credenciales** y **estado**, y brindando capacidades expuestas por ACL o REST para otros bounded contexts o consumidores.
+
+### 5.5.1. Domain Layer
+
+La Domain Layer de User Management encapsula la lógica de negocio relacionada con la autenticación y la gestión de usuarios. En esta capa se definen los elementos principales del dominio: agregados, entidades y objetos de valor que representan los conceptos clave del sistema.
+
+**Entities**
+- User extiende AuditableAbstractAggregateRoot
+  - Responsabilidad: representar al usuario, su identidad, credenciales y estado de verificación.
+  - Invariantes / reglas: email único, contraseña almacenada en forma segura, no permitir registro si faltan datos obligatorios.
+  - Atributos principales: id, String email, String passwordHash, String fullName, UserStatus status, Set<Role> roles, UserPreferences preferences.
+
+- UserPreferences
+  - Responsabilidad: preferencias modificables por el usuario.
+  - Reglas: valores por defecto aplicables en creación; validación de opciones permitidas.
+  - Atributos: id, userId (FK), Boolean notifications, String language.
+
+**Value Objects**
+
+- Email (valida formato, inmutable).
+
+**Aggregates**
+
+- `User` es el aggregate root que controla modificaciones sobre preferencias y eventos de dominio.
+
+**Repositories (interfaces)**
+
+-  UserRepository (interface) extends JpaRepository(User)
+  - Métodos relevantes: Optional(User) findByEmail(String email); boolean existsByEmail(String email)
+
+**Eventos de Dominio**
+
+- UserRegistered
+- UserRegistrationFailed
+- UserAuthenticated
+
+### 5.5.2. Interface Layer
+
+Capa de presentación que expone REST endpoints y, opcionalmente, consumidores para integrar eventos entrantes, permite la interacción con las entidades del dominio mediante solicitudes HTTP, facilitando la comunicación entre los clientes y el sistema y delega a application services / command handlers.
+
+- **AuthenticationController** (@RestController)
+  - Propósito: Gestiona las operaciones de autenticación y registro de usuarios.
+  - Endpoints:
+    - `POST /api/v1/authentication/sign-up`
+    - `POST /api/v1/authentication/sign-in`
+
+- **UserController** (@RestController)
+  - Propósito: Gestiona las preferencias relacionadas con el usuario.
+  - Endpoints:
+    - `GET /api/v1/users/{id}`: obtener perfil
+
+**Controller responsibilities:**
+Validar entrada, mapear resultado a HTTP Response, manejar códigos HTTP y errores.
+
+### 5.5.3. Application Layer
+
+Actúa como un intermediario entre la Domain Layer y las capas externas, como la Interface Layer y la Infrastructure Layer. Su propósito principal es coordinar las operaciones de negocio relacionadas con el registro, autenticación y manejo de preferencias de usuario. Esta capa orquesta la ejecución de comandos y consultas, garantizando la correcta aplicación de las reglas del dominio sin exponer los detalles internos de implementación.
+
+**Command Services**
+
+Los servicios de comandos son responsables de ejecutar operaciones que modifican el estado del sistema, como registrar un nuevo usuario, autenticar credenciales o crear y actualizar preferencias. A continuación, se describen los principales servicios de comandos:
+
+- **UserCommandServiceImpl**
+  - **Propósito:** Gestiona las operaciones relacionadas con los usuarios, incluyendo el registro y la autenticación.
+  - **Métodos principales:**
+    - `handle(RegisterUserCommand command)`: Registra un nuevo usuario en el sistema, verificando la unicidad del correo electrónico y aplicando las reglas de seguridad para el almacenamiento de la contraseña.
+    - `handle(AuthenticateUserCommand command)`: Autentica a un usuario validando sus credenciales y generando un token de acceso.
+  - **Dependencias:**
+    - `UserRepository`: Interactúa con la base de datos para guardar y recuperar información de usuarios.
+    - `JwtTokenService`: Genera tokens JWT de autenticación para usuarios registrados.
+
+**Query Services**
+
+Los servicios de consultas son responsables de recuperar información del sistema sin modificar su estado, tales como obtener datos de usuarios o recuperar sus preferencias. A continuación, se describen los principales servicios de consultas:
+
+- **UserQueryServiceImpl**
+  - **Propósito**: Gestiona las consultas relacionadas con los usuarios.
+  - **Métodos principales:**
+    - `handle(GetUserByIdQuery query)`: Recupera un usuario específico mediante su identificador único.
+  - **Dependencias:**
+    - `UserRepository`: Interactúa con la base de datos para recuperar la información del usuario.
+
+**Relaciones entre componentes**
+- Los **Command Services** interactúan con los repositorios para modificar el estado del sistema para registrar usuarios o actualizar preferencias y con los servicios de soporte como JwtToken para operaciones auxiliares.
+- Los **Query Services** interactúan exclusivamente con los repositorios para recuperar información existente sin alterar el estado.
+
+Esta estructura asegura que la Application Layer sea modular, reutilizable y mantenible, con una clara separación de responsabilidades y una orquestación controlada de los procesos de negocio del bounded context.
+
+### 5.5.4. Infrastructure Layer
+
+La Infrastructure Layer del User Management Bounded Context proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema. Esta capa conecta la lógica de negocio con los recursos externos, como la base de datos y los servicios relacionados con la seguridad y persistencia de datos.
+
+**Persistencia (JPA Repositories)**
+
+- **UserRepository**
+  - **Propósito**: Proporciona métodos para interactuar con la base de datos de usuarios.
+  - **Métodos principales**:
+    - `findByEmail(String email)`: Busca un usuario por su dirección de correo electrónico.
+  - **Tecnología**: Implementado mediante Spring Data JPA, extendiendo JpaRepository(User).
+
+**Relaciones entre componentes**
+
+- **Persistencia**: El repositorio UserRepository proporciona acceso directo a las entidades del dominio almacenadas en la base de datos.
+
+### 5.5.6. Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presenta el **diagrama de componentes** correspondiente al *Bounded Context User Management*, el cual ilustra los principales **módulos, servicios e interacciones internas** que conforman la arquitectura del sistema.  
+
+El diagrama se desarrolla siguiendo los principios del **C4 Model (Nivel de Componentes)**, representando de manera clara la estructura y las relaciones entre los distintos elementos de la aplicación, tales como **controladores**, **servicios de aplicación**, **repositorios**, **servicios de dominio** y **bases de datos**.
+
+![](./assets/cap-5/c4-user.png)
+
+El diagrama muestra cómo *User Management*, implementada en **Spring Boot**, se integra en nuestra solución junto con nuestra aplicación **Web App** que actúa como interfaz de usuario. En el interior del servicio, se organizan los componentes en capas definidas como **controladores REST** que manejan las solicitudes externas; los **servicios de aplicación** que procesan la lógica de negocio mediante comandos y consultas; mientras que la **capa de infraestructura** gestiona la persistencia de datos a través de **repositorios JPA**. Finalmente, la **base de datos PostgreSQL** actúa como almacenamiento relacional que mantiene la información de usuarios y sus preferencias, completando la vista integral del flujo de datos y dependencias dentro del bounded context.
+
+### 5.5.7. Bounded Context Software Architecture Code Level Diagrams
+
+En esta sección se presentan los diagramas a nivel de código para el *Bounded Context User Management*, los cuales muestran con mayor detalle la **implementación interna de los componentes** que conforman el sistema. Estos diagramas describen la **estructura de clases, interfaces y sus relaciones** dentro de las distintas capas arquitectónicas, ofreciendo una visión técnica que facilita la comprensión del diseño, la implementación coherente de los módulos y el mantenimiento evolutivo del sistema.
+
+#### 5.5.7.1. Bounded Context Domain Layer Class Diagrams
+
+El **diagrama de clases del Dominio** para el *Bounded Context User Management* modela los elementos esenciales encargados de representar las reglas de negocio, la identidad de los usuarios y las operaciones que permiten su gestión dentro del sistema.  
+Incluye **Agregados**, **Value Objects**, **Commands**, **Queries** y **Domain Services**, junto con sus relaciones y responsabilidades.
+
+![](./assets/cap-5/clases-user.png)
+
+**Elementos del diagrama:**
+
+- **Aggregate Root**
+
+  - **User:** Representa el agregado principal del dominio encargado de la identidad y autenticación del usuario.
+
+  - **Atributos:**
+    - `private UserId userId`: Identificador único del usuario (Value Object).
+    - `private Email email`: Correo electrónico del usuario (Value Object).
+    - `private String password`: Contraseña cifrada.
+    - `private String fullName`: Nombre completo del usuario.
+
+  - **Métodos:**
+    - `public UserId getUserId()`: Retorna el identificador del usuario.
+    - `public Email getEmail()`: Retorna el email del usuario.
+    - `public static User createUser(Email email, String password, String fullName)`: Crea una nueva instancia de usuario validando las reglas de negocio.
+    - `public void changeEmail(Email newEmail)`: Permite actualizar el correo electrónico validando su formato y unicidad.
+
+- **Value Objects**
+
+  - **Email:** Objeto de valor que encapsula la validación y representación del correo electrónico.
+
+  - **Atributos:**
+    - `private String email`: Dirección de correo electrónico.
+
+  - **Métodos:**
+    - `public boolean isValid()`: Verifica que el formato del email sea correcto.
+    - `public String getEmail()`: Retorna el valor del correo electrónico.
+
+- **Domain Services**
+
+  - **UserManagementCommandService:** Servicio de dominio responsable de manejar comandos que modifican el estado del sistema.
+    - **Métodos:**
+      - `public void handle(RegisterUserCommand command)`: Registra un nuevo usuario.
+      - `public void handle(AuthenticateUserCommand command)`: Autentica un usuario existente.
+
+  - **UserManagementQueryService:** Servicio de dominio encargado de ejecutar consultas sobre los usuarios.
+    - **Métodos:**
+      - `public User handle(GetUserByIdQuery query)`: Recupera un usuario mediante su identificador.
+      - `public User handle(GetUserByEmailQuery query)`: Recupera un usuario mediante su correo electrónico.
+
+**Relaciones:**
+
+- `User` **compone** los objetos de valor `UserId` y `Email`.
+- `UserManagementCommandService` **depende** de los comandos para ejecutar acciones de negocio.
+- `UserManagementQueryService` **utiliza** los queries para recuperar información.
+- `Commands` y `Queries` **interactúan** con el agregado `User` a través de los servicios de dominio.
+
+
+#### 5.5.7.2. Bounded Context Database Design Diagram
+
+El diseño de base de datos del *Bounded Context User Management* traduce la estructura conceptual del dominio a un modelo relacional para el almacenamiento y gestión de usuarios dentro del sistema.
+Este modelo refleja la consistencia entre la capa de dominio y la capa de persistencia**, garantizando la integridad de los datos, la trazabilidad de las operaciones y la eficiencia en las consultas.
+Cada tabla y campo ha sido definida considerando las reglas del dominio y las necesidades de auditoría.
+
+<p align="center">
+    <img src="./assets/cap-5/db-users.png"/>
+</p>
+
+**Descripción:**
+
+- **Tabla:** Usuarios
+- **Atributos:**
+  - `user_id`: Identificador único del usuario. Generado automáticamente.
+  - `email`: Dirección de correo electrónico del usuario. Debe ser única y válida.
+  - `password`: Contraseña cifrada utilizando algoritmo de hashing seguro.
+  - `full_name`: Nombre completo del usuario.
+  - `created_at`: Fecha y hora en que el registro fue creado.
+  - `updated_at`: Fecha y hora de la última actualización del registro.
+
+<br>
+
+---
 
 ## 5.6. Bounded Context: Favorite User Teams
 
+Este bounded context agrupa toda la funcionalidad relacionada con la selección, gestión y persistencia de los equipos de fútbol favoritos de los usuarios dentro de la aplicación. Su objetivo es permitir que cada usuario pueda elegir equipos disponibles y mantener actualizada su lista de favoritos, de modo que el sistema pueda enviar notificaciones personalizadas en función de dichas selecciones.  
+El agregado central de este contexto es **FavoriteUserTeam**, encargado de representar la relación entre un usuario y los equipos que ha marcado como favoritos.
+
+
 ### 5.6.1. Domain Layer
+
+La Domain Layer de **Favorite User Teams** encapsula la lógica de negocio relacionada con la gestión de equipos favoritos de los usuarios. En esta capa se definen las entidades, agregados y repositorios que controlan las reglas e invariantes del dominio.
+
+**Entities**
+- **FavoriteUserTeam** extiende de `AuditableAbstractAggregateRoot`
+  - **Responsabilidad:** Representar los equipos favoritos seleccionados por un usuario.
+  - **Reglas:** 
+    - Un usuario no puede agregar dos veces el mismo equipo como favorito. 
+    - Debe existir un usuario y un equipo válidos al crear la relación.
+  - **Atributos principales:**
+    - `id`
+    - `userId`
+    - `teamId`
+    - `createdAt`
+    - `updatedAt`
+
+**Aggregates**
+- `FavoriteUserTeam` es el aggregate root, responsable de la gestión y emisión de eventos de dominio al agregar o eliminar equipos favoritos.
+
+**Repositories (interfaces)**
+- **FavoriteUserTeamRepository** (interface) extiende `JpaRepository<FavoriteUserTeam>`
+  - **Métodos relevantes:**
+    - `List<FavoriteUserTeam> findByUserId(userId)`
+    - `boolean existsByUserIdAndTeamId(userId, teamId)`
+
+**Eventos de Dominio**
+- **TeamAddedToFavorites**
+  - Emitido cuando un usuario agrega un nuevo equipo a su lista de favoritos.
+- **TeamRemovedFromFavorites**
+  - Emitido cuando un usuario elimina un equipo previamente marcado como favorito.
 
 ### 5.6.2. Interface Layer
 
+Capa de presentación que expone los endpoints REST para gestionar los equipos favoritos de los usuarios.  
+Su responsabilidad principal es manejar las solicitudes HTTP, validar los datos de entrada y delegar la ejecución a los servicios de aplicación.
+
+**FavoriteUserTeamController** (@RestController)
+- **Propósito:** Gestionar las operaciones relacionadas con las funciones de agregar y eliminar equipos favoritos por parte de los usuarios.
+- **Endpoints:**
+  - `POST /api/v1/users/{userId}/favorites`: Agrega un equipo a la lista de favoritos del usuario.
+  - `DELETE /api/v1/users/{userId}/favorites/{teamId}`: Elimina un equipo de la lista de favoritos del usuario.
+  - `GET /api/v1/users/{userId}/favorites`: Recupera la lista completa de equipos favoritos del usuario.
+
+**Responsabilidades del Controller:**
+- Validar las solicitudes entrantes.
+- Mapear los comandos y consultas hacia los servicios correspondientes.
+- Manejar las respuestas HTTP con los códigos adecuados.
+
+
 ### 5.6.3. Application Layer
+
+La capa de aplicación de **Favorite User Teams** Bounded Context actúa como intermediario entre la capa de dominio y las capas externas de Interface e Infrastructure.
+Su propósito es coordinar las operaciones de negocio, orquestando la ejecución de comandos y consultas relacionados con la gestión de equipos favoritos de los usuarios.
+
+**Command Services**
+Los servicios de comandos son responsables de modificar el estado del sistema, en este caso, agregar o eliminar equipos favoritos.
+
+- **FavoriteTeamCommandServiceImpl**
+  - **Propósito:** Gestionar las operaciones de agregar o eliminar equipos favoritos.
+  - **Métodos principales:**
+    - `handle(AddFavoriteTeamCommand command)`: Agrega un equipo a la lista de favoritos del usuario, validando que no exista una relación previa entre usuario y equipo.
+    - `handle(RemoveFavoriteTeamCommand command)`: Elimina un equipo de la lista de favoritos del usuario si existe la relación.
+  - **Dependencias:**
+    - `FavoriteUserTeamRepository`: Interactúa con la base de datos para persistir los cambios.
+  - **Eventos Emitidos:**
+    - `TeamAddedToFavorites`
+    - `TeamRemovedFromFavorites`
+
+**Query Services**
+Los servicios de consultas son responsables de recuperar información sobre los equipos favoritos sin modificar el estado del sistema.
+
+- **FavoriteTeamQueryServiceImpl**
+  - **Propósito:** Recuperar la información de los equipos favoritos de un usuario.
+  - **Métodos principales:**
+    - `handle(GetFavoritesByUserIdQuery query)`: Retorna todos los equipos favoritos de un usuario.
+  - **Dependencias:**
+    - `FavoriteUserTeamRepository`: Interactúa con la base de datos para obtener los registros correspondientes.
+
+**Relaciones entre componentes**
+- Los **Command Services** utilizan los repositorios para modificar el estado del sistema y emiten eventos cuando se agregan o eliminan equipos favoritos.
+- Los **Query Services** se comunican exclusivamente con los repositorios para recuperar información de lectura.
 
 ### 5.6.4. Infrastructure Layer
 
+Capa de infraestructura de **Favorite User Teams** Bounded Context que proporciona las implementaciones necesarias para la persistencia de datos y soporte técnico de las operaciones del sistema. Esta capa conecta la lógica del dominio con la base de datos.
+
+**Persistencia (JPA Repositories)**
+
+- **FavoriteUserTeamRepository**
+  - **Propósito:** Proporcionar métodos para interactuar con la base de datos de relaciones usuario-equipo favorito.
+  - **Métodos principales:**
+    - `List(FavoriteUserTeam) findByUserId(userId)`
+    - `boolean existsByUserIdAndTeamId(userId, teamId)`
+  - **Tecnología:** Implementado mediante Spring Data JPA, extendiendo `JpaRepository(FavoriteUserTeam)`.
+
+**Relaciones entre componentes**
+- Los **repositorios** proporcionan acceso directo a la base de datos para las operaciones de lectura y escritura del agregado `FavoriteUserTeam`.
+- La **Application Layer** consume estos repositorios para ejecutar comandos y consultas, garantizando la separación de responsabilidades.
+
 ### 5.6.6. Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presenta el diagrama de componentes correspondiente al *Bounded Context Favorite User Teams*, el cual ilustra los principales **módulos, servicios e interacciones internas** que conforman la arquitectura del sistema.  
+
+El diagrama se desarrolla siguiendo los principios del **C4 Model (Nivel de Componentes)**, representando de manera clara la estructura y las relaciones entre los distintos elementos de la aplicación, tales como **controladores**, **servicios de aplicación**, **repositorios**, **servicios de dominio** y **bases de datos**.
+
+![](./assets/cap-5/c4-favorite.png)
+
+El diagrama muestra cómo *Favorite User Teams*, implementado en **Spring Boot**, se integra dentro de nuestra solución junto con la **Web App**, que actúa como interfaz de usuario para la gestión de equipos favoritos. En el interior del servicio, los componentes se estructuran por capas bien definidas como los **controladores REST** que exponen endpoints para agregar, eliminar o consultar equipos favoritos; los **servicios de aplicación** como `FavoriteTeamCommandServiceImpl` que manejan la lógica de negocio relacionada con los comandos y consultas; mientras que la **capa de infraestructura** gestiona la persistencia de datos a través del `FavoriteUserTeamRepository`. Finalmente, la base de datos **PostgreSQL** actúa como almacenamiento relacional que guarda la información de los equipos favoritos asociados a cada usuario, completando la vista integral del flujo de datos y dependencias dentro del bounded context.
 
 ### 5.6.7. Bounded Context Software Architecture Code Level Diagrams
 
+En esta sección se presentan los **diagramas a nivel de código** para el *Bounded Context Favorite User Teams*, los cuales detallan la **implementación interna de los componentes** que conforman el servicio encargado de gestionar los equipos favoritos de los usuarios.  
+Estos diagramas describen la **estructura de clases, interfaces y sus relaciones** dentro de las diferentes capas arquitectónicas **dominio, aplicación, infraestructura e interfaz**, proporcionando una visión técnica que facilita la comprensión del diseño, promueve la coherencia en la implementación de los módulos y apoya el mantenimiento evolutivo del sistema.
+
 #### 5.6.7.1. Bounded Context Domain Layer Class Diagrams
+
+El **diagrama de clases del Dominio** para el *Bounded Context Favorite User Teams* modela los elementos fundamentales encargados de representar la relación entre los **usuarios** y sus **equipos de fútbol favoritos**, junto con las operaciones que permiten su administración dentro del sistema.  
+Incluye **Agregados**, **Commands**, **Queries** y **Domain Services**, además de las relaciones y responsabilidades que conectan estos elementos en el dominio.
+
+![](./assets/cap-5/clases-favorite.png)
+
+**Elementos del diagrama:**
+
+- **Aggregate Root**
+
+  - **FavoriteUserTeams:** Representa el agregado principal del dominio encargado de mantener la lista de equipos favoritos asociados a un usuario.
+
+  - **Atributos:**
+    - `private Id userId`: Identificador único del usuario propietario de los equipos favoritos.
+    - `private List<Teams> favoriteTeams`: Lista de equipos de fútbol seleccionados como favoritos.
+
+  - **Métodos:**
+    - `public Id getUserId()`: Retorna el identificador del usuario.
+    - `public List<Teams> getFavoriteTeams()`: Devuelve la lista de equipos favoritos del usuario.
+
+- **Domain Services**
+
+  - **FavoriteTeamCommandService:** Servicio de dominio responsable de manejar comandos que modifican el estado del sistema, permitiendo agregar o eliminar equipos favoritos de un usuario.
+
+    - **Métodos:**
+      - `public Long handle(CreateFavoriteTeamCommand command)`: Registra un nuevo equipo como favorito de un usuario.
+      - `public void handle(DeleteFavoriteTeamCommand command)`: Elimina un equipo de la lista de favoritos del usuario.
+
+  - **FavoriteTeamQueryService:** Servicio de dominio encargado de ejecutar consultas sobre los equipos favoritos registrados por los usuarios.
+
+    - **Métodos:**
+      - `public Optional<FavoriteTeam> handle(GetFavoriteTeamByIdQuery query)`: Recupera un equipo favorito específico según su identificador.
+      - `public List<FavoriteTeam> handle(GetFavoriteTeamByUserIdQuery query)`: Recupera todos los equipos favoritos asociados a un usuario determinado.
+
+**Relaciones:**
+- `FavoriteUserTeams` **agrega** una colección de `Teams`, representando la relación entre el usuario y sus equipos favoritos.  
+- `FavoriteTeamCommandService` **depende** de los comandos para ejecutar operaciones de creación y eliminación.  
+- `FavoriteTeamQueryService` **utiliza** los queries para recuperar información desde el agregado.  
+- `Commands` y `Queries` **interactúan** con el agregado `FavoriteUserTeams` a través de los servicios de dominio.
+
 
 #### 5.6.7.2. Bounded Context Database Design Diagram
 
+El diseño de base de datos del *Bounded Context Favorite User Teams* tiene la estructura conceptual del dominio a un modelo relacional orientado al almacenamiento y gestión de los **equipos favoritos de los usuarios** dentro del sistema, Cada tabla y atributo ha sido definido en función de las reglas del dominio, manteniendo una estructura clara y extensible para futuras relaciones con otros contextos.
 
+<p align="center">
+    <img src="./assets/cap-5/db-favorite.png"/>
+</p>
 
+**Descripción:**
+
+- **Tabla:** favorite_user_teams
+- **Atributos:**
+  - `favorite_teams_id`: Identificador único del registro de equipo favorito. Generado automáticamente.
+  - `user_id`: Identificador del usuario que ha marcado el equipo como favorito. Actúa como **clave foránea** hacia la tabla de usuarios.
+  - `teams_id`: Identificador del equipo de fútbol marcado como favorito. Actúa como **clave foránea** hacia la tabla de equipos.
+  - `created_at`: Fecha y hora en que el registro fue creado, utilizada para auditoría y trazabilidad.
+  - `updated_at`: Fecha y hora de la última actualización del registro, permitiendo controlar modificaciones en las preferencias del usuario.
 
 <br>
 
