@@ -2263,7 +2263,7 @@ En esta sección se presenta el **diagrama de componentes** correspondiente al *
 
 El diagrama se desarrolla siguiendo los principios del **C4 Model (Nivel de Componentes)**, representando de manera clara la estructura y las relaciones entre los distintos elementos de la aplicación, tales como **controladores**, **servicios de aplicación**, **repositorios**, **servicios de dominio** y **bases de datos**.
 
-![](./assets/cap-5/c4-user.png)
+![](./assets/cap-5/c4-userm.png)
 
 El diagrama muestra cómo *User Management*, implementada en **Spring Boot**, se integra en nuestra solución junto con nuestra aplicación **Web App** que actúa como interfaz de usuario. En el interior del servicio, se organizan los componentes en capas definidas como **controladores REST** que manejan las solicitudes externas; los **servicios de aplicación** que procesan la lógica de negocio mediante comandos y consultas; mientras que la **capa de infraestructura** gestiona la persistencia de datos a través de **repositorios JPA**. Finalmente, la **base de datos PostgreSQL** actúa como almacenamiento relacional que mantiene la información de usuarios y sus preferencias, completando la vista integral del flujo de datos y dependencias dentro del bounded context.
 
@@ -2877,3 +2877,7 @@ Este apartado muestra los Mockups de la Landing Page de Betalyze, la culminació
 - **URL Desarrollo de Event Storming en Miro:**
 
   - <https://miro.com/app/board/uXjVM5kwB68=/?share_link_id=734768237007>
+
+- **Web Application Prototyping:**
+  
+  - <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/EUQw1k_IWoFJrT_FutRdgOkBsfMEmw93bdOptI4vE6kXpg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=glcdzp>
