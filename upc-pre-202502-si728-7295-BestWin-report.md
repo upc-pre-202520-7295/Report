@@ -2003,11 +2003,11 @@ La capa de infraestructura provee adaptadores concretos para MySQL. Todas las im
 
 #### 5.1.7.1. Bounded Context Domain Layer Class Diagrams
 
-![database diagram data retrival](./assets/bounded/database-diagram-data-retrival.png)
+![class diagram data retrival](./assets/bounded/class-diagram-data-retrival.png)
 
 #### 5.1.7.2. Bounded Context Database Design Diagram
 
-![class diagram data retrival](./assets/bounded/class-diagram-data-retrival.png)
+![database diagram data retrival](./assets/bounded/database-diagram-data-retrival.png)
 
 <br>
 
@@ -2091,17 +2091,17 @@ La capa de infraestructura implementa los adaptadores que trabajan exclusivament
 
 ### 5.2.6. Bounded Context Software Architecture Component Level Diagrams
 
-![c4 data retrival](./assets/bounded/c4-prediction.png)
+![c4 prediction](./assets/bounded/c4-prediction.png)
 
 ### 5.2.7. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.2.7.1. Bounded Context Domain Layer Class Diagrams
 
-![database diagram data retrival](./assets/bounded/database-diagram-prediction.png)
+![class diagram prediction](./assets/bounded/class-diagram-prediction.png)
 
 #### 5.2.7.2. Bounded Context Database Design Diagram
 
-![class diagram data retrival](./assets/bounded/class-diagram-prediction.png)
+![database diagram prediction](./assets/bounded/database-diagram-prediction.png)
 
 <br>
 
