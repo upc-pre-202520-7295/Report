@@ -1910,23 +1910,104 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 
 ## 5.1. Bounded Context: Data Retrieval
 
+Este bounded context se encarga de la adquisición, normalización y persistencia de datos de partidos, cuotas y estadísticas. Se integra directamente con APIs externas o scrapers y se implementará como módulos del monolito Spring.
+
 ### 5.1.1. Domain Layer
+
+La capa de dominio modela las entidades y reglas de negocio puras relacionadas con ingestión y normalización de datos, definiendo los conceptos centrales que gobiernan la lógica del contexto.
+
+- *Match* (Entity)  
+  - Propósito: representar un partido.  
+  - Atributos: matchId: UUID, homeTeamId: UUID, awayTeamId: UUID, startAt: DateTime, status: MatchStatus.  
+  - Métodos: isUpcoming(): boolean, timeToStart(): Duration.
+
+- *Team* (Entity)  
+  - Propósito: datos de un equipo.  
+  - Atributos: teamId: UUID, name: String, country: String, leagueId: UUID.  
+  - Métodos: displayName(): String.
+
+- *OddsSnapshot* (Entity)  
+  - Propósito: snapshot de cuota obtenido de una fuente.  
+  - Atributos: snapshotId: UUID, matchId: UUID, sourceName: String, market: Market, oddValue: Decimal, capturedAt: DateTime.  
+  - Métodos: getOdd(): Decimal.
+
+- *RawFeed* (Entity)  
+  - Propósito: registrar payload crudo (API response o HTML scraper).  
+  - Atributos: feedId: UUID, provider: String, payload: JSON, receivedAt: DateTime, status: FeedStatus, storedPath: String.  
+  - Métodos: markProcessed(), markFailed(reason:String).
+
+- *MatchAggregate* (Aggregate root)  
+  - Propósito: agrupar Match, OddsSnapshot[], Statistics?.  
+  - Métodos: applySnapshot(snapshot: OddsSnapshot), normalize().
+
+*Value Objects*  
+- Market (HOME_WIN, DRAW, AWAY_WIN, OVER_UNDER_X)  
+- Endpoint (url: String, auth: AuthInfo)
+
+*Interfaces / Domain Services*  
+- IMatchRepository (save, findById, findByDateRange)  
+- IDataNormalizer (normalize(raw: RawFeed): List<Match>)  
+- IOddsSelector (selectBestOdds(matchId: UUID): List<OddsSnapshot>)
 
 ### 5.1.2. Interface Layer
 
+La capa de interfaz expone los endpoints y los componentes de integración con proveedores externos. Todo se publica como endpoints y servicios dentro del monolito Spring.
+
+- *MatchIngestController* (Spring REST Controller)  
+  - Endpoints: POST /ingest/raw, GET /matches/{id}.  
+  - Responsabilidad: ingest manual y validación.
+
+- *PublicMatchesController* (Spring REST Controller)  
+  - Endpoints: GET /matches/today, GET /matches/{id}/odds.  
+  - Responsabilidad: servir datos al frontend.
+
+- *ApiProviderClient* (component)  
+  - Implementa llamadas HTTP a APIs externas con retries y rate limiting.
+
+- *ScraperService* (component)  
+  - Implementa scrapers para fuentes sin API.
+
+- *Scheduler* (Spring @Scheduled)  
+  - Responsabilidad: ejecutar sincronizaciones periódicas (syncOdds, dailyIngest).
+
 ### 5.1.3. Application Layer
+
+La capa de aplicación orquesta los casos de uso del contexto. Contiene handlers que coordinan repositorios, normalizadores y adaptadores para realizar ingests y sincronizaciones.
+
+- IngestRawFeedCommand / IngestRawFeedHandler  
+  - Flujo: persistir RawFeed -> IDataNormalizer.normalize -> persistir Match y OddsSnapshot -> actualizar cache.
+
+- SyncOddsFromProviderCommand / SyncOddsHandler  
+  - Flujo: ApiProviderClient o ScraperService -> parseo -> generar OddsSnapshot -> persistir.
+
+- GetMatchesQuery / GetMatchesHandler  
+  - Flujo: consulta IMatchRepository -> mapear DTO -> devolver.
+
+La coordinación se realiza con llamadas internas y jobs programados. No se usa message broker.
 
 ### 5.1.4. Infrastructure Layer
 
+La capa de infraestructura provee adaptadores concretos para MySQL. Todas las implementaciones son adaptadores Spring listos para inyectar.
+
+- ApiProviderClientHttp (RestTemplate/WebClient) con retry/backoff.  
+- ScraperAdapter (Jsoup/HtmlUnit) para fuentes HTML.  
+- MatchRepositoryJpa (Spring Data JPA / PostgreSql).  
+- RawFeedStore (filesystem).  
+
 ### 5.1.6. Bounded Context Software Architecture Component Level Diagrams
+
+![c4 data retrival](./assets/bounded/c4-data-retrival.png)
 
 ### 5.1.7. Bounded Context Software Architecture Code Level Diagrams
 
+
 #### 5.1.7.1. Bounded Context Domain Layer Class Diagrams
+
+![database diagram data retrival](./assets/bounded/database-diagram-data-retrival.png)
 
 #### 5.1.7.2. Bounded Context Database Design Diagram
 
-
+![class diagram data retrival](./assets/bounded/class-diagram-data-retrival.png)
 
 <br>
 
@@ -1936,21 +2017,91 @@ El diagrama de despliegue de Betalyze ilustra cómo los contenedores de software
 
 ### 5.2.1. Domain Layer
 
+Este bounded context organiza la gestión de artefactos ML, la catalogación de versiones y la generación de predicciones. El entrenamiento se realiza en python; el monolito registra metadata, descarga o recibe referencias de artifacts y ejecuta predicciones. Toda la persistencia es en PosgreSql.
+La capa de dominio modela modelos, versiones, trabajos de entrenamiento, sets de features y predicciones. Contiene las entidades que representan el estado y las reglas mínimas para validar metadatos y resultados.
+
+- Model (Entity)  
+  - Propósito: representar un modelo lógico disponible para inferencia.  
+  - Atributos: +modelId: UUID, +name: String, +type: String, +currentVersionId: UUID.  
+  - Métodos: +getCurrentVersion(): ModelVersion, +predict(features: FeatureSet): Prediction.
+
+- ModelVersion (Entity)  
+  - Propósito: versión registrada de un modelo con referencia al artifact.  
+  - Atributos: +versionId: UUID, +modelId: UUID, +artifactPathOrId: String, +metrics: JSON, +createdAt: DateTime, +checksum: String.  
+  - Métodos: +validateChecksum(): boolean.
+
+- TrainingJob (Entity)  
+  - Propósito: registrar metadatos de un entrenamiento realizado en Colab.  
+  - Atributos: +jobId: UUID, +modelId: UUID, +status: String, +params: JSON, +startedAt: DateTime, +finishedAt: DateTime, +colabNoteUrl: String.  
+  - Métodos: +markCompleted(versionId: UUID), +markFailed(reason: String).
+
+- FeatureSet (Entity)  
+  - Propósito: conjunto de features generadas para un match usadas en inferencia.  
+  - Atributos: +featureSetId: UUID, +matchId: UUID, +featuresSerialized: TEXT, +generatedAt: DateTime.  
+  - Métodos: +get(featureName: String): Any.
+
+- Prediction (Entity)  
+  - Propósito: resultado de una inferencia para un partido.  
+  - Atributos: +predictionId: UUID, +matchId: UUID, +modelVersionId: UUID, +probabilitiesSerialized: TEXT, +generatedAt: DateTime, +confidence: DECIMAL(5,4).  
+  - Métodos: +getProbability(outcome: String): Decimal.
+
+*Interfaces / Domain Services*  
+- IModelRepository (+saveVersion, +getLatest, +findById)  
+- IModelArtifactLoader (+retrieve(artifactPathOrId): bytes|File)  
+- IFeatureExtractor (+extract(matchId: UUID): FeatureSet)  
+- IPredictor (+predict(modelVersionId, FeatureSet): Prediction)
+
 ### 5.2.2. Interface Layer
+
+La capa de interfaz expone endpoints para registrar entrenamientos, publicar versiones desde python y solicitar predicciones. Los endpoints aceptan y devuelven DTOs simples.
+
+- TrainingController  
+  - Endpoints: POST /models/{id}/register-training (crea TrainingJob), GET /training/{jobId} (estado).
+
+- ModelRegistryController  
+  - Endpoints: POST /models/{id}/upload-version (Colab sube metadata de version y referencia del artifact), GET /models/{id}/versions.
+
+- PredictionController  
+  - Endpoints: POST /predict (body: matchId o featureSetId), GET /predictions/{matchId}.
 
 ### 5.2.3. Application Layer
 
+La capa de aplicación orquesta la creación de TrainingJob, la importación de ModelVersion y la generación de predicciones. Maneja validaciones y transacciones con PosgreSql.
+
+- RegisterTrainingCommand / RegisterTrainingHandler  
+  - Flujo: crear TrainingJob en estado PENDING con parámetros
+
+- ImportModelVersionCommand / ImportModelVersionHandler  
+  - Flujo: recibir metadata desde python -> validar checksum (si aplica) -> persistir ModelVersion -> actualizar Model.currentVersionId.
+
+- GeneratePredictionCommand / GeneratePredictionHandler  
+  - Flujo: obtener ModelVersion -> IFeatureExtractor.extract(matchId) -> IPredictor.predict(modelVersionId, features) -> persistir Prediction.
+
+- GetModelMetricsQuery / GetModelMetricsHandler  
+  - Flujo: consultar métricas por ModelVersion y devolver resumen.
+
 ### 5.2.4. Infrastructure Layer
 
+La capa de infraestructura implementa los adaptadores que trabajan exclusivamente con el monolito Spring y PosgreSql. No se emplean servicios externos adicionales para persistencia.
+
+- ModelRepositoryJpa (Spring Data JPA / PosgreSql) para models, model_versions, training_jobs, predictions.  
+- ArtifactStorageInPosgreSql (opcional): columna BLOB o artifact_path que referencia filesystem gestionado por el monolito.  
+- PredictorAdapterLocal (carga artifact compatible en el servidor si el formato lo permite).  
+- FeatureExtractorJpa (genera y persiste FeatureSet en PosgreSql).
+
 ### 5.2.6. Bounded Context Software Architecture Component Level Diagrams
+
+![c4 data retrival](./assets/bounded/c4-prediction.png)
 
 ### 5.2.7. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.2.7.1. Bounded Context Domain Layer Class Diagrams
 
+![database diagram data retrival](./assets/bounded/database-diagram-prediction.png)
+
 #### 5.2.7.2. Bounded Context Database Design Diagram
 
-
+![class diagram data retrival](./assets/bounded/class-diagram-prediction.png)
 
 <br>
 
@@ -2820,11 +2971,127 @@ Este apartado muestra los Mockups de la Landing Page de Betalyze, la culminació
 
 ### 6.4.1. Applications Wireframes
 
+Se presentan las distintas maquetas de las vistas de nuestr aplicacion. Estas son simples puesto que nos enfocamos netamente en eliminar la fatiga visual  que le producen las paginas llenas de cosas a los usuarios
+
+- Dashboard
+
+<p align="center">
+    <img src="./assets/cap-6/wireframe-dashboard.png"/>
+</p>
+
+- Profile
+
+<p align="center">
+    <img src="./assets/cap-6/wireframe-profile.png"/>
+</p>
+
+- ValueBets
+
+<p align="center">
+    <img src="./assets/cap-6/wireframe-valuebets.png"/>
+</p>
+
+- Filters
+
+<p align="center">
+    <img src="./assets/cap-6/wireframe-filters.png"/>
+</p>
+
+- MatchDetails
+
+<p align="center">
+    <img src="./assets/cap-6/wireframe-match-details.png"/>
+</p>
+
+- PreferencesAndFavorites
+
+<p align="center">
+    <img src="./assets/cap-6/wireframe-preferences.png"/>
+</p>
+
 ### 6.4.2. Applications Wireflow Diagrams
+
+- Salir de la sesion
+
+<p align="center">
+    <img src="./assets/cap-6/wireflow-signup.png"/>
+</p>
+
+- Ver detalles del partido
+
+<p align="center">
+    <img src="./assets/cap-6/wireflow-match-details.png"/>
+</p>
+
+- Filter Matches
+
+<p align="center">
+    <img src="./assets/cap-6/wireflow-filter-match.png"/>
+</p>
+
+- Basic Navigation
+
+<p align="center">
+    <img src="./assets/cap-6/wireflow-basic-navigation.png"/>
+</p>
 
 ### 6.4.2. Applications Mock-ups
 
+- Dashboard
+
+<p align="center">
+    <img src="./assets/cap-6/mockup-dashboard.png"/>
+</p>
+
+- Profile
+
+<p align="center">
+    <img src="./assets/cap-6/mockup-profile.png"/>
+</p>
+
+- ValueBets
+
+<p align="center">
+    <img src="./assets/cap-6/mockup-valuebets.png"/>
+</p>
+
+- Filters
+
+<p align="center">
+    <img src="./assets/cap-6/mockup-filters.png"/>
+</p>
+
+- MatchDetails
+
+<p align="center">
+    <img src="./assets/cap-6/mockup-match-details.png"/>
+</p>
+
+- PreferencesAndFavorites
+
+<p align="center">
+    <img src="./assets/cap-6/mockup-preferences.png"/>
+</p>
+
 ### 6.4.3. Applications User Flow Diagrams
+
+- Basic Navigation
+
+<p align="center">
+    <img src="./assets/cap-6/user-flow-basic-navigation.png"/>
+</p>
+
+- Salir de la sesion
+
+<p align="center">
+    <img src="./assets/cap-6/user-flow-signup.png"/>
+</p>
+
+- Filter Matches
+
+<p align="center">
+    <img src="./assets/cap-6/user-flow-filter-match.png"/>
+</p>
 
 ## 6.5. Applications Prototyping
 
