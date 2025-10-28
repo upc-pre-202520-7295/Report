@@ -1996,7 +1996,7 @@ La capa de infraestructura provee adaptadores concretos para MySQL. Todas las im
 
 ### 5.1.6. Bounded Context Software Architecture Component Level Diagrams
 
-![c4 data retrival](./assets/bounded/c4-data-retrival.png)
+![c4 prediction](./assets/cap-5/c4-data-retrival.jpg)
 
 ### 5.1.7. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2004,6 +2004,8 @@ La capa de infraestructura provee adaptadores concretos para MySQL. Todas las im
 #### 5.1.7.1. Bounded Context Domain Layer Class Diagrams
 
 ![class diagram data retrival](./assets/bounded/class-diagram-data-retrival.png)
+
+El diagrama presenta la arquitectura de gestión de matches, equipos y odds siguiendo el patrón Command Query Responsibility Segregation (CQRS). El Scheduler actúa como orquestador de tareas automáticas que dispara tres comandos independientes: FetchMatchCommand para obtener datos de matches, FetchTeamStatsCommand para recopilar estadísticas de equipos, y FetchOddCommand para actualizar las cuotas de apuestas. Estos comandos convergen en el MatchCommandService, que se encarga de persistir la información en las tres entidades del dominio: Match (con identificador y fecha), TeamStat (con identificador de equipo y rendimiento) y Odd (con identificador y valor de cuota). Paralelamente, el Scheduler consulta información a través de GetMatchQuery, que se comunica con MatchQueryService para recuperar datos de matches. Las entidades están relacionadas mediante agregaciones, donde un Match contiene múltiples TeamStats y Odds asociadas. Toda la información se persiste en una base de datos relacional, permitiendo que el sistema mantenga un registro integral de matches, rendimiento de equipos y cuotas disponibles en tiempo real.
 
 #### 5.1.7.2. Bounded Context Database Design Diagram
 
@@ -2091,13 +2093,15 @@ La capa de infraestructura implementa los adaptadores que trabajan exclusivament
 
 ### 5.2.6. Bounded Context Software Architecture Component Level Diagrams
 
-![c4 prediction](./assets/bounded/c4-prediction.png)
+![c4 prediction](./assets/cap-5/C4-prediction.jpg)
 
 ### 5.2.7. Bounded Context Software Architecture Code Level Diagrams
 
 #### 5.2.7.1. Bounded Context Domain Layer Class Diagrams
 
 ![class diagram prediction](./assets/bounded/class-diagram-prediction.png)
+
+El diagrama ilustra un sistema de predicciones y gestión de modelos de machine learning que funciona de forma automatizada mediante el Scheduler. El sistema implementa un patrón donde el Scheduler dispara dos comandos principales: GeneratePredictionCommand para crear predicciones basadas en datos de matches, e InterimModelCommand para entrenar y actualizar modelos interim. Ambos comandos son procesados por ModelQueryService, que actúa como orquestador central del sistema. El servicio interactúa con dos entidades de dominio interconectadas: Model (que contiene el identificador del modelo, fecha de versión y parámetros) y Prediction (que registra el identificador de predicción, identificador del match, fecha de creación y valor predicho). La relación entre estas entidades es biunívoca: un modelo genera múltiples predicciones mientras que cada predicción es generada por un modelo específico. Además, el Scheduler puede consultar el último modelo disponible a través de GetLastModelQuery. Toda la información se persiste en la base de datos, permitiendo trazabilidad completa del historial de modelos y predicciones para auditoría y análisis posterior.
 
 #### 5.2.7.2. Bounded Context Database Design Diagram
 
@@ -2971,7 +2975,9 @@ Este apartado muestra los Mockups de la Landing Page de Betalyze, la culminació
 
 ### 6.4.1. Applications Wireframes
 
-Se presentan las distintas maquetas de las vistas de nuestr aplicacion. Estas son simples puesto que nos enfocamos netamente en eliminar la fatiga visual  que le producen las paginas llenas de cosas a los usuarios
+Se presentan las distintas maquetas de las vistas de nuestras aplicaciones. Estas son preliminares y se centran en eliminar la fatiga visual  que le producen las paginas llenas de cosas a los usuarios
+
+**Aplicación web:**
 
 - Dashboard
 
@@ -3009,6 +3015,36 @@ Se presentan las distintas maquetas de las vistas de nuestr aplicacion. Estas so
     <img src="./assets/cap-6/wireframe-preferences.png"/>
 </p>
 
+<br>
+
+**Aplicación móvil**
+
+- Apuestas de valor
+
+<p align="center">
+    <img src="./assets/cap-6/w-mobile-1.png"/>
+</p>
+
+- Detalles de un encuentro
+
+<p align="center">
+    <img src="./assets/cap-6/w-mobile-2.png"/>
+</p>
+
+- Filtros y Búsqueda
+
+<p align="center">
+    <img src="./assets/cap-6/w-mobile-3.png"/>
+</p>
+
+-  Favoritos y Preferencias
+
+<p align="center">
+    <img src="./assets/cap-6/w-mobile-4.png"/>
+</p>
+
+<br>
+
 ### 6.4.2. Applications Wireflow Diagrams
 
 - Salir de la sesion
@@ -3035,7 +3071,11 @@ Se presentan las distintas maquetas de las vistas de nuestr aplicacion. Estas so
     <img src="./assets/cap-6/wireflow-basic-navigation.png"/>
 </p>
 
+<br>
+
 ### 6.4.2. Applications Mock-ups
+
+**Aplicación Web**
 
 - Dashboard
 
@@ -3073,6 +3113,35 @@ Se presentan las distintas maquetas de las vistas de nuestr aplicacion. Estas so
     <img src="./assets/cap-6/mockup-preferences.png"/>
 </p>
 
+<br>
+
+**Aplicación móvil**
+
+- Apuestas de valor
+
+<p align="center">
+    <img src="./assets/cap-6/m-mobile-1.png"/>
+</p>
+
+- Detalles de un encuentro
+
+<p align="center">
+    <img src="./assets/cap-6/m-mobile-2.png"/>
+</p>
+
+- Filtros y Búsqueda
+
+<p align="center">
+    <img src="./assets/cap-6/m-mobile-3.png"/>
+</p>
+
+- Favoritos y Preferencias
+
+<p align="center">
+    <img src="./assets/cap-6/m-mobile-4.png"/>
+</p>
+
+
 ### 6.4.3. Applications User Flow Diagrams
 
 - Basic Navigation
@@ -3095,6 +3164,20 @@ Se presentan las distintas maquetas de las vistas de nuestr aplicacion. Estas so
 
 ## 6.5. Applications Prototyping
 
+Se presenta los prototipos de Betalyze, donde se evidencia el resultado de las decisiones de diseño y arquitectura de información tomadas para las aplicaciones web y móvil. Este trabajo detallado asegura la correcta organización, navegación y accesibilidad del contenido, garantizando una experiencia de usuario intuitiva y eficiente en el uso de nuestra solución.
+
+**Aplicación web:**
+
+- **Screenshot de video:**
+
+<p align="center">
+  <img src="./assets/cap-6/screenshot-1.png"/>
+</p>
+
+- **Enlace de video subido a Microsoft Stream:**
+
+  - <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/EUQw1k_IWoFJrT_FutRdgOkBeDBJB0HZLVAgHrdHLBZCfw?e=ghy6wb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D>
+
 <br>
 
 ---
@@ -3102,7 +3185,7 @@ Se presentan las distintas maquetas de las vistas de nuestr aplicacion. Estas so
 
 - Como fase inicial del proyecto, nos hemos descrito la problemática de nuestro producto y diseñado la arquitectura correspondiente siguiendo los métodos pertinentes centrandonos en los atributos de calidad más importantes para el negocio, como el rendimiento, la disponibilidad y la escalabilidad. Al aplicar el enfoque de Domain-Driven Design (DDD), pudimos modelar la complejidad del negocio de las apuestas en un sistema más manejable y robusto. Todo este proceso se comunicó de forma clara a diferentes niveles. Usamos un lenguaje técnico para el equipo de desarrollo, lo que permitió que todos entendieran la arquitectura y los objetivos de diseño. Al mismo tiempo, tradujimos estos conceptos considerando a nuestros stakeholders y segmentos objetivos, asegurando su apoyo y alineación con la propuesta de solución. En resumen, al planificar con el usuario y el negocio en mente y al comunicarnos de manera efectiva, logramos sentar las bases para un sistema que estará preparado para un correcto desarrollo e implementación.
 
-
+- El trabajo realizado se ha centrado en realizar el diseño a nivel táctico y la experiencia de usuario de nuestra solución. Mediante el Diseño Táctico de Software se especificó la arquitectura interna de los Bounded Contexts, definiendo las capas de Dominio, Aplicación, Interfaz e Infraestructura, y documentando diagramas a nivel de componente y código. Com parte del diseño de los productos de nuestra solución, se establecieron las Guías de Estilo y la Arquitectura de Información como navegación, búsqueda y etiquetado que establecen la identidad visual de nuestra solución. Este proceso culminó con la elaboración y prototipado de los wireframes y mock-ups de la Landing Page y las Aplicaciones para Betalyze. En resumen, hemos elaborado los lineamientos y guías visuales detallados que aseguran el desarrollo e implementación de nuestra solución de forma estandarizada y centrada en el usuario.
 
 <br>
 
@@ -3147,4 +3230,10 @@ Se presentan las distintas maquetas de las vistas de nuestr aplicacion. Estas so
 
 - **Web Application Prototyping:**
   
-  - <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/EUQw1k_IWoFJrT_FutRdgOkBsfMEmw93bdOptI4vE6kXpg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=glcdzp>
+  - <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/EUQw1k_IWoFJrT_FutRdgOkBeDBJB0HZLVAgHrdHLBZCfw?e=ghy6wb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D>
+
+- **Videos de Exposiciones**
+
+  - TB1: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/EUFo42ngXedIsmeE3Vx9oKoBfPEjLXUTDkpKC4kjpuMcAw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=udaAU6>
+
+  - Trabajo Parcial: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/EUFo42ngXedIsmeE3Vx9oKoBfPEjLXUTDkpKC4kjpuMcAw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cwkzjf>
