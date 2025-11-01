@@ -248,6 +248,27 @@ Se utilizaron Git y Github para el versionamiento y gestión del proyecto, lo cu
   - [6.4.3. Applications User Flow Diagrams](#643-applications-user-flow-diagrams)
 - [6.5. Applications Prototyping](#65-applications-prototyping)
 
+### [Capítulo VII: Product Implementation, Validation & Deployment](#capítulo-vii-product-implementation-validation-deployment)
+- [7.1. Software Configuration Management](#71-software-configuration-management)
+  - [7.1.1. Software Development Environment Configuration](#711-software-development-environment-configuration)
+  - [7.1.2. Source Code Management](#712-source-code-management)
+  - [7.1.3. Source Code Style Guide & Conventions](#713-source-code-style-guide-conventions)
+  - [7.1.4. Software Deployment Configuration](#714-software-deployment-configuration)
+- [7.2. Solution Implementation](#72-solution-implementation)
+  - [7.2.1. Sprint n](#721-sprint-n)
+    - [7.2.1.1. Sprint Planning n](#7211-sprint-planning-n)
+    - [7.2.1.2. Sprint Backlog n](#7212-sprint-backlog-n)
+    - [7.2.1.3. Development Evidence for Sprint Review](#7213-development-evidence-for-sprint-review)
+    - [7.2.1.4. Testing Suite Evidence for Sprint Review](#7214-testing-suite-evidence-for-sprint-review)
+    - [7.2.1.5. Execution Evidence for Sprint Review](#7215-execution-evidence-for-sprint-review)
+    - [7.2.1.6. Services Documentation Evidence for Sprint Review](#7216-services-documentation-evidence-for-sprint-review)
+    - [7.2.1.7. Software Deployment Evidence for Sprint Review](#7217-software-deployment-evidence-for-sprint-review)
+    - [7.2.1.8. Team Collaboration Insights during Sprint](#7218-team-collaboration-insights-during-sprint)
+- [7.3. Validation Interviews](#73-validation-interviews)
+  - [7.3.1. Diseño de Entrevistas](#731-diseño-de-entrevistas)
+  - [7.3.2. Registro de Entrevistas](#732-registro-de-entrevistas)
+  - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-según-heurísticas)
+- [7.4. Video About-the-Product](#74-video-about-the-product)
 
 <br>
 
@@ -3179,6 +3200,406 @@ Se presenta los prototipos de Betalyze, donde se evidencia el resultado de las d
   - <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/EUQw1k_IWoFJrT_FutRdgOkBeDBJB0HZLVAgHrdHLBZCfw?e=ghy6wb&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D>
 
 <br>
+
+---
+
+# Capítulo VII: Product Implementation, Validation & Deployment
+
+## 7.1. Software Configuration Management
+
+En esta sección se establece el proceso de implementación, comprobación, despliegue y validación de nuestra solución compuesta por los productos digitales definidos en nuestro alcance para Betalyze. Este capítulo, detalla la configuración del entorno de desarrollo, control de código fuente, guías de estilo de código y configuración de despliegue para **Landing Page**, **Web Application**, **Web Services** y **Mobile Application**.
+
+<br/>
+
+### 7.1.1. Software Development Environment Configuration
+
+A continuación se especifica cada uno de los productos de software, que utilizamos para colaborar en el ciclo de vida y desarrollo de los productos para nuestra solución, considerando todas las herramientas utilizadas en la documentación, especificación de nuestra solución y desarrollo de software, respetando las restricciones indicadas sobre los productos de software y herramientas que debemos utilizar.
+
+**Project Management**
+
+| Producto de Software | Descripción | Ruta de referencia o de descarga |
+|:--------------------:|:------------|:---------------------------------|
+| Trello | Para el control del proyecto, asignación de tareas y actividades de cada integrante del equipo en base a nuestras User Stories. | https://www.trello.com/ |
+| Discord | Plataforma virtual para realizar reuniones del grupo para coordinar y asignar actividades. | https://discord.com/ |
+
+<br>
+
+**Requirements Management**
+
+| Producto de Software | Descripción | Ruta de referencia o de descarga |
+|:--------------------:|:------------|:---------------------------------|
+| UXPressia | Elaboración de User Personas, Empathy Maps, Journey Maps e Impact Maps. | https://uxpressia.com/ |
+| Miro | Elaboración de As-Is y To-Be Scenario Maps | https://miro.com/ |
+| Microsoft Stream | Publicación de videos que contienen las entrevistas y descripción sobre el producto | https://www.microsoft.com/es-es/microsoft-365/microsoft-stream |
+
+<br>
+
+**Product UX/UI Design**
+
+| Producto de Software | Descripción | Ruta de referencia o de descarga |
+|:--------------------:|:------------|:---------------------------------|
+| Figma | Elaboración de Wireframes, Mock-ups y Prototypes. | https://www.figma.com |
+
+<br>
+
+**Software Development**
+
+| Producto de Software | Descripción | Ruta de referencia o de descarga |
+|:--------------------:|:------------|:---------------------------------|
+| IntelliJ | Idea Entorno de Desarrollo Integrado (IDE) para codificación y desarrollo del lado Backend de nuestra solución. | https://www.jetbrains.com/idea/ |
+| Visual Studio Code | Editor de código fuente para codificación y desarrollo de nuestra aplicación web y móvil. | https://code.visualstudio.com/ |
+| GIT | Almacenamiento y control de versiones de nuestro código. | https://git-scm.com |
+| GitHub | Plataforma para gestionar GIT en una ogranización con repositorios por producto. | https://github.com |
+
+<br>
+
+**Software Testing**
+
+| Producto de Software | Descripción | Ruta de referencia o de descarga |
+|:--------------------:|:------------|:---------------------------------|
+| Gherkin | Lenguaje de especificación de pruebas utilizado para escribir nuestros Test. | https://cucumber.io/docs/gherkin/ |
+
+<br>
+
+**Software Deployment**
+
+| Producto de Software | Descripción | Ruta de referencia o de descarga |
+|:--------------------:|:------------|:---------------------------------|
+| GitHub Pages | Despliegue de nuestra Landing Page. | https://pages.github.com/ |
+| Firebase | Despliegue de nuestra aplicación web y móvil. | https://firebase.google.com/ |
+| Microsoft Azure | Despliegue de servicios web. | https://azure.microsoft.com/ |
+
+<br>
+
+**Software Documentation**
+
+| Producto de Software | Descripción | Ruta de referencia o de descarga |
+|:--------------------:|:------------|:---------------------------------|
+| Swagger | Documentación de Web Services usando OpenAPI Specification. | https://swagger.io |
+
+<br>
+
+### 7.1.2. Source Code Management
+
+Para el seguimiento de modificaciones en el desarrollo de nuestra solución, utilizamos la plataforma GitHub para alojar tanto la documentación como el código de nuestros productos de software. Esta plataforma nos permite realizar seguimiento de las modificaciones en cada parte de los productos desarrollados. Para asegurar que todo el equipo pueda acceder a la plataforma, y que los repositorios que alojarán diferentes productos parte de nuestra solución, sean accesibles por una misma ruta, hemos creado una organización en GitHub con el nombre de nuestro producto.
+
+| Organización | URL |
+|:------------:|:----|
+| upc-pre-202520-7295 | https://github.com/upc-pre-202520-7295 |
+
+<br>
+
+Dentro de nuestra organización en GitHub, se encuentran los repositorios correspondientes a cada uno de los productos a desarrollar.
+
+| Producto | URL del Repositorio |
+|:--------:|:--------------------|
+| Landing Page | https://github.com/upc-pre-202520-7295/Landing-Page |
+| Web Service | https://github.com/upc-pre-202520-7295/Web-Service |
+| Web Application | https://github.com/upc-pre-202520-7295/Web-Application |
+| Mobile Application | https://github.com/upc-pre-202520-7295/Mobile-Application |
+
+<br>
+
+**Implementación de GitFlow**
+
+Para el desarrollo de nuestro proyecto, implementaremos GitFlow propuesto por Vincent Driessen en "A successful Git branching model". Utilizaremos este flujo de trabajo en todos los repositorios que integran nuestra solución.
+
+Para implementar GitFlow crearemos las siguientes ramas de trabajo en cada repositorio:
+
+| Rama | Descripción |
+|:----:|:------------|
+| main | La rama principal del repositorio contiene el código inicial y estable, y solo se actualizará con versiones estables del software. Cada cambio en esta rama deberá ser revisado por todos los integrantes del equipo. |
+| develop | Esta rama contendrá el código más reciente desarrollado y servirá como base para futuras versiones. Se fusionará con ramas de características "feature" y principal "main" cuando sea necesario. Los miembros del equipo podrán realizar fusiones a esta rama si lo consideran conveniente. |
+| feature | Ramas que pueden crear los integrantes del equipo para el desarrollo de nuevas funciones o características. Estas ramas existen mientras la funcionalidad esté en desarrollo, pero eventualmente se deben fusionar con la rama "develop" para añadir definitivamente la nueva funcionalidad a próximas versiones. La convención de nomenclatura para esta rama puede ser cualquier nombre excepto master, develop, release o hotfix. |
+| release | Esta rama se utilizará para preparar el código que incluye varias características nuevas para una nueva versión. Podrá fusionarse con las ramas "develop" y "main" después de una revisión parcial por parte del equipo. La convención de nomenclatura para esta rama debe ser release-<número>, donde <número> debe ser una secuencia de dígitos y puntos. |
+| hotfixes | Esta rama nos permitirá corregir errores en el código de la rama "main". Una vez realizadas las correcciones, éstas se fusionarán tanto en la rama "main" como en la rama "develop". La convención de nomenclatura para esta rama debe ser hotfix-<número>, donde <número> debe ser una secuencia de dígitos y puntos. |
+
+<br>
+
+<p align="center">
+    <img src="https://miro.medium.com/v2/resize:fit:1400/1*X8WN29vxbiyc3XFFfWanTA.png" width="60%" alt="Ejemplo flujo de Gitflow"/>
+</p>
+
+<br>
+
+**Implementación de Conventional Commits**
+
+Conventional Commits es una convención basada en los mensajes de commit en git. En nuestro contexto nos proporciona un conjunto de reglas para crear un historial de commits, ya que describe las características, correcciones y cambios importantes realizados en los mensajes de commit.
+
+Aplicaremos Conventional Commits para los textos de mensajes de cada commit en todas las ramas de nuestros repositorio.
+
+Los mensajes de commit deben tener la siguiente estructura:
+
+```
+<Tipo>[ámbito opcional]: <Descripción>
+[Cuerpo opcional]
+[pie de página opcional]
+```
+
+Durante el desarrollo de los productos asociados a nuestra solución establecemos que cada commit debe contener los siguientes elementos.
+
+`fix`: Indica una corrección en el código base.<br>
+`feat`: Introduce una nueva característica en el código base.<br>
+Otros tipos basados en la convención Angular como `build:` , `chore:` , `ci:` , `docs:` , `style:` , `refactor:`, `perf:` , `test:` y otros.
+
+Establecemos estas convenciones con el propósito de comunicar de manera clara y precisa la intención de todo lo realizado durante el desarrollo de nuestra solución, tanto a los consumidores de los repositorios como a los miembros del equipo.
+
+<br>
+
+### 7.1.3. Source Code Style Guide & Conventions
+
+Para el desarrollo de nuestra propuesta de solución, el equipo utilizará las convenciones estándar para cada lenguaje durante todo el ciclo de vida del proyecto y en todos los repositorios de trabajo. A continuación, se presentan las referencias para la nomenclatura de los elementos en cada lenguaje, procurando utilizar nomenclatura en inglés y seguir buenas prácticas de programación.
+
+| Lenguaje | Referencias y Convenciones |
+|:--------:|:---------------------------|
+| HTML | - Utilizar la estructura de documento propia de HTML, especificando el "DOCTYPE html". <br> - Cerrar siempre las etiquetas de autocierre con />. <br> - Utilizar minúsculas "lowercase" para los nombres de las etiquetas y atributos. <br> - Incluir atributos ALT en las imágenes para describir su contenido. <br> - Mantener una indentación consistente en el código. |
+| CSS | - Utilizar unidades relativas para definir el tamaño de las imágenes. <br> - Separar las palabras con guiones en lugar de espacios o subrayados. <br> - Preferir el uso de propiedades abreviadas cuando sea posible. <br> - Emplear nombres descriptivos para las clases y los identificadores. |
+| JavaScript | - Documentar el código de manera descriptiva. <br> - Utilizar nombres descriptivos para variables y funciones. <br> - Organizar el código en módulos y componentes. |
+| TypeScript | - Definir explícitamente los tipos para variables, parámetros de función y valores de retorno. <br> - Utilizar interfaces o tipos para describir la forma de los objetos. <br> - Aplicar herencia y composición en clases para reutilizar código y mejorar la estructura. |
+| Java | - Las clases e interfaces deben nombrarse con sustantivos en CamelCase. <br> - Organizar el código en módulos y componentes. <br> - Limitar la longitud de los métodos para que realicen una única función clara. <br> - Manejar adecuadamente las excepciones con mensajes o acciones concretas. |
+| Dart | - Los nombres de variables, métodos y funciones deben comenzar con una letra minúscula y seguir la convención lowerCamelCase. <br> - Los nombres de clases, enumeraciones y tipos deben usar UpperCamelCase. <br> - Evitar crear objetos o instancias innecesarias; preferir constantes `const` cuando sea posible. <br> - Usar `late` o inicialización diferida solo cuando sea realmente necesario para optimizar recursos. <br> - Los nombres de archivos, bibliotecas y paquetes deben escribirse en minúsculas, usando guiones bajos `snake_case` para separar palabras. |
+| Gherkin | Se usará la estructura "Given","When","Then","And" para escribir casos de prueba. <br> - Uso de archivos .feature para cada caso de prueba. <br> - Utilizar un Feature por funcionalidad del sistema. <br> - Describir escenarios de un uso único, lo más independiente posible de otras funcionalidades. |
+
+<br>
+
+### 7.1.4. Software Deployment Configuration
+
+<!--
+**Deployment Diagram C4 Model:**
+-->
+<br>
+
+## 7.2. Solution Implementation
+
+### 7.2.1. Sprint 1
+
+#### 7.2.1.1. Sprint Planning 1
+
+Este sprint se orientó a entregar la primera versión de los productos de nuestra solución Betalyze que comprende **Landing Page (HTML/CSS/JS)**, **Frontend Web (Angular)** y la **App Mobile (Flutter/Dart)**.
+
+<table>
+  <thead>
+    <tr><th>Sprint #</th><th>Sprint 1</th></tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="2"><strong>Sprint Planning Background</strong></td></tr>
+    <tr><td>Date</td><td>2025-10-27</td></tr>
+    <tr><td>Time</td><td>22:00</td></tr>
+    <tr><td>Location</td><td>Virtual</td></tr>
+    <tr>
+      <td>Prepared By</td>
+      <td>Equipo BestWin</td>
+    </tr>
+    <tr>
+      <td>Attendees (to planning meeting)</td>
+      <td>
+        Bernaola Pérez, André Arturo / Loli Ruiz, Renzo Javier / Soriano Medrano, Diego
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Sprint 1 – 1 Review Summary</strong></td>
+      <td><em> (Sprint 1) </em></td>
+    </tr>
+    <tr>
+      <td><strong>Sprint 1 – 1 Retrospective Summary</strong></td>
+      <td><em> (Sprint 1) </em></td>
+    </tr>
+    <tr><td colspan="2"><strong>Sprint Goal &amp; User Stories</strong></td></tr>
+    <tr>
+      <td>Sprint 1 Goal</td>
+      <td>
+        Nuestro foco es sentar las bases nuestra solución Betalyze al entregar un MVP que incluya las funcionalidades básicas del negocio como la visualización de métricas de equipos, alertas de partidos, la capacidad de guardar equipos favoritos en la plataforma móvil y web, junto con una base de servicios web. Creemos que esto entregará una experiencia inicial y tangible a los primeros usuarios que les permita interactuar con los datos deportivos clave y evaluar el potencial de la aplicación, obteniendo así feedback sobre las características principales. Esto será confirmado cuando podamos realizar una demostración exitosa de las funcionalidades básicas a los stakeholders y los usuarios utilicen activamente al menos dos de las funciones básicas en la plataforma móvil o web.
+      </td>
+    </tr>
+    <tr>
+      <td>Sprint 1 Velocity</td>
+      <td><strong> SP</strong></td>
+    </tr>
+    <tr>
+      <td>Sum of Story Points</td>
+      <td><strong> SP</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+#### 7.2.1.2. Sprint Backlog 1
+<!--
+Como primer Sprint de Betalyze, nos enfocamos en las historias de usuario que establecen el núcleo de nuestra propuesta de solución, permitiendo a los usuarios acceder a información relevante del negocio, métricas de equipos y alertas de partidos, mientras se completaba la primera fase del desarrollo de la aplicación móvil, la web, y los servicios de dominio centrales. Esto con la finalidad de demostrar las funciones básicas del MVP y podamos obtener las primeras impresiones sobre el valor entregado y la estabilidad de las aplicaciones.
+
+[![image.png]()]()
+
+**URL publico de trello:** <>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>Sprint #</td>
+            <td colspan="7" >Sprint 1</td>
+        </tr>
+        <tr>
+            <td colspan="2" > User Story</td>
+            <td colspan="6" > Work-Item / Task </td>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> Id </td>
+        <td> Title </td>
+        <td> Id </td>
+        <td> Title </td>
+        <td> Description </td>
+        <td> Estimation (Hours) </td>
+        <td> Assigned To </td>
+        <td> Status (To-do / In-Process / To-Review / Done) </td>
+      </tr>
+      <tr>
+        <td>US001</td>
+        <td>  </td>
+        <td>TA1</td>
+        <td>  </td>
+        <td>  </td>
+        <td>02</td>
+        <td>  </td>
+        <td> Done </td>
+      </tr>
+      <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td>  </td>
+        <td>  </td>
+        <td>02</td>
+        <td>  </td>
+        <td> Done </td>
+    </tr>
+    <tr>
+        <td>US002</td>
+        <td>  </td>
+        <td>TA1</td>
+        <td>  </td>
+        <td>  </td>
+        <td>03</td>
+        <td>  </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td>  </td>
+        <td>  </td>
+        <td>03</td>
+        <td>  </td>
+        <td>Done</td>
+    </tr>
+    </tbody>
+</table>
+-->
+<br>
+
+#### 7.2.1.3. Development Evidence for Sprint Review
+
+<!--introducción que resume los principales avances en la implementación 
+
+<br>
+
+**Landign Page**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|------------|--------|-----------|----------------|---------------------|--------------------|
+|  |  |  |  |  |  |
+-->
+<br>
+
+#### 7.2.1.4. Testing Suite Evidence for Sprint Review
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|------------|--------|-----------|----------------|---------------------|--------------------|
+|  |  |  |  |  |  |
+
+<br>
+
+#### 7.2.1.5. Execution Evidence for Sprint Review
+<!-- 
+Esta sección inicia con un resumen que explique lo alcanzado en este Sprint y presenta screenshots de las principales vistas implementadas, junto con un enlace a un video que ilustre y explique la visualización y navegación logrados en este Sprint. 
+
+- **Landing Page**
+
+- **Web Application**
+
+- **Mobile Application**
+
+-->
+
+<br>
+
+#### 7.2.1.6. Services Documentation Evidence for Sprint Review
+<!--
+Introducción en la que se resume los logros alcanzados en relación con Documentación de Web Services para este Sprint.
+
+A continuación, se presenta la relación de endpoints documentados con OpenAPI, dentro del alcance de nuestro primer Sprint:
+
+<br>
+
+Debe elaborarse una tabla en la que se incluya, para cada Endpoint, la indicación de acciones implementadas, junto con los enlaces correspondientes a la documentación desplegada (o URL local en Sprints previos al despliegue de Web Services). Indicar las acciones soportadas incluyendo para cada acción el verbo http (get, post, put, delete, patch), sintaxis de llamada, especificación de posibles parámetros, así como ejemplo y explicación del response. 
+Adicionalmente, debe incluirse y explicarse capturas en imágenes de la interacción, utilizando datos de muestra, con la documentación elaborada. Debe incluirse el URL del repositorio de Web Services, junto con los id de los commits elacionados con Documentación para este Sprint.
+
+<br>
+
+**Bounded Context**
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/ /{} |  | GET | GET /api/v1/ /{} | {} |
+| /api/v1/ /{} |  | PUT | PUT /api/v1/ /{} | {} \ Request body |
+| /api/v1/ /{} |  | PUT | PUT /api/v1/ /{} | {} \ Request body |
+| /api/v1/ /{} |  | GET | GET /api/v1/ /{} | {} |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+|         Petición        |                Respuesta             |
+|-------------------------|--------------------------------------|
+| GET /api/v1/ / | 200 OK - ... en formato JSON. |
+| PUT /api/v1/ / {  } | 200 OK - Retorna los datos ... en formato JSON. |
+| PUT /api/v1/ / {  } | 200 OK - Retorna los datos ... en formato JSON. |
+| GET /api/v1/ / | 200 OK - Retorna ... en formato JSON. |
+
+<br>
+
+**Imágenes y documentación:**
+
+<img src=""/>
+
+<br>
+-->
+#### 7.2.1.7. Software Deployment Evidence for Sprint Review
+<!--
+La sección inicia con una introducción explicando qué se ha realizado con respecto a despliegue durante este Sprint. 
+Abarca actividades de creación de cuentas, configuración de recursos en cloud providers, configuración de proyectos de desarrollo para integración o automatización de labor de Deployment, entre otros. Se considera dentro del proceso de Deployment todos los productos digitales. Se debe adicionar capturas en imagen y explicaciones de los pasos realizados durante el Sprint.
+-->
+<br>
+
+#### 7.2.1.8. Team Collaboration Insights during Sprint
+<!--
+explica cómo se han desarrollado las actividades de implementación y se presenta capturas en imagen de los analíticos de colaboración y commits en GitHub, realizados por los miembros del equipo. Todos los miembros del equipo deben tener participación en la implementación de cada uno de los productos según corresponda en el Sprint: Landing Page, Web Services y Aplicaciones
+
+- **Landing Page**
+
+- **Web Application**
+
+- **Mobile Application**
+-->
+<br>
+
+## 7.3. Validation Interviews
+
+### 7.3.1. Diseño de Entrevistas
+
+### 7.3.2. Registro de Entrevistas
+
+### 7.3.3. Evaluaciones según heurísticas
+
+## 7.4. Video About-the-Product
 
 ---
 # Conclusiones
