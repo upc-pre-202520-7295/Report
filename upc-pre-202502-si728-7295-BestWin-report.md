@@ -250,24 +250,24 @@ Se utilizaron Git y Github para el versionamiento y gestión del proyecto, lo cu
 
 ### [Capítulo VII: Product Implementation, Validation & Deployment](#capítulo-vii-product-implementation-validation-deployment)
 - [7.1. Software Configuration Management](#71-software-configuration-management)
-  - [7.1.1. Software Development Environment Configuration](#711-software-development-environment-configuration)
-  - [7.1.2. Source Code Management](#712-source-code-management)
-  - [7.1.3. Source Code Style Guide & Conventions](#713-source-code-style-guide-conventions)
-  - [7.1.4. Software Deployment Configuration](#714-software-deployment-configuration)
+  - [7.1.1. Software Development Environment Configuration](#711-software-development-environment-configuration)
+  - [7.1.2. Source Code Management](#712-source-code-management)
+  - [7.1.3. Source Code Style Guide & Conventions](#713-source-code-style-guide-conventions)
+  - [7.1.4. Software Deployment Configuration](#714-software-deployment-configuration)
 - [7.2. Solution Implementation](#72-solution-implementation)
-  - [7.2.1. Sprint n](#721-sprint-n)
-    - [7.2.1.1. Sprint Planning n](#7211-sprint-planning-n)
-    - [7.2.1.2. Sprint Backlog n](#7212-sprint-backlog-n)
-    - [7.2.1.3. Development Evidence for Sprint Review](#7213-development-evidence-for-sprint-review)
-    - [7.2.1.4. Testing Suite Evidence for Sprint Review](#7214-testing-suite-evidence-for-sprint-review)
-    - [7.2.1.5. Execution Evidence for Sprint Review](#7215-execution-evidence-for-sprint-review)
-    - [7.2.1.6. Services Documentation Evidence for Sprint Review](#7216-services-documentation-evidence-for-sprint-review)
-    - [7.2.1.7. Software Deployment Evidence for Sprint Review](#7217-software-deployment-evidence-for-sprint-review)
-    - [7.2.1.8. Team Collaboration Insights during Sprint](#7218-team-collaboration-insights-during-sprint)
+  - [7.2.1. Sprint n](#721-sprint-n)
+    - [7.2.1.1. Sprint Planning n](#7211-sprint-planning-n)
+    - [7.2.1.2. Sprint Backlog n](#7212-sprint-backlog-n)
+    - [7.2.1.3. Development Evidence for Sprint Review](#7213-development-evidence-for-sprint-review)
+    - [7.2.1.4. Testing Suite Evidence for Sprint Review](#7214-testing-suite-evidence-for-sprint-review)
+    - [7.2.1.5. Execution Evidence for Sprint Review](#7215-execution-evidence-for-sprint-review)
+    - [7.2.1.6. Services Documentation Evidence for Sprint Review](#7216-services-documentation-evidence-for-sprint-review)
+    - [7.2.1.7. Software Deployment Evidence for Sprint Review](#7217-software-deployment-evidence-for-sprint-review)
+    - [7.2.1.8. Team Collaboration Insights during Sprint](#7218-team-collaboration-insights-during-sprint)
 - [7.3. Validation Interviews](#73-validation-interviews)
-  - [7.3.1. Diseño de Entrevistas](#731-diseño-de-entrevistas)
-  - [7.3.2. Registro de Entrevistas](#732-registro-de-entrevistas)
-  - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-según-heurísticas)
+  - [7.3.1. Diseño de Entrevistas](#731-diseño-de-entrevistas)
+  - [7.3.2. Registro de Entrevistas](#732-registro-de-entrevistas)
+  - [7.3.3. Evaluaciones según heurísticas](#733-evaluaciones-según-heurísticas)
 - [7.4. Video About-the-Product](#74-video-about-the-product)
 
 <br>
@@ -1258,43 +1258,34 @@ El equipo generó un escenario ideal para cada segmento, partiendo de los hallaz
 | US02                     | Identificar apuestas de valor    | Como apostador frecuente quiero que el sistema marque las apuestas de valor para detectar oportunidades de mayor rentabilidad.                | Scenario 1: Detección correcta – Dado que hay cuotas con valor, cuando abro el dashboard, entonces se resaltan los partidos.<br><br>Scenario 2: Sin datos – Dado que no se pueden calcular, cuando entro, entonces aparece aviso de “sin información disponible”. | EP01 |
 | **EP02** | Filtros y Búsqueda  | Incluye filtros y herramientas de búsqueda que permiten al usuario encontrar rápidamente partidos según su interés (liga, local/visitante, equipo). |  |  |
 | US03                     | Ordenar partidos                 | Como usuario quiero ordenar los partidos por hora o probabilidad para priorizar en qué apostar primero.                                       | Scenario 1: Orden exitoso – Dado que selecciono ordenar por hora, cuando confirmo, entonces se lista cronológicamente.<br><br>Scenario 2: Falla de orden – Dado que no hay datos, cuando aplico orden, entonces aparece mensaje de error. | EP02 |
-| US04                     | Filtrar por condición de juego   | Como apostador quiero filtrar partidos por local/visitante para enfocarme en los que me interesan.                                              | Scenario 1: Filtro aplicado – Dado que selecciono “local”, cuando confirmo, entonces solo aparecen partidos en casa.<br><br>Scenario 2: Sin resultados – Dado que no hay partidos locales, cuando aplico el filtro, entonces aparece mensaje de vacío. | EP02 |
-| US05                     | Filtrar por liga o torneo        | Como usuario quiero filtrar partidos por liga para ver solo los torneos que sigo.                                                               | Scenario 1: Filtro exitoso – Dado que elijo una liga, cuando confirmo, entonces veo solo esos partidos.<br><br>Scenario 2: Liga vacía – Dado que no hay partidos en la liga, cuando aplico el filtro, entonces se muestra “sin partidos programados”. | EP02 |
-| US06                     | Buscar partidos por nombre       | Como usuario quiero escribir el nombre del equipo para ubicar rápido el partido que me interesa.                                                | Scenario 1: Resultados encontrados – Dado que escribo un nombre válido, cuando presiono buscar, entonces aparecen partidos relacionados.<br><br>Scenario 2: Sin resultados – Dado que el equipo no existe, cuando busco, entonces se muestra mensaje “no se encontró información”. | EP02 |
+| US04                     | Buscar partidos por nombre       | Como usuario quiero escribir el nombre del equipo para ubicar rápido el partido que me interesa.                                                | Scenario 1: Resultados encontrados – Dado que escribo un nombre válido, cuando presiono buscar, entonces aparecen partidos relacionados.<br><br>Scenario 2: Sin resultados – Dado que el equipo no existe, cuando busco, entonces se muestra mensaje “no se encontró información”. | EP02 |
 | **EP03** | Historial y Métricas | Abarca la visualización de historial de rendimiento, métricas y estadísticas clave de equipos y partidos. |  |  |
-| US07                     | Ver historial visual             | Como fanático del fútbol quiero ver un gráfico con los últimos resultados para analizar el estado de forma.                                    | Scenario 1: Historial cargado – Dado que abro el historial, cuando carga, entonces veo gráfico con resultados recientes.<br><br>Scenario 2: Sin datos – Dado que no hay historial disponible, cuando abro la sección, entonces aparece mensaje de vacío. | EP03 |
-| US08                     | Ver métricas de desempeño        | Como usuario quiero ver métricas de goles, tiros y córners para entender el rendimiento.                                                        | Scenario 1: Métricas mostradas – Dado que selecciono últimos partidos, cuando carga, entonces se muestran promedios.<br><br>Scenario 2: Datos no encontrados – Dado que no hay métricas, cuando abro la sección, entonces aparece alerta. | EP03 |
+| US05                     | Ver historial visual             | Como fanático del fútbol quiero ver un gráfico con los últimos resultados para analizar el estado de forma.                                    | Scenario 1: Historial cargado – Dado que abro el historial, cuando carga, entonces veo gráfico con resultados recientes.<br><br>Scenario 2: Sin datos – Dado que no hay historial disponible, cuando abro la sección, entonces aparece mensaje de vacío. | EP03 |
+| US06                     | Ver métricas de desempeño        | Como usuario quiero ver métricas de goles, tiros y córners para entender el rendimiento.                                                        | Scenario 1: Métricas mostradas – Dado que selecciono últimos partidos, cuando carga, entonces se muestran promedios.<br><br>Scenario 2: Datos no encontrados – Dado que no hay métricas, cuando abro la sección, entonces aparece alerta. | EP03 |
 | **EP04** | Alertas y Notificaciones  | Reúne las funciones de alertas y notificaciones en tiempo real para recordar partidos, alineaciones y oportunidades de apuestas de valor.  |  |  |
-| US09                     | Recibir alertas antes del partido | Como usuario quiero recibir notificaciones 15 min antes para revisar alineaciones y probabilidades.                                             | Scenario 1: Alerta recibida – Dado que tengo alertas activas, cuando faltan 15 min, entonces recibo notificación push.<br><br>Scenario 2: Alerta no enviada – Dado que estoy sin conexión, cuando llega la hora, entonces se muestra alerta pendiente al reconectar. | EP04 |
-| US10                     | Notificación de apuestas de valor | Como usuario quiero que me avisen de apuestas de valor en mis equipos favoritos para no perder oportunidades.                                  | Scenario 1: Notificación enviada – Dado que hay apuesta de valor, cuando se detecta, entonces recibo aviso en tiempo real.<br><br>Scenario 2: Falla de sistema – Dado que el sistema está en mantenimiento, cuando debería llegar la alerta, entonces recibo mensaje de indisponibilidad.| EP04 |
-| US11                     | Configurar alertas personalizadas | Como usuario quiero configurar alertas por tipo de apuesta para recibir solo notificaciones relevantes.                                      | Scenario 1: Configuración guardada – Dado que activo solo over/under, cuando guardo, entonces recibo solo esas alertas.<br><br>Scenario 2: Error de guardado – Dado que falla el servidor, cuando guardo, entonces aparece mensaje de error. | EP04 |
+| US07                     | Recibir alertas antes del partido | Como usuario quiero recibir notificaciones diarias según mis equipos seleccionados como favoritos.  | Scenario 1: Alerta recibida – Dado que tengo alertas activas, cuando faltan 15 min, entonces recibo notificación push.<br><br>Scenario 2: Alerta no enviada – Dado que estoy sin conexión, cuando llega la hora, entonces se muestra alerta pendiente al reconectar. | EP04 |
+| US08                     | Configurar alertas personalizadas | Como usuario quiero configurar las preferencias de notificaciones por equipo favorito para recibir notificaciones relevantes.  | Scenario 1: Configuración guardada – Dado que activo solo over/under, cuando guardo, entonces recibo solo esas alertas.<br><br>Scenario 2: Error de guardado – Dado que falla el servidor, cuando guardo, entonces aparece mensaje de error. | EP04 |
 | **EP05** | Personalización y Experiencia  | Funcionalidades que permiten personalizar el dashboard, elegir ligas/equipos favoritos y mejorar la experiencia visual.  |  |  |
-| US12                     | Guardar equipos favoritos        | Como usuario quiero marcar equipos como favoritos para acceder rápido a sus partidos.                                                         | Scenario 1: Favorito guardado – Dado que selecciono un equipo, cuando confirmo, entonces aparece en mi lista de favoritos.<br><br>Scenario 2: Error de guardado – Dado que el servidor falla, cuando confirmo, entonces aparece mensaje de error. | EP05 |
-| US13                     | Configurar ligas preferidas      | Como usuario quiero elegir mis ligas preferidas para personalizar mi dashboard.                                                                | Scenario 1: Configuración aplicada – Dado que selecciono ligas, cuando guardo, entonces se filtra mi inicio.<br><br>Scenario 2: Error de sincronización – Dado que no se guardó, cuando recargo, entonces vuelvo a ver todas las ligas. | EP05 |
+| US09                     | Guardar equipos favoritos        | Como usuario quiero marcar equipos como favoritos para acceder rápido a sus partidos.                                                         | Scenario 1: Favorito guardado – Dado que selecciono un equipo, cuando confirmo, entonces aparece en mi lista de favoritos.<br><br>Scenario 2: Error de guardado – Dado que el servidor falla, cuando confirmo, entonces aparece mensaje de error. | EP05 |
 | **EP06** | Confianza y Transparencia | Muestra información que genera confianza: explicaciones del modelo de ML, métricas de precisión y datos de validación. |  |  |
-| US14                     | Ver explicaciones del modelo     | Como usuario quiero entender cómo se generan las probabilidades para confiar en la plataforma.                                                  | Scenario 1: Info mostrada – Dado que presiono “info”, cuando carga, entonces se despliega explicación breve.<br><br>Scenario 2: Error de carga – Dado que el contenido no está disponible, cuando presiono “info”, entonces aparece mensaje de error. | EP06 |
-| US15                     | Ver métricas de precisión         | Como apostador quiero ver el histórico de aciertos para evaluar si confiar en la predicción.                                                    | Scenario 1: Datos mostrados – Dado que entro a métricas, cuando carga, entonces veo % de acierto por liga.<br><br>Scenario 2: Sin información – Dado que no hay suficientes datos, cuando abro, entonces se muestra “no disponible”. | EP06 |
+| US10                     | Ver métricas de precisión         | Como apostador quiero ver el histórico de aciertos para evaluar si confiar en la predicción.                                                    | Scenario 1: Datos mostrados – Dado que entro a métricas, cuando carga, entonces veo % de acierto por liga.<br><br>Scenario 2: Sin información – Dado que no hay suficientes datos, cuando abro, entonces se muestra “no disponible”. | EP06 |
 | **EP07** | Información Relevante | Centraliza noticias, alineaciones oficiales y comparativas de cuotas para brindar contexto útil antes de apostar. |  |  |
-| US16                     | Consultar alineaciones oficiales  | Como usuario quiero ver alineaciones confirmadas en para ajustar mi apuesta. | Scenario 1: Datos cargados – Dado que se publican alineaciones, cuando abro, entonces veo formación oficial.<br><br>Scenario 2: Error de proveedor – Dado que la API falla, cuando abro, entonces aparece mensaje de error. | EP07 |
-| US17                     | Comparar cuotas de distintas casas | Como apostador quiero ver comparativa de cuotas para elegir la más rentable.                                                                   | Scenario 1: Comparativa exitosa – Dado que hay varias casas, cuando abro la sección, entonces veo tabla comparativa.<br><br>Scenario 2: Faltan datos – Dado que una casa no responde, cuando cargo, entonces aparece nota “datos incompletos”. | EP07 |
-| US18                     | Ver detalles de partido          | Como usuario quiero abrir ficha de partido para ver datos específicos.                                                                         | Scenario 1: Ficha cargada – Dado que selecciono partido, cuando abro, entonces veo historial, cuotas y alineaciones.<br><br>Scenario 2: Error de carga – Dado que falla la API, cuando abro, entonces aparece mensaje de error. | EP07 |
+| US11                     | Ver detalles de partido          | Como usuario quiero abrir ficha de partido para ver datos específicos.                                                                         | Scenario 1: Ficha cargada – Dado que selecciono partido, cuando abro, entonces veo historial, cuotas y alineaciones.<br><br>Scenario 2: Error de carga – Dado que falla la API, cuando abro, entonces aparece mensaje de error. | EP07 |
 | **EP08** | Experiencia Avanzada  | Engloba funcionalidades para usuarios avanzados como guardar pronósticos, simular combinadas y ajustar nivel de detalle. |  |  |
-| US19                     | Exportar dashboard de predicciones | Como usuario quiero exportar dashboard de probabilidades en CSV o Excel para analizar mis resultados de manera externa.                                     | Scenario 1: Exportación exitosa – Dado que presiono exportar, cuando confirmo, entonces se descarga el archivo.<br><br>Scenario 2: Falla de exportación – Dado que hay error, cuando intento exportar, entonces se muestra alerta. | EP08 |
-| US20                     | Configurar nivel de detalle     | Como usuario quiero elegir si ver solo datos básicos o estadísticas avanzadas para personalizar la experiencia.                             | Scenario 1: Nivel aplicado – Dado que selecciono avanzado, cuando confirmo, entonces se muestran métricas extra.<br><br>Scenario 2: Error de configuración – Dado que falla, cuando guardo, entonces no se aplican cambios. | EP08 |
-| US21                     | Simular combinadas              | Como apostador quiero simular apuestas combinadas para estimar posibles ganancias antes de apostar.                                           | Scenario 1: Simulación exitosa – Dado que selecciono 3 partidos, cuando confirmo, entonces veo cuota total combinada.<br><br>Scenario 2: Error de cálculo – Dado que hay falla en API, cuando simulo, entonces aparece mensaje de error. | EP08 |
+| US12                     | Exportar dashboard de predicciones | Como usuario quiero exportar dashboard de probabilidades en CSV o Excel para analizar mis resultados de manera externa.                                     | Scenario 1: Exportación exitosa – Dado que presiono exportar, cuando confirmo, entonces se descarga el archivo.<br><br>Scenario 2: Falla de exportación – Dado que hay error, cuando intento exportar, entonces se muestra alerta. | EP08 |
 | **EP09** | Integración & Datos  | Maneja la conexión con APIs externas, Google Calendar y reportes de datos incorrectos. |  |  |
-| US22                     | Integración con API de casas de apuestas | Como usuario quiero que las cuotas se actualicen automáticamente al menos una vez al día.                                     | Scenario 1: Actualización automática – Dado que hay cambio, cuando recargo, entonces se reflejan nuevas cuotas.<br><br>Scenario 2: Falla de API – Dado que la API no responde, cuando cargo, entonces se muestra mensaje de error. | EP09 |
-| US23                     | Conexión con Google Calendar   | Como usuario quiero agregar partidos importantes a mi calendario para recibir recordatorios.                                                  | Scenario 1: Evento creado – Dado que presiono añadir, cuando confirmo, entonces aparece en mi calendario.<br><br>Scenario 2: Error de integración – Dado que la conexión falla, cuando confirmo, entonces se muestra error. | EP09 |
+| US13                     | Integración con API de casas de apuestas | Como usuario quiero que las cuotas se actualicen automáticamente al menos una vez al día.                                     | Scenario 1: Actualización automática – Dado que hay cambio, cuando recargo, entonces se reflejan nuevas cuotas.<br><br>Scenario 2: Falla de API – Dado que la API no responde, cuando cargo, entonces se muestra mensaje de error. | EP09 |
+| US14                     | Conexión con Google Calendar   | Como usuario quiero agregar partidos importantes a mi calendario para recibir recordatorios.                                                  | Scenario 1: Evento creado – Dado que presiono añadir, cuando confirmo, entonces aparece en mi calendario.<br><br>Scenario 2: Error de integración – Dado que la conexión falla, cuando confirmo, entonces se muestra error. | EP09 |
 | **EP10** | Landing Page | Reúne las secciones públicas del sitio: información general, precios, FAQ y contacto para nuevos usuarios.  |  |  |
-| US24                     | Ver información general        | Como visitante quiero ver información de qué es Betalyze para entender el valor de la plataforma.                                           | Scenario 1: Página cargada – Dado que entro a la landing, cuando carga, entonces veo sección “qué es Betalyze”.<br><br>Scenario 2: Error de carga – Dado que el servidor falla, cuando entro, entonces aparece mensaje de error. | EP10 |
-| US25                     | Ver precios de suscripción     | Como visitante quiero ver planes y precios de suscripción para considerar la adquisición.                                                | Scenario 1: Precios mostrados – Dado que abro la sección de precios, cuando carga, entonces veo planes detallados.<br><br>Scenario 2: Información no disponible – Dado que hay error, cuando entro, entonces aparece mensaje de “temporalmente no disponible”. | EP10 |
-| US26                     | Consultar FAQ y contacto       | Como visitante quiero acceder a FAQ y datos de contacto para resolver dudas antes de comprar.                                                  | Scenario 1: FAQ mostrada – Dado que abro sección FAQ, cuando carga, entonces veo preguntas y respuestas.<br><br>Scenario 2: Contacto no disponible – Dado que falla el formulario, cuando envío mensaje, entonces aparece alerta de error. | EP10 |
+| US15                     | Identificación de la Propuesta de Valor | Como visitante general, quiero entender rápidamente qué es Betalyze, para decidir si me interesa explorar más sobre el producto.  | Scenario 1: Dado que el visitante accede a la landing page, Cuando visualiza la sección introductoria, Entonces comprende que Betalyze ofrece predicciones deportivas basadas en machine learning. <br><br> Scenario 2: Dado que el visitante está en la landing page, Cuando revisa los beneficios destacados, Entonces identifica que el producto tiene una alta precisión del y una gran base de usuarios. | EP10 |
+| US16                     | Validación del Funcionamiento     | Como visitante del segmento Apostadores Frecuentes, quiero conocer cómo funciona el sistema de predicciones, para confiar en la calidad de los resultados antes de usar el producto.  | Scenario 1: Dado que el visitante accede a la sección “¿Cómo funciona?”, Cuando lee la descripción del proceso, Entonces entiende que las predicciones se generan mediante algoritmos de machine learning y análisis deportivo. <br><br> Scenario 2: Dado que el visitante busca información técnica, Cuando revisa la sección de características del producto, Entonces identifica que puede acceder a filtros avanzados y exportar reportes desde el dashboard web. | EP10 |
+| US17                     | Disponibilidad y Acceso Móvil       | Como visitante del segmento Fanáticos del fútbol, quiero saber si puedo usar Betalyze desde mi celular, para acceder a las predicciones en cualquier momento.  | Scenario 1: Dado que el visitante revisa la información del producto, Cuando observa las plataformas disponibles, Entonces confirma que existe una app móvil para iOS y Android. <br><br> Scenario 2: Dado que el visitante busca flexibilidad de uso, Cuando revisa las funcionalidades, Entonces identifica que el sistema está disponible 24/7 y permite uso sin conexión. | EP10 |
+| US18                     | Exploración de Acceso Gratuito       | Como visitante general, quiero saber si puedo probar Betalyze sin compromiso, para evaluar su funciones más atractivas.  | Scenario 1: Dado que el visitante está considerando registrarse, Cuando revisa la información de acceso, Entonces confirma que puede usar la versión web o descargar la app sin costo inicial. <br><br> Scenario 2: Dado que el visitante desea evitar riesgos, Cuando revisa las condiciones de uso, Entonces identifica que el acceso inicial es gratuito y sin necesidad de pago. | EP10 |
+| US19                     |  Evaluación de Interfaz y Herramientas Avanzadas      | Como Apostador Frecuente, quiero visualizar las funcionalidades específicas y la interfaz del producto en móvil y web, para asegurarme de que la herramienta es lo suficientemente robusta y fácil de usar para mis análisis diarios.  | Scenario 1: Dado que el visitante del segmento Apostadores Frecuentes accede a la sección de capturas del Web Dashboard, cuando revisa las características específicas listadas bajo el encabezado "Web features", entonces confirma la disponibilidad de "Advanced filters" y "Interactive elements". <br><br> Scenario 2: Dado que el visitante revisa la sección de la Mobile App, cuando lee las características y los nombres de las vistas disponibles, entonces identifica funcionalidades cruciales para la operación diaria, como "Real-time notifications". | EP10 |
 
 <br>
 
 ## 3.3. Impact Mapping
-
-<!-- Contenido de Impact Mapping -->
 
 ![Impact Apostador Frecuente](./assets/impact_apostador_frecuente.png)
 ![Impact Fanatico Futbol](./assets/impact_fanatico_futbol.png)
@@ -1303,32 +1294,25 @@ El equipo generó un escenario ideal para cada segmento, partiendo de los hallaz
 
 |  # Orden  |  User Story Id  |  Título  |  Descripción  |  Story Points (1/2/3/5/8)  |
 |:----------|:----------------|:---------|:--------------|:---------------------------|
-| 1 | US24 | Ver información general | Como visitante quiero ver información de qué es Betalyze para entender el valor de la plataforma. | 1 |
-| 2 | US25 | Ver precios de suscripción | Como visitante quiero ver planes y precios de suscripción para considerar la adquisición. | 1 |
-| 3 | US26 | Consultar FAQ y contacto | Como visitante quiero acceder a FAQ y datos de contacto para resolver dudas antes de comprar. | 1 |
-| 4 | US01 | Visualizar probabilidades en el Dashboard | Como apostador frecuente quiero ver en un solo lugar las probabilidades de los partidos del día para ahorrar tiempo en mi análisis. | 5 |
-| 5 | US02 | Identificar apuestas de valor | Como apostador frecuente quiero que el sistema marque las apuestas de valor para detectar oportunidades de mayor rentabilidad. | 8 |
-| 6 | US22 | Integración con API de casas de apuestas | Como usuario quiero que las cuotas se actualicen automáticamente al menos una vez al día. | 5 |
-| 7 | US17 | Comparar cuotas de distintas casas | Como apostador quiero ver comparativa de cuotas para elegir la más rentable. | 8 |
-| 8 | US12 | Guardar equipos favoritos | Como usuario quiero marcar equipos como favoritos para acceder rápido a sus partidos. | 3 |
-| 9 | US13 | Configurar ligas preferidas | Como usuario quiero elegir mis ligas preferidas para personalizar mi dashboard. | 3 |
-| 10 | US03 | Ordenar partidos | Como usuario quiero ordenar los partidos por hora o probabilidad para priorizar en qué apostar primero. | 2 |
-| 11 | US05 | Filtrar por liga o torneo | Como usuario quiero filtrar partidos por liga para ver solo los torneos que sigo. | 2 |
-| 12 | US06 | Buscar partidos por nombre | Como usuario quiero escribir el nombre del equipo para ubicar rápido el partido que me interesa. | 2 |
-| 13 | US18 | Ver detalles de partido | Como usuario quiero abrir ficha de partido para ver datos específicos. | 5 |
-| 14 | US07 | Ver historial visual | Como fanático del fútbol quiero ver un gráfico con los últimos resultados para analizar el estado de forma. | 5 |
-| 15 | US08 | Ver métricas de desempeño | Como usuario quiero ver métricas de goles, tiros y córners para entender el rendimiento. | 5 |
-| 16 | US09 | Recibir alertas antes del partido | Como usuario quiero recibir notificaciones 15 min antes para revisar alineaciones y probabilidades. | 5 |
-| 17 | US10 | Notificación de apuestas de valor | Como usuario quiero que me avisen de apuestas de valor en mis equipos favoritos para no perder oportunidades. | 5 |
-| 18 | US11 | Configurar alertas personalizadas | Como usuario quiero configurar alertas por tipo de apuesta para recibir solo notificaciones relevantes. | 3 |
-| 19 | US14 | Ver explicaciones del modelo | Como usuario quiero entender cómo se generan las probabilidades para confiar en la plataforma. | 2 |
-| 20 | US15 | Ver métricas de precisión | Como apostador quiero ver el histórico de aciertos para evaluar si confiar en la predicción. | 5 |
-| 21 | US16 | Consultar alineaciones oficiales | Como usuario quiero ver alineaciones confirmadas en para ajustar mi apuesta. | 3 |
-| 22 | US04 | Filtrar por condición de juego | Como apostador quiero filtrar partidos por local/visitante para enfocarme en los que me interesan. | 2 |
-| 23 | US20 | Configurar nivel de detalle | Como usuario quiero elegir si ver solo datos básicos o estadísticas avanzadas para personalizar la experiencia. | 3 |
-| 24 | US21 | Simular combinadas | Como apostador quiero simular apuestas combinadas para estimar posibles ganancias antes de apostar. | 8 |
-| 25 | US19 | Exportar dashboard de predicciones | Como usuario quiero exportar dashboard de probabilidades en CSV o Excel para analizar mis resultados de manera externa. | 3 |
-| 26 | US23 | Conexión con Google Calendar | Como usuario quiero agregar partidos importantes a mi calendario para recibir recordatorios. | 3 |
+| 1 | US13 | Integración con API de casas de apuestas | Como usuario quiero que las cuotas se actualicen automáticamente al menos una vez al día. | 5 |
+| 2 | US02 | Identificar apuestas de valor | Como apostador frecuente quiero que el sistema marque las apuestas de valor para detectar oportunidades de mayor rentabilidad. | 5 |
+| 3 | US01 | Visualizar probabilidades en el Dashboard | Como apostador frecuente quiero ver en un solo lugar las probabilidades de los partidos del día para ahorrar tiempo en mi análisis. | 3 |
+| 4 | US07 | Recibir alertas antes del partido | Como usuario quiero recibir notificaciones diarias según mis equipos seleccionados como favoritos. | 3 |
+| 5 | US09 | Guardar equipos favoritos | Como usuario quiero marcar equipos como favoritos para acceder rápido a sus partidos. | 2 |
+| 6 | US03 | Ordenar partidos | Como usuario quiero ordenar los partidos por hora o probabilidad para priorizar en qué apostar primero. | 2 |
+| 7 | US04 | Buscar partidos por nombre | Como usuario quiero escribir el nombre del equipo para ubicar rápido el partido que me interesa. | 2 |
+| 8 | US05 | Ver historial visual | Como fanático del fútbol quiero ver un gráfico con los últimos resultados para analizar el estado de forma. | 3 |
+| 9 | US06 | Ver métricas de desempeño | Como usuario quiero ver métricas de goles, tiros y córners para entender el rendimiento. | 3 |
+| 10 | US08 | Configurar alertas personalizadas | Como usuario quiero configurar las preferencias de notificaciones por equipo favorito para recibir notificaciones relevantes. | 5 |
+| 11 | US10 | Ver métricas de precisión | Como apostador quiero ver el histórico de aciertos para evaluar si confiar en la predicción. | 3 |
+| 12 | US11 | Ver detalles de partido | Como usuario quiero abrir ficha de partido para ver datos específicos. | 3 |
+| 13 | US12 | Exportar dashboard de predicciones | Como usuario quiero exportar dashboard de probabilidades en CSV o Excel para analizar mis resultados de manera externa. | 5 |
+| 14 | US14 | Conexión con Google Calendar | Como usuario quiero agregar partidos importantes a mi calendario para recibir recordatorios. | 3 |
+| 15 | US15 | Identificación de la Propuesta de Valor | Como visitante general, quiero entender rápidamente qué es Betalyze, para decidir si me interesa explorar más sobre el producto. | 1 |
+| 16 | US16 | Validación del Funcionamiento | Como visitante del segmento Apostadores Frecuentes, quiero conocer cómo funciona el sistema de predicciones, para confiar en la calidad de los resultados antes de usar el producto. | 1 |
+| 17 | US17 | Disponibilidad y Acceso Móvil | Como visitante del segmento Fanáticos del fútbol, quiero saber si puedo usar Betalyze desde mi celular, para acceder a las predicciones en cualquier momento. | 1 |
+| 18 | US18 | Exploración de Acceso Gratuito | Como visitante general, quiero saber si puedo probar Betalyze sin compromiso, para evaluar su funciones más atractivas. | 1 |
+| 19 | US19 | Evaluación de Interfaz y Herramientas Avanzadas | Como Apostador Frecuente, quiero visualizar las funcionalidades específicas y la interfaz del producto en móvil y web, para asegurarme de que la herramienta es lo suficientemente robusta y fácil de usar para mis análisis diarios. | 2 |
 
 <br>
 
@@ -3595,10 +3579,149 @@ explica cómo se han desarrollado las actividades de implementación y se presen
 
 ### 7.3.1. Diseño de Entrevistas
 
+A continuación se establece la estructura para las entrevistas de validación, para los elementos y tareas especificas para nuestros productos Web y Móvil, incluyendo la visita a nuestra Landing Page.
+
+**Información general requerida para ambos segmentos:**
+
+- Nombres
+- Apellidos
+- Edad
+- Distrito
+
+**Validación de Propuesta de Valor (Landing Page)**
+
+- Validación de los elementos en ambos segmentos:
+  - Hero Section: ¿Con poco tiempo de visualización se puede entender qué hace Betalyze?.
+  - Benefits Section: ¿Los beneficios listados resuelven los atienden a sus necesidades antes mencionadas?
+  - How It Works: ¿Entienden de dónde salen los datos? (Transparencia del modelo ML).
+  - CTA (Call to Action): ¿Sienten el impulso de hacer clic en "Descargar la aplicación" o "Probar la versión Web"?
+  - Ver screenshots o demos del producto.
+  - Navegar al footer para obtener datos de contacto o redes sociales.
+
+- Preguntas adicionales:
+  - ¿Basado en el contenido e información de la página, ¿para qué crees que sirve Betalyze?
+  - ¿Qué sección te genera más confianza y cuál te genera dudas o cuál te gusta más?
+
+**Validación de Solución y User Flows**
+
+Continuamos con pedir a un usuario por cada segmento que realice tareas específicas usando las aplicaciones Web y Móvil.
+
+**Tareas y preguntas para el segmento Apostadores frecuentes:**
+
+- Tarea 1: Explorar las opciones y la interfaz de la aplicación
+  - ¿Qué tan intuitiva te resulta la navegación en la app?
+- Tarea 2: Visualizar dashboard con métricas.
+  - ¿La información presentada es clara y fácil de entender?
+- Tarea 3: Encontrar una "Value Bet" (Apuesta de valor)
+  - ¿Entiende qué significa "Value Bet"?
+- Tarea 4: Analizar la influencia de la intuición o pasión en las apuestas.
+  - ¿Qué funcionalidades podrían ayudarte a controlar las apuestas emocionales?
+- Tarea 5: Buscar partidos específicos con filtros en Filters and Search
+  - ¿Los filtros que usaste te ayudaron a encontrar el partido correcto?
+- Tarea 6: Seleccionar y ver detalles de un partido.
+  - ¿La visualización de los datos es clara y comprensible?
+- Tarea 7: Visualizar datos históricos de partidos
+  - ¿Los datos son comprensibles?
+- Tarea 8: Visualizar equipos y añadir a favoritos.
+  - ¿Agregar equipos a favoritos resulta sencillo?
+- Tarea 9: Revisar y Configurar notificaciones.
+  - ¿Las notificaciones recibidas son relevantes y oportunas?
+
+**Tareas y preguntas para el segmento Fanáticos del Fútbol:**
+
+- Tarea 1: Buscar ligas, equipos o selecciones.
+  - ¿Puedes visualizar fácilmente las ligas o equipos de tu interés?
+- Tarea 2: Explorar las opciones y la interfaz de la aplicación
+  - ¿Cómo te sientes con la facilidad de uso de la app?
+- Tarea 3: Visualizar dashboard con métricas.
+  - ¿La presentación de la información es clara y atractiva para ti?
+- Tarea 4: Encontrar una "Value Bet" (Apuesta de valor)
+  - ¿Te interesa esta función aunque no apuestes?
+- Tarea 5: Analizar la influencia de la intuición o pasión en las apuestas.
+  - Aunque no apuestes, ¿la pasión influye en cómo percibes las predicciones?
+- Tarea 6: Buscar partidos específicos con filtros en Filters and Search.
+  - ¿Los filtros usados te ayudan a encontrar partidos de interés?
+- Tarea 7: Seleccionar y ver detalles de un partido.
+  - ¿La información mostrada cumple con tus expectativas?
+- Tarea 8: Visualizar datos históricos de partidos
+  - ¿Los datos son comprensibles?
+- Tarea 9: Visualizar equipos y añadir a favoritos.
+  - ¿Qué tan útil te resulta marcar equipos como favoritos?
+- Tarea 10: Revisar y Configurar notificaciones.
+  - ¿Las notificaciones actuales captan tu atención y te aportan valor?
+
+<br>
+
 ### 7.3.2. Registro de Entrevistas
+<!--
+**Segmento Apostadores frecuentes:**
 
+|     Entrevistado     |    Daniel Chipana    |
+|:---------------------|----------------------|
+| Edad                 | N/A  |
+| Distrito             | N/A  |
+| Screenshot           | ![](./assets/) |
+| Inicio de entrevista | Minuto 0:00 |
+| Duración             | 3:19 minutos |
+| Resumen              |  Prefiere apuestas combinadas. Considera fundamental la rapidez de pronósticos. Usa móvil como principal canal, consulta alineaciones y estadísticas previas. Personalidad racional y metódica.  |
+| URL del video       | <> |
+
+<br>
+
+**Segmento Fanáticos del fútbol:**
+
+|     Entrevistado     |    David Rivas    |
+|:---------------------|----------------------|
+| Edad                 | 22  |
+| Distrito             | San Martín de Porres  |
+| Screenshot           | ![](./assets/.png) |
+| Inicio de entrevista | Minuto 18:23 |
+| Duración             | 4:46 minutos |
+| Resumen              |  |
+| URL del video       | <> |
+
+
+
+<br>
+-->
 ### 7.3.3. Evaluaciones según heurísticas
+<!--
+Aplicación del Formato para Evaluación de User Experience según Heurísticas
 
+- **SITE o APP A EVALUAR:**
+
+  Aplicación web y movíl Betalyze
+
+- **Tareas a Evaluar:**
+
+  1. 
+  2. 
+
+- **Escala de Severidad:**
+
+ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
+
+| Nivel | Descripción |
+|-------|:------------|
+| 1 | Problema superficial: puede ser fácilmente superador por el usuario ó ocurre con muy poco frecuencia. No necesita ser arreglado a no ser que exista disponibilidad de tiempo. |
+| 2 | Problema menor: puede ocurrir un poco más frecuentemente o es un poco más difícil de superar para el usuario. Se le debería asignar una prioridad baja resolverlo de cara al siguiente reléase. |
+| 3 | Problema mayor: ocurre frecuentemente o los usuarios no son capaces de resolverlos. Es importante que sean corregidos y se les debe asignar una prioridad alta. |
+| 4 | Problema muy grave: un error de gran impacto que impide al usuario continuar con el uso de la herramienta. Es imperativo que sea corregido antes del lanzamiento.  |
+
+- **Tabla Resumen:**
+
+| # | Problema | Escala de severidad | Heurística/Principio violada(o) |
+|---|:---------|---------------------|:--------------------------------|
+| 1 |  | 3 |  |
+| 2 |  | 3 |  |
+| 3 |  | 3 |  |
+
+- **Descripción De Problemas:**
+
+
+
+<br>
+-->
 ## 7.4. Video About-the-Product
 
 ---
