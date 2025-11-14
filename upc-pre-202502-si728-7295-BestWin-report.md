@@ -255,9 +255,9 @@ Se utilizaron Git y Github para el versionamiento y gestión del proyecto, lo cu
   - [7.1.3. Source Code Style Guide & Conventions](#713-source-code-style-guide-conventions)
   - [7.1.4. Software Deployment Configuration](#714-software-deployment-configuration)
 - [7.2. Solution Implementation](#72-solution-implementation)
-  - [7.2.1. Sprint n](#721-sprint-n)
-    - [7.2.1.1. Sprint Planning n](#7211-sprint-planning-n)
-    - [7.2.1.2. Sprint Backlog n](#7212-sprint-backlog-n)
+  - [7.2.1. Sprint 1](#721-sprint-1)
+    - [7.2.1.1. Sprint Planning 1](#7211-sprint-planning-1)
+    - [7.2.1.2. Sprint Backlog 1](#7212-sprint-backlog-1)
     - [7.2.1.3. Development Evidence for Sprint Review](#7213-development-evidence-for-sprint-review)
     - [7.2.1.4. Testing Suite Evidence for Sprint Review](#7214-testing-suite-evidence-for-sprint-review)
     - [7.2.1.5. Execution Evidence for Sprint Review](#7215-execution-evidence-for-sprint-review)
@@ -3278,7 +3278,7 @@ Dentro de nuestra organización en GitHub, se encuentran los repositorios corres
 | Producto | URL del Repositorio |
 |:--------:|:--------------------|
 | Landing Page | https://github.com/upc-pre-202520-7295/Landing-Page |
-| Web Service | https://github.com/upc-pre-202520-7295/Web-Service |
+| Web Service | https://github.com/upc-pre-202520-7295/Backend |
 | Web Application | https://github.com/upc-pre-202520-7295/Web-Application |
 | Mobile Application | https://github.com/upc-pre-202520-7295/Mobile-Application |
 
@@ -3397,11 +3397,11 @@ Este sprint se orientó a entregar la primera versión de los productos de nuest
     </tr>
     <tr>
       <td>Sprint 1 Velocity</td>
-      <td><strong> SP</strong></td>
+      <td><strong> 35 </strong></td>
     </tr>
     <tr>
       <td>Sum of Story Points</td>
-      <td><strong> SP</strong></td>
+      <td><strong> 35 </strong></td>
     </tr>
   </tbody>
 </table>
@@ -3409,12 +3409,12 @@ Este sprint se orientó a entregar la primera versión de los productos de nuest
 <br>
 
 #### 7.2.1.2. Sprint Backlog 1
-<!--
+
 Como primer Sprint de Betalyze, nos enfocamos en las historias de usuario que establecen el núcleo de nuestra propuesta de solución, permitiendo a los usuarios acceder a información relevante del negocio, métricas de equipos y alertas de partidos, mientras se completaba la primera fase del desarrollo de la aplicación móvil, la web, y los servicios de dominio centrales. Esto con la finalidad de demostrar las funciones básicas del MVP y podamos obtener las primeras impresiones sobre el valor entregado y la estabilidad de las aplicaciones.
 
-[![image.png]()]()
+[![image.png](./assets/cap-7/trello-backlog.png)]()
 
-**URL publico de trello:** <>
+**URL publico de trello:** <https://trello.com/b/xOXH5kca/betalyze>
 
 <table border="1">
     <thead>
@@ -3439,46 +3439,274 @@ Como primer Sprint de Betalyze, nos enfocamos en las historias de usuario que es
         <td> Status (To-do / In-Process / To-Review / Done) </td>
       </tr>
       <tr>
-        <td>US001</td>
-        <td>  </td>
+        <td>US15</td>
+        <td> Identificación de la Propuesta de Valor </td>
         <td>TA1</td>
-        <td>  </td>
-        <td>  </td>
+        <td> Desarrollo de Hero section </td>
+        <td> Implementación y verificación de textos clave (título, subtítulo, insignia ML) y estadísticas en la sección principal para comunicar la propuesta de valor. </td>
         <td>02</td>
-        <td>  </td>
+        <td> Diego Soriano </td>
         <td> Done </td>
       </tr>
       <tr>
         <td></td><td></td>
         <td>TA2</td>
-        <td>  </td>
-        <td>  </td>
+        <td> Desarrollo de Benefits section </td>
+        <td> Implementación y verificación de los 6 "Benefit Cards" para detallar el valor de Betalyze. </td>
         <td>02</td>
-        <td>  </td>
+        <td> Renzo Loli </td>
         <td> Done </td>
     </tr>
     <tr>
-        <td>US002</td>
-        <td>  </td>
+        <td>US16</td>
+        <td> Validación del Funcionamiento </td>
         <td>TA1</td>
-        <td>  </td>
-        <td>  </td>
+        <td> Desarrollo de How It Works section </td>
+        <td> Implementación y verificación de los 3 pasos de funcionamiento (Seleccionar, Comprobar, Decidir) en la sección "How does it work?". </td>
         <td>03</td>
-        <td>  </td>
+        <td> Renzo Loli </td>
         <td>Done</td>
     </tr>
     <tr>
         <td></td><td></td>
         <td>TA2</td>
-        <td>  </td>
-        <td>  </td>
+        <td> Enlace del CTA del Proceso </td>
+        <td> Conexión del botón "Try the app" en la sección "How It Works" con la acción o URL de acceso al producto/app. </td>
+        <td>01</td>
+        <td> André Bernaola </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US17</td>
+        <td> Disponibilidad y Acceso Móvil </td>
+        <td>TA1</td>
+        <td> Inclusión de Mockups Móvil/Web en Hero </td>
+        <td> Implementación de los mockups (Mobile Mockup y Desktop Mockup) en la Hero Section para mostrar la disponibilidad en ambos dispositivos. </td>
+        <td>02</td>
+        <td> André Bernaola </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Desarrollo de Sección CTA Principal </td>
+        <td> Implementación y verificación de los botones de descarga de la aplicación móvil y acceso web en la sección CTA final. </td>
+        <td>01</td>
+        <td> André Bernaola </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US18</td>
+        <td> Exploración de Acceso Gratuito </td>
+        <td>TA1</td>
+        <td> Revisión de Botones de Descarga/Acceso </td>
+        <td> Verificación de que los botones de CTA principal incluyen texto que indique el acceso gratuito. </td>
+        <td>02</td>
+        <td> Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Desarrollo de Indicadores de Confianza </td>
+        <td> Implementación de las características de prueba en la sección CTA. </td>
+        <td>02</td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US19</td>
+        <td> Evaluación de Interfaz y Herramientas Avanzadas </td>
+        <td>TA1</td>
+        <td> Desarrollo de Screenshots section - Mobile </td>
+        <td> Implementación de la galería de capturas de pantalla móviles y la lista de características específicas del móvil. </td>
+        <td>02</td>
+        <td> André Bernaola </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Desarrollo de Screenshots section - Web </td>
+        <td> Implementación de la captura de pantalla del "Web Dashboard" y la lista de características avanzadas de la versión web. </td>
+        <td>02</td>
+        <td> Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US01</td>
+        <td> Visualizar probabilidades en el Dashboard </td>
+        <td>TA1</td>
+        <td> Desarrollo del Endpoint de Partidos </td>
+        <td> Crear el servicio Backend para entregar los datos de partidos, hora, fecha y probabilidades al Dashboard. </td>
         <td>03</td>
-        <td>  </td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Implementación de Cards en Dashboard (Móvil/Web) </td>
+        <td> Desarrollar la interfaz para mostrar las cards de partidos con hora, fecha y probabilidades en la sección Dashboard. </td>
+        <td>02</td>
+        <td> André Bernaola, Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US04</td>
+        <td> Buscar partidos por nombre </td>
+        <td>TA1</td>
+        <td> Desarrollo de Componente de Filtrado y Búsqueda (Móvil/Web) </td>
+        <td> Implementar la página/sección Filters and Search con el formulario para filtrar y buscar partidos. </td>
+        <td>03</td>
+        <td> André Bernaola, Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Lógica de Búsqueda por Nombre en Backend </td>
+        <td> Implementar la lógica de filtrado en el servicio Backend (Spring Boot) para permitir buscar partidos por el nombre del equipo. </td>
+        <td>03</td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US05</td>
+        <td> Ver historial visual </td>
+        <td>TA1</td>
+        <td> Diseño y Desarrollo de Componente de Historial (Móvil/Web) </td>
+        <td> Implementar la tabla de Metrics and History para mostrar el historial de partidos pasados con sus datos. </td>
+        <td>02</td>
+        <td> André Bernaola, Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Integración de Datos Históricos con Frontend </td>
+        <td> Desarrollar el servicio Backend para extraer y entregar datos históricos de partidos. </td>
+        <td>03</td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US06</td>
+        <td> Ver métricas de desempeño </td>
+        <td>TA1</td>
+        <td> Integración de Métricas en el Servicio de Detalles </td>
+        <td> Modificar el servicio Backend de partidos para incluir detalles dentro de los datos de cada partido. </td>
+        <td>02</td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Implementación de Visualización de Métricas en Detalle (Móvil/Web) </td>
+        <td> Desarrollar el componente Match Details para mostrar los detalles del partido seleccionado. </td>
+        <td>03</td>
+        <td> André Bernaola, Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US07</td>
+        <td> Recibir alertas antes del partido </td>
+        <td>TA1</td>
+        <td> Desarrollo del Servicio de Generación de Notificaciones </td>
+        <td> Crear un servicio en el Backend que genere notificaciones diarias basadas en los equipos favoritos del usuario. </td>
+        <td>04</td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Implementación de la Interfaz de Notificaciones </td>
+        <td> Desarrollar la página Notificaciones para mostrar la lista de alertas. </td>
+        <td>03</td>
+        <td> André Bernaola, Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US08</td>
+        <td> Configurar alertas personalizadas </td>
+        <td>TA1</td>
+        <td> Desarrollo de Lógica de Preferencias de Notificación </td>
+        <td> Implementar la capacidad en el Backend para almacenar y aplicar preferencias de notificaciones. </td>
+        <td>04</td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Implementación de Opciones de Configuración de Alertas (Web/Móvil) </td>
+        <td> Desarrollar el formulario o sección de configuración donde el usuario pueda configurar las preferencias de notificaciones. </td>
+        <td>03</td>
+        <td> André Bernaola, Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US09</td>
+        <td> Guardar equipos favoritos </td>
+        <td>TA1</td>
+        <td> Desarrollo de la funcionalidad de Favoritos en Backend </td>
+        <td> Crear un servicio Backend para gestionar el estado de "favorito" de un equipo y entregar las listas de equipos seguidos/no seguidos. </td>
+        <td>04</td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Implementación de la Interfaz de Favoritos (Móvil/Web) </td>
+        <td> Desarrollar la sección Favorites con las cards de equipos y el icono de estrella para marcar/desmarcar equipos. </td>
+        <td>03</td>
+        <td> André Bernaola, Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US11</td>
+        <td> Ver detalles de partido </td>
+        <td>TA1</td>
+        <td> Desarrollo del Enlace entre Listado y Detalle (Móvil/Web) </td>
+        <td> Implementar la lógica que redirige y pasa el identificador del partido al seleccionar un card en la sección Filters and Search al Match Details. </td>
+        <td>03</td>
+        <td> André Bernaola, Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Desarrollo de la Página de Detalles del Partido (Móvil/Web) </td>
+        <td> Desarrollar el componente Match Details para visualizar todos los datos específicos del partido obtenidos del Backend. </td>
+        <td>04</td>
+        <td> André Bernaola, Diego Soriano </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US13</td>
+        <td> Integración con API de casas de apuestas </td>
+        <td>TA1</td>
+        <td> Integración con API </td>
+        <td> Configurar la integración en el Backend con API de terceros para obtener datos. </td>
+        <td>03</td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Automatización de Tarea de Actualización Diaria </td>
+        <td> Implementar un proceso programado para actualizar automáticamente las cuotas al menos una vez al día. </td>
+        <td>03</td>
+        <td> Renzo Loli </td>
         <td>Done</td>
     </tr>
     </tbody>
 </table>
--->
+
 <br>
 
 #### 7.2.1.3. Development Evidence for Sprint Review
