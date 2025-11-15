@@ -3930,53 +3930,88 @@ Continuamos con pedir a un usuario por cada segmento que realice tareas específ
 <br>
 
 ### 7.3.2. Registro de Entrevistas
-<!--
-**Segmento Apostadores frecuentes:**
+
+**Segmento Apostadores Frecuentes:**
 
 |     Entrevistado     |    Daniel Chipana    |
 |:---------------------|----------------------|
-| Edad                 | N/A  |
-| Distrito             | N/A  |
-| Screenshot           | ![](./assets/) |
+| Edad                 | 25  |
+| Distrito             | Magdalena  |
+| Screenshot           | ![](./assets/cap-7/validation-1.png) |
 | Inicio de entrevista | Minuto 0:00 |
-| Duración             | 3:19 minutos |
-| Resumen              |  Prefiere apuestas combinadas. Considera fundamental la rapidez de pronósticos. Usa móvil como principal canal, consulta alineaciones y estadísticas previas. Personalidad racional y metódica.  |
-| URL del video       | <> |
+| Duración             | 7:43 minutos |
+| Resumen              | El entrevistado, valoró positivamente la aplicación en general, pero ofreció varias apreciaciones clave para mejorar la experiencia de usuario y la visualización de datos. En cuanto al diseño, sugirió que la diferenciación de equipos mediante colores y la inclusión de los logos/escudos, además de los nombres, sería mucho mejor para distinguir rápidamente a los participantes. Respecto a la usabilidad, encontró que la sección de "apuestas de valor" debería mostrar más partidos por pantalla para evitar tener que desplazarse demasiado. Finalmente, encontró muy bueno y útil el sistema de notificaciones y favoritos, ya que le avisarían sobre partidos de sus equipos predilectos, especialmente de ligas internacionales de las que no siempre se está al tanto. |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/IQCggn61UIjfR67O0y-asHOOASj5tKbCyxdciSz9LOPzINU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=TUEaDr> |
+
+|     Entrevistado     |   Gerson Ambrosio    |
+|:---------------------|----------------------|
+| Edad                 | 20  |
+| Distrito             | Callao  |
+| Screenshot           | ![](./assets/cap-7/validation-2.png) |
+| Inicio de entrevista | Minuto 7:44 |
+| Duración             | 13:07 minutos |
+| Resumen              | El segundo entrevistado demostró una comprensión clara del concepto de "Value Bet". Consideró la funcionalidad de los filtros como muy útil y práctica para segmentar rápidamente los partidos por equipo, liga o condición, eliminando la necesidad de buscar individualmente. En la sección de detalles del partido, el entrevistado enfatizó que los datos de probabilidad, el promedio de goles y el historial de los equipos son cruciales y muy comprensibles, siendo esta información de gran interés para él, que se enfoca en el mercado de goles. Además, calificó la función de favoritos como sencilla y útil, ya que le permitiría saltar pasos al recomendarle directamente los partidos de los equipos en los que confía y está acostumbrado a apostar. Por último, consideró que las notificaciones son relevantes y oportunas, sirviendo como un valioso historial para mantenerse informado sobre los resultados de otros encuentros mientras sigue un partido de interés principal. |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/IQCggn61UIjfR67O0y-asHOOASj5tKbCyxdciSz9LOPzINU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=TUEaDr> |
 
 <br>
 
 **Segmento Fanáticos del fútbol:**
 
-|     Entrevistado     |    David Rivas    |
+|     Entrevistado     |    Sebastian Pacheco    |
 |:---------------------|----------------------|
 | Edad                 | 22  |
-| Distrito             | San Martín de Porres  |
-| Screenshot           | ![](./assets/.png) |
-| Inicio de entrevista | Minuto 18:23 |
-| Duración             | 4:46 minutos |
-| Resumen              |  |
-| URL del video       | <> |
+| Distrito             | Cercado de Lima  |
+| Screenshot           | ![](./assets/cap-7/validation-3.png) |
+| Inicio de entrevista | Minuto 20:52 |
+| Duración             | 11:11 minutos |
+| Resumen              | El entrevistado encontró que la Landing Page era descriptiva y clara, generando más intención de descargar la versión móvil que la web. Sintió que la aplicación satisface sus necesidades como fanático, confiando en los porcentajes de las predicciones, aunque le gustaría ver más contenido que solo listas en el Home. Consideró la aplicación fácil de usar, la presentación de la información clara y atractiva, y mostró interés en la función de "apuestas de valor" por su confianza en las probabilidades. Finalmente, consideró que la función de favoritos/notificaciones es excelente y muy útil para un fanático que sigue múltiples equipos. |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/IQCggn61UIjfR67O0y-asHOOASj5tKbCyxdciSz9LOPzINU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=TUEaDr> |
 
+|     Entrevistado     |    Rodrigo Chirinos    |
+|:---------------------|----------------------|
+| Edad                 | 21  |
+| Distrito             | Puente Piedra  |
+| Screenshot           | ![](./assets/cap-7/validation-4.png) |
+| Inicio de entrevista | Minuto 32:04 |
+| Duración             | 6:25 minutos |
+| Resumen              | El entrevistado percibió rápidamente que la plataforma se centra en análisis y predicciones de fútbol, y consideró los beneficios listados como relevantes. Comprendió el origen de los datos de probabilidades, aunque sugirió que la transparencia del modelo podría explicarse mejor de forma visual. Sintió que la aplicación es fácil de usar y la información del Dashboard es clara, concisa y atractiva. Afirmó que las funciones son interesantes y relevantes incluso sin ser un apostador. Consideró que los filtros, los detalles de partidos cumplen sus expectativas y las funciones de favoritos y notificaciones son útiles y aportan valor. |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/IQCggn61UIjfR67O0y-asHOOASj5tKbCyxdciSz9LOPzINU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=TUEaDr> |
+
+|     Entrevistado     |    Daniel Ruiz    |
+|:---------------------|----------------------|
+| Edad                 | 20  |
+| Distrito             | Cercado de Lima |
+| Screenshot           | ![](./assets/cap-7/validation-5.png) |
+| Inicio de entrevista | Minuto 38:31 |
+| Duración             | 9:22 minutos |
+| Resumen              | El entrevistado entendió claramente el apartado de "apuestas de valor", que muestra la probabilidad del equipo ganador, la cuota y el porcentaje de incremento potencial de la apuesta. Encontró el apartado de filtros muy interesante, ya que permite ver datos extra como las estadísticas de los últimos 5 partidos y la media de goles. La característica de favoritos y notificaciones le pareció muy buena y productiva, ya que asegura recibir anuncios inmediatos sobre los partidos de su equipo predilecto. Consideró que la aplicación es intuitiva, muy simple y fácil de usar, sintiendo que en el momento la navegación es óptima y no requiere más opciones. Además, afirmó que los datos influyen más que la pasión al considerar la conveniencia de una apuesta. |
+| URL del video       | <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/IQCggn61UIjfR67O0y-asHOOASj5tKbCyxdciSz9LOPzINU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=TUEaDr> |
 
 
 <br>
--->
+
 ### 7.3.3. Evaluaciones según heurísticas
-<!--
+
 Aplicación del Formato para Evaluación de User Experience según Heurísticas
 
 - **SITE o APP A EVALUAR:**
 
-  Aplicación web y movíl Betalyze
+  Aplicación Web y Móvil de Betalyze
 
 - **Tareas a Evaluar:**
 
-  1. 
-  2. 
+  1. Explorar la interfaz y navegación de la aplicación
+  2. Visualizar dashboard con métricas
+  3. Encontrar y comprender la función "Value Bet"
+  4. Buscar partidos específicos con filtros
+  5. Seleccionar y ver detalles de un partido
+  6. Visualizar datos históricos de partidos
+  7. Visualizar equipos y añadir a favoritos
+  8. Revisar y configurar notificaciones 
 
 - **Escala de Severidad:**
 
- Los errores serán puntuados tomando en cuenta la siguiente escala de severidad
+ Los errores serán puntuados tomando en cuenta la siguiente escala de severidad:
 
 | Nivel | Descripción |
 |-------|:------------|
@@ -3989,16 +4024,26 @@ Aplicación del Formato para Evaluación de User Experience según Heurísticas
 
 | # | Problema | Escala de severidad | Heurística/Principio violada(o) |
 |---|:---------|---------------------|:--------------------------------|
-| 1 |  | 3 |  |
-| 2 |  | 3 |  |
-| 3 |  | 3 |  |
+| 1 | La visualización de equipos solo muestra nombres, sin colores ni logos, dificultando la diferenciación rápida. | 3 | Visibilidad del estado del sistema |
+| 2 | La sección de "Value Bet" muestra solo un partido por fila, obligando a desplazarse mucho para ver más opciones. | 3 | Eficiencia de uso |
+| 3 | La transparencia del origen de los datos de probabilidades y el modelo de predicción no es clara. | 3 | Ayuda y documentación |
 
 - **Descripción De Problemas:**
 
+    1. **Falta de diferenciación visual de equipos:**  
+     Los usuarios encuentran difícil distinguir rápidamente entre equipos solo por el nombre, ya que no se muestran colores ni logos. Esto afecta la experiencia de navegación y la rapidez con la que se puede identificar los partidos de interés.  
+     **Heurística: Visibilidad del estado del sistema**
 
+  2. **Diseño poco eficiente en la sección de "Value Bet":**  
+     Mostrar solo un partido por fila en la sección de "Value Bet" obliga a los usuarios a desplazarse mucho para ver más opciones, lo que reduce la eficiencia y la facilidad de uso.  
+     **Heurística: Eficiencia de uso**
+
+  3. **Falta de transparencia en el origen de los datos y modelo de predicción:**  
+     Los usuarios no comprenden claramente cómo se generan las probabilidades y predicciones, y la explicación visual o textual del modelo es insuficiente. Esto puede generar desconfianza y limitar la utilidad de la función.  
+     **Heurística: Ayuda y documentación**
 
 <br>
--->
+
 ## 7.4. Video About-the-Product
 
 ---
@@ -4060,3 +4105,7 @@ Aplicación del Formato para Evaluación de User Experience según Heurísticas
   - TB1: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/EUFo42ngXedIsmeE3Vx9oKoBfPEjLXUTDkpKC4kjpuMcAw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=udaAU6>
 
   - Trabajo Parcial: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/EUFo42ngXedIsmeE3Vx9oKoBfPEjLXUTDkpKC4kjpuMcAw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=cwkzjf>
+
+- **URL video de entrevistas de validación:**
+
+  - <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114793_upc_edu_pe/IQCggn61UIjfR67O0y-asHOOASj5tKbCyxdciSz9LOPzINU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=TUEaDr>
