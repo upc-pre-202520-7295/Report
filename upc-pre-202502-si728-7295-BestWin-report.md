@@ -3795,44 +3795,155 @@ Esta sección inicia con un resumen que explique lo alcanzado en este Sprint y p
 <br>
 
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review
-<!--
-Introducción en la que se resume los logros alcanzados en relación con Documentación de Web Services para este Sprint.
+**Introducción**
 
-A continuación, se presenta la relación de endpoints documentados con OpenAPI, dentro del alcance de nuestro primer Sprint:
+Durante este Sprint se logró implementar y documentar completamente la API REST de Betalyze utilizando el estándar OpenAPI 3.0.1. Se desarrollaron un total de 19 endpoints distribuidos en 5 bounded contexts funcionales: Users, DataRetrieval, Notifications, Favorites y Prediction & Analytics. Todos los endpoints fueron documentados con especificaciones detalladas incluyendo parámetros, esquemas de request/response y configuración de seguridad mediante JWT. Este trabajo establece la base completa de los servicios web que soportan nuestra plataforma de predicción y análisis deportivo.
 
-<br>
+A continuación, se presenta la relación de endpoints documentados con OpenAPI, dentro del alcance de nuestro Sprint:
 
-Debe elaborarse una tabla en la que se incluya, para cada Endpoint, la indicación de acciones implementadas, junto con los enlaces correspondientes a la documentación desplegada (o URL local en Sprints previos al despliegue de Web Services). Indicar las acciones soportadas incluyendo para cada acción el verbo http (get, post, put, delete, patch), sintaxis de llamada, especificación de posibles parámetros, así como ejemplo y explicación del response. 
-Adicionalmente, debe incluirse y explicarse capturas en imágenes de la interacción, utilizando datos de muestra, con la documentación elaborada. Debe incluirse el URL del repositorio de Web Services, junto con los id de los commits elacionados con Documentación para este Sprint.
-
-<br>
-
-**Bounded Context**
+- **Bounded Context: Users**
 
 | Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
 |----------|------------------------|------------|---------------------|------------|
-| /api/v1/ /{} |  | GET | GET /api/v1/ /{} | {} |
-| /api/v1/ /{} |  | PUT | PUT /api/v1/ /{} | {} \ Request body |
-| /api/v1/ /{} |  | PUT | PUT /api/v1/ /{} | {} \ Request body |
-| /api/v1/ /{} |  | GET | GET /api/v1/ /{} | {} |
+| /api/v1/auth/register | Registro de nuevos usuarios | POST | POST /api/v1/auth/register | Request body: email, password, fullName |
+| /api/v1/auth/login | Autenticación de usuarios | POST | POST /api/v1/auth/login | Request body: email, password |
+| /api/v1/users/user/{userId}/profile | Obtener perfil de usuario | GET | GET /api/v1/users/user/{userId}/profile | userId (path) \ Bearer token |
 
 **Ejemplos de Ejecución y Respuesta:**
 
-|         Petición        |                Respuesta             |
-|-------------------------|--------------------------------------|
-| GET /api/v1/ / | 200 OK - ... en formato JSON. |
-| PUT /api/v1/ / {  } | 200 OK - Retorna los datos ... en formato JSON. |
-| PUT /api/v1/ / {  } | 200 OK - Retorna los datos ... en formato JSON. |
-| GET /api/v1/ / | 200 OK - Retorna ... en formato JSON. |
+| Petición | Respuesta |
+|----------|-----------|
+| POST /api/v1/auth/register { "email": "usuario@ejemplo.com", "password": "Pass123!", "fullName": "Juan Pérez" } | 200 OK - Retorna los datos del usuario registrado con su token JWT en formato JSON. |
+| POST /api/v1/auth/login { "email": "usuario@ejemplo.com", "password": "Pass123!" } | 200 OK - Retorna los datos del usuario autenticado con su token JWT en formato JSON. |
+| GET /api/v1/users/user/550e8400-e29b-41d4-a716-446655440000/profile | 200 OK - Retorna el email y nombre completo del usuario en formato JSON. |
 
-<br>
+- **Bounded Context: DataRetrieval**
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/teams | Listar todos los equipos | GET | GET /api/v1/teams | Bearer token |
+| /api/v1/teams/{teamId} | Obtener equipo por ID | GET | GET /api/v1/teams/{teamId} | teamId (path) \ Bearer token |
+| /api/v1/matches/ | Listar todos los partidos | GET | GET /api/v1/matches/ | Bearer token |
+| /api/v1/matches/today | Obtener partidos del día | GET | GET /api/v1/matches/today | Bearer token |
+| /api/v1/matches/refresh/{season} | Actualizar partidos manualmente | POST | POST /api/v1/matches/refresh/{season} | season (path) \ Bearer token |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+| Petición | Respuesta |
+|----------|-----------|
+| GET /api/v1/teams | 200 OK - Retorna la lista completa de equipos con id, nombre e imagen en formato JSON. |
+| GET /api/v1/teams/550e8400-e29b-41d4-a716-446655440000 | 200 OK - Retorna los datos del equipo específico en formato JSON. |
+| GET /api/v1/matches/ | 200 OK - Retorna todos los partidos con información de equipos, scores y fechas en formato JSON. |
+| GET /api/v1/matches/today | 200 OK - Retorna los partidos programados para hoy en formato JSON. |
+| POST /api/v1/matches/refresh/2025 | 200 OK - Actualiza los datos de partidos de la temporada especificada. |
+
+- **Bounded Context: Notifications**
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/notifications/user/{userId}/notifications | Obtener todas las notificaciones | GET | GET /api/v1/notifications/user/{userId}/notifications | userId (path) \ Bearer token |
+| /api/v1/notifications/user/{userId}/unread | Obtener notificaciones no leídas | GET | GET /api/v1/notifications/user/{userId}/unread | userId (path) \ Bearer token |
+| /api/v1/notifications/user/{userId}/notification | Enviar notificación | POST | POST /api/v1/notifications/user/{userId}/notification | userId (path) \ Request body: title, message, imageUrl \ Bearer token |
+| /api/v1/notifications/user/{userId}/notification/{id}/read | Marcar como leída | PUT | PUT /api/v1/notifications/user/{userId}/notification/{id}/read | userId (path), id (path) \ Bearer token |
+| /api/v1/notifications/user/{userId}/fcm-token/{token} | Actualizar token FCM | PUT | PUT /api/v1/notifications/user/{userId}/fcm-token/{token} | userId (path), token (path) \ Bearer token |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+| Petición | Respuesta |
+|----------|-----------|
+| GET /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/notifications | 200 OK - Retorna el historial completo de notificaciones del usuario en formato JSON. |
+| GET /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/unread | 200 OK - Retorna las notificaciones no leídas en formato JSON. |
+| POST /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/notification { "title": "Nuevo partido", "message": "Real Madrid vs Barcelona", "imageUrl": "..." } | 200 OK - Notificación enviada exitosamente. |
+| PUT /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/notification/notification-id/read | 200 OK - Notificación marcada como leída. |
+| PUT /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/fcm-token/fcm-token-123 | 200 OK - Token FCM actualizado correctamente. |
+
+- **Bounded Context: Favorites**
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/teams/user/{userId}/favorite | Listar equipos favoritos | GET | GET /api/v1/teams/user/{userId}/favorite | userId (path) |
+| /api/v1/teams/user/{userId}/favorite/{teamId} | Agregar equipo a favoritos | POST | POST /api/v1/teams/user/{userId}/favorite/{teamId} | userId (path), teamId (path) |
+| /api/v1/teams/user/{userId}/favorite/{teamId} | Eliminar equipo de favoritos | DELETE | DELETE /api/v1/teams/user/{userId}/favorite/{teamId} | userId (path), teamId (path) |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+| Petición | Respuesta |
+|----------|-----------|
+| GET /api/v1/teams/user/550e8400-e29b-41d4-a716-446655440000/favorite | 200 OK - Retorna la lista de equipos favoritos del usuario en formato JSON. |
+| POST /api/v1/teams/user/550e8400-e29b-41d4-a716-446655440000/favorite/team-id-123 | 200 OK - Equipo agregado a favoritos exitosamente. |
+| DELETE /api/v1/teams/user/550e8400-e29b-41d4-a716-446655440000/favorite/team-id-123 | 200 OK - Equipo eliminado de favoritos exitosamente. |
+
+- **Bounded Context: Prediction & Analytics**
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/predictions/predict/{homeTeamId}/{awayTeamId} | Generar predicción de partido | POST | POST /api/v1/predictions/predict/{homeTeamId}/{awayTeamId} | homeTeamId (path), awayTeamId (path) \ Bearer token |
+| /api/v1/predictions/train | Entrenar modelo ML | POST | POST /api/v1/predictions/train | Bearer token |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+| Petición | Respuesta |
+|----------|-----------|
+| POST /api/v1/predictions/predict/team-001/team-002 | 200 OK - Retorna la predicción con ganador, precisión y goles estimados en formato JSON. |
+| POST /api/v1/predictions/train | 200 OK - Modelo de Machine Learning reentrenado exitosamente. |
 
 **Imágenes y documentación:**
 
-<img src=""/>
+<img src="assets/swagger-auth-endpoints.png"/>
+
+*Documentación OpenAPI de endpoints de autenticación y registro de usuarios*
 
 <br>
--->
+
+<img src="assets/swagger-teams-endpoints.png"/>
+
+*Documentación OpenAPI de endpoints del bounded context DataRetrieval (Teams)*
+
+<br>
+
+<img src="assets/swagger-matches-endpoints.png"/>
+
+*Documentación OpenAPI de endpoints del bounded context DataRetrieval (Matches)*
+
+<br>
+
+<img src="assets/swagger-notifications-endpoints.png"/>
+
+*Documentación OpenAPI de endpoints del bounded context Notifications*
+
+<br>
+
+<img src="assets/swagger-favorites-endpoints.png"/>
+
+*Documentación OpenAPI de endpoints del bounded context Favorites*
+
+<br>
+
+<img src="assets/swagger-predictions-endpoints.png"/>
+
+*Documentación OpenAPI de endpoints del bounded context Prediction & Analytics*
+
+<br>
+
+**Información del Repositorio
+
+**URL del Repositorio Backend:** 
+```
+https://github.com/upc-pre-202520-7295/Backend
+```
+
+**Commits Relacionados con la Documentación del Sprint:**
+
+| Commit ID | Descripción | Autor | Fecha |
+|-----------|-------------|-------|-------|
+| `c9ed27b` | added data retrieval and predictions | 0renzo0loli0 | Nov 14, 2025 |
+| `80de1b3` | Merge branch 'notifications' into develop | diego5m | Nov 13, 2025 |
+| `8e13385` | feat: add notifications | diego5m | Nov 13, 2025 |
+| `f395a6d` | Merge branch 'favorites' into develop | diego5m | Nov 13, 2025 |
+| `189048f` | feat: add favorites | diego5m | Nov 13, 2025 |
+| `1ec2c05` | feat: add user management bounded context | Andr0ita0 | Nov 13, 2025 |
+| `4f2d9dc` | added shared kernel | 0renzo0loli0 | Nov 13, 2025 |
+| `47e51ea` | added base of project | 0renzo0loli0 | Nov 13, 2025 |
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
 <!--
 La sección inicia con una introducción explicando qué se ha realizado con respecto a despliegue durante este Sprint. 
