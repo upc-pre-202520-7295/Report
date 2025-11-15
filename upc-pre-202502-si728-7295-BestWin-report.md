@@ -3776,7 +3776,58 @@ Para el primer Sprint de Betalyze se desarrolló la base de los productos que co
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 |------------|--------|-----------|----------------|---------------------|--------------------|
-|  |  |  |  |  |  |
+| Backend | develop | c9ed27b | added data retrieval and predictions | | 2025-11-14 |
+| Backend | develop | 80de1b3 | Merge branch 'notifications' into develop | | 2025-11-13 |
+| Backend | develop | 8e13385 | feat: add notifications | | 2025-11-13 |
+| Backend | develop | f395a6d | Merge branch 'favorites' into develop | | 2025-11-13 |
+| Backend | develop | 189048f | feat: add favorites | | 2025-11-13 |
+| Backend | develop | 1ec2c05 | feat: add user management bounded context | | 2025-11-13 |
+| Backend | develop | 4f2d9dc | added shared kernel | | 2025-11-13 |
+| Backend | develop | 47e51ea | added base of project | | 2025-11-13 |
+| Landing-Page | develop | fd769db | feat: replace buttons with anchor tags for web version access and update links | | 2025-11-14 |
+| Landing-Page | develop | 7ac83eb | Merge remote-tracking branch 'origin/develop' into develop | | 2025-11-14 |
+| Landing-Page | develop | 18a5cdc | feat: update download buttons to use anchor tags for app download | | 2025-11-14 |
+| Landing-Page | develop | 26ba55c | feat: add script for landing page | | 2025-11-13 |
+| Landing-Page | develop | cddf4b5 | added benefits, about the product and how it works sections | | 2025-11-13 |
+| Landing-Page | develop | d001bbe | feat: add screenshots and CTA sections to index.html | | 2025-11-13 |
+| Landing-Page | develop | 9587831 | feat: images and styles | | 2025-11-12 |
+| Landing-Page | develop | 5019503 | Merge branch 'hero-section' into develop | | 2025-11-12 |
+| Landing-Page | develop | ba85783 | feat: hero-section | | 2025-11-12 |
+| Landing-Page | develop | aa60772 | Merge branch 'language-switcher' into develop | | 2025-11-12 |
+| Landing-Page | develop | 3f1e169 | feat: language-switcher | | 2025-11-12 |
+| Landing-Page | develop | b5b81f8 | chore: add logo | | 2025-11-12 |
+| Landing-Page | develop | 6002943 | feat: index.html | | 2025-11-12 |
+| Web-Application | develop | 773b4db | added predition and analytics bounded | | 2025-11-13 |
+| Web-Application | develop | faadebb | added data retrieval bounded | | 2025-11-13 |
+| Web-Application | develop | 8496ca8 | Delete src/data-retrieval/pages/filters-page directory | | 2025-11-13 |
+| Web-Application | develop | 2c1bed0 | added data retrieval bounded context | | 2025-11-13 |
+| Web-Application | develop | 1247f06 | feat: add betting insights bounded context | | 2025-11-13 |
+| Web-Application | develop | ec89196 | feat: add notifications bounded context | | 2025-11-13 |
+| Web-Application | develop | 8be3a4b | Merge branch 'favorite-teams' into develop | | 2025-11-12 |
+| Web-Application | develop | 3f0c1bd | feat: add favorite user teams page | | 2025-11-12 |
+| Web-Application | develop | 8af8e5f | Merge branch 'user-management' into develop | | 2025-11-12 |
+| Web-Application | develop | dfe4e6a | feat: add user management page | | 2025-11-12 |
+| Web-Application | develop | 3fe4288 | chore: add base service | | 2025-11-12 |
+| Web-Application | develop | ff35158 | Merge branch 'public-pages' into develop | | 2025-11-12 |
+| Web-Application | develop | 1ad8150 | feat: add Home Page | | 2025-11-12 |
+| Web-Application | develop | ae0f308 | feat: add and configure Page not found | | 2025-11-12 |
+| Web-Application | develop | 5afd3c4 | Merge branch 'layout' into develop | | 2025-11-12 |
+| Web-Application | develop | 5637599 | feat: add sidenav | | 2025-11-12 |
+| Web-Application | develop | a1b322b | feat: add header | | 2025-11-12 |
+| Web-Application | develop | 0851794 | feat: project configuration | | 2025-11-12 |
+| Web-Application | develop | d08da0f | chore: add logo | | 2025-11-12 |
+| Web-Application | develop | 8a59e4d | initial commit | | 2025-11-01 |
+| Mobile-Application | develop | 6816ab3 | added data retrieval bounded | | 2025-11-13 |
+| Mobile-Application | develop | 793f6f1 | Merge branch 'betting-insights' into develop | | 2025-11-13 |
+| Mobile-Application | develop | f5d6cb5 | feat: add betting insights | | 2025-11-13 |
+| Mobile-Application | develop | 18c211e | feat: add user entity and model with JSON serialization for IAM bc | | 2025-11-13 |
+| Mobile-Application | develop | 4dff076 | feat: add team model and entity for favorites bc | | 2025-11-13 |
+| Mobile-Application | develop | 04408e4 | feat: implement Firebase messaging setup and token retrieval | | 2025-11-13 |
+| Mobile-Application | develop | 9fec5cf | feat: add shared files | | 2025-11-13 |
+| Mobile-Application | develop | 93db86e | feat: add notifications bc | | 2025-11-13 |
+| Mobile-Application | develop | 7056ddb | feat: add favorite bc | | 2025-11-13 |
+| Mobile-Application | develop | d43ad42 | chore: add initial setup | | 2025-11-13 |
+| Mobile-Application | develop | de0a414 | first commit | | 2025-11-13 |
 
 <br>
 
@@ -3944,6 +3995,9 @@ https://github.com/upc-pre-202520-7295/Backend
 | `1ec2c05` | feat: add user management bounded context | Andr0ita0 | Nov 13, 2025 |
 | `4f2d9dc` | added shared kernel | 0renzo0loli0 | Nov 13, 2025 |
 | `47e51ea` | added base of project | 0renzo0loli0 | Nov 13, 2025 |
+
+<br>
+
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
 <!--
 La sección inicia con una introducción explicando qué se ha realizado con respecto a despliegue durante este Sprint. 
