@@ -3801,7 +3801,7 @@ Durante este Sprint se logró implementar y documentar completamente la API REST
 
 A continuación, se presenta la relación de endpoints documentados con OpenAPI, dentro del alcance de nuestro Sprint:
 
-- **Bounded Context: Users**
+- **Bounded Context: Users** 
 
 | Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
 |----------|------------------------|------------|---------------------|------------|
@@ -3887,7 +3887,7 @@ A continuación, se presenta la relación de endpoints documentados con OpenAPI,
 | POST /api/v1/predictions/predict/team-001/team-002 | 200 OK - Retorna la predicción con ganador, precisión y goles estimados en formato JSON. |
 | POST /api/v1/predictions/train | 200 OK - Modelo de Machine Learning reentrenado exitosamente. |
 
-**Imágenes y documentación:**
+- **Imágenes y documentación:**
 
 <img src="assets/swagger-auth-endpoints.png"/>
 
@@ -3925,7 +3925,7 @@ A continuación, se presenta la relación de endpoints documentados con OpenAPI,
 
 <br>
 
-**Información del Repositorio
+- **Información del Repositorio**
 
 **URL del Repositorio Backend:** 
 ```
