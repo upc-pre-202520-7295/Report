@@ -3802,18 +3802,22 @@ Esta sección resume la evidencia de las pruebas realizadas durante el *Sprint 1
 
 
 #### 7.2.1.5. Execution Evidence for Sprint Review
-<!-- 
-Esta sección inicia con un resumen que explique lo alcanzado en este Sprint y presenta screenshots de las principales vistas implementadas, junto con un enlace a un video que ilustre y explique la visualización y navegación logrados en este Sprint. 
 
-- **Landing Page**
+En esta sección se presenta un resumen conciso de los logros alcanzados durante el Sprint, acompañado de evidencia visual localizada en capturas de pantalla de las vistas principales implementadas y un enlace a un video demostrativo. La evidencia documenta la navegación, los flujos clave y las funcionalidades entregadas, y sirve como soporte para la evaluación y validación durante la revisión del Sprint.
+
+- **App Service**
+
+[![back.jpg](https://i.postimg.cc/BQk2pPD4/back.jpg)](https://postimg.cc/WhmDb3XH)
+
 
 - **Web Application**
 
+  [![web.jpg](https://i.postimg.cc/gJzhjV96/web.jpg)](https://postimg.cc/JyF0dBz1)
+
 - **Mobile Application**
 
--->
+  [![mov.jpg](https://i.postimg.cc/Z5NpMYFY/mov.jpg)](https://postimg.cc/QFXFB3yv)
 
-<br>
 
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review
 **Introducción**
@@ -3969,26 +3973,49 @@ https://github.com/upc-pre-202520-7295/Backend
 <br>
 
 #### 7.2.1.7. Software Deployment Evidence for Sprint Review
-<!--
-La sección inicia con una introducción explicando qué se ha realizado con respecto a despliegue durante este Sprint. 
-Abarca actividades de creación de cuentas, configuración de recursos en cloud providers, configuración de proyectos de desarrollo para integración o automatización de labor de Deployment, entre otros. Se considera dentro del proceso de Deployment todos los productos digitales. Se debe adicionar capturas en imagen y explicaciones de los pasos realizados durante el Sprint.
--->
-<br>
+
+Durante el Sprint 1, el equipo de Betalyze completó el proceso de despliegue de la aplicación web frontend, estableciendo la infraestructura necesaria para que la plataforma esté accesible públicamente. Este proceso incluyó la configuración de la cuenta en Vercel y la conexión con el repositorio de GitHub para habilitar deployments automáticos. A continuación, se detallan los pasos realizados para el despliegue de la aplicación web.
+
+### Deployment de Aplicación Web - Vercel
+
+#### Paso 1: Conexión de GitHub con Vercel
+
+Se accedió a [vercel.com](https://vercel.com) y se creó una cuenta vinculada con GitHub. Desde el dashboard de Vercel, se seleccionó "Add New Project" y se autorizó el acceso al repositorio de la organización `upc-pre-202520-7295`.
+
+#### Paso 2: Configuración y Deploy
+
+Vercel detectó automáticamente que el proyecto es una aplicación Angular. Se presionó el botón **"Deploy"** y Vercel realizó automáticamente:
+- Instalación de dependencias
+- Build del proyecto
+- Despliegue en producción
+
+El deployment se completó exitosamente en aproximadamente 2 minutos.
+
+#### Resultado del Deployment
+
+La aplicación web quedó desplegada y accesible públicamente en la siguiente URL:
+
+**URL de producción:** `https://betalyze-web-aadt.vercel.app/`
+
+Vercel quedó configurado para realizar deployments automáticos cada vez que se realiza un commit a la rama `main` del repositorio.
+
+[![web-deploy.jpg](https://i.postimg.cc/zDpjCfpQ/web-deploy.jpg)](https://postimg.cc/JtDZmMf3)
+
+
 
 #### 7.2.1.8. Team Collaboration Insights during Sprint
-<!--
-explica cómo se han desarrollado las actividades de implementación y se presenta capturas en imagen de los analíticos de colaboración y commits en GitHub, realizados por los miembros del equipo. Todos los miembros del equipo deben tener participación en la implementación de cada uno de los productos según corresponda en el Sprint: Landing Page, Web Services y Aplicaciones
 
-- **Landing Page**
 
-- **Web Application**
+[![web-contributors-insight.png](https://i.postimg.cc/3J5trqS4/web-contributors-insight.png)](https://postimg.cc/4nP6BWTs)
 
-- **Mobile Application**
--->
-<br>
+[![landing-contributors-insight.png](https://i.postimg.cc/02RV54WG/landing-contributors-insight.png)](https://postimg.cc/yWjmvLzW)
+
+[![mobile-contributors-insight.png](https://i.postimg.cc/26g2Z9zr/mobile-contributors-insight.png)](https://postimg.cc/r0C16J0P)
+
+[![backend-contributors-insight.png](https://i.postimg.cc/Nf6pKxS6/backend-contributors-insight.png)](https://postimg.cc/SJKW5cyR)
+
 
 ## 7.3. Validation Interviews
-
 ### 7.3.1. Diseño de Entrevistas
 
 A continuación se establece la estructura para las entrevistas de validación, para los elementos y tareas especificas para nuestros productos Web y Móvil, incluyendo la visita a nuestra Landing Page.
@@ -4177,11 +4204,7 @@ Aplicación del Formato para Evaluación de User Experience según Heurísticas
      Los usuarios no comprenden claramente cómo se generan las probabilidades y predicciones, y la explicación visual o textual del modelo es insuficiente. Esto puede generar desconfianza y limitar la utilidad de la función.  
      **Heurística: Ayuda y documentación**
 
-<br>
 
-## 7.4. Video About-the-Product
-
----
 # Conclusiones
 
 - Como fase inicial del proyecto, nos hemos descrito la problemática de nuestro producto y diseñado la arquitectura correspondiente siguiendo los métodos pertinentes centrandonos en los atributos de calidad más importantes para el negocio, como el rendimiento, la disponibilidad y la escalabilidad. Al aplicar el enfoque de Domain-Driven Design (DDD), pudimos modelar la complejidad del negocio de las apuestas en un sistema más manejable y robusto. Todo este proceso se comunicó de forma clara a diferentes niveles. Usamos un lenguaje técnico para el equipo de desarrollo, lo que permitió que todos entendieran la arquitectura y los objetivos de diseño. Al mismo tiempo, tradujimos estos conceptos considerando a nuestros stakeholders y segmentos objetivos, asegurando su apoyo y alineación con la propuesta de solución. En resumen, al planificar con el usuario y el negocio en mente y al comunicarnos de manera efectiva, logramos sentar las bases para un sistema que estará preparado para un correcto desarrollo e implementación.
