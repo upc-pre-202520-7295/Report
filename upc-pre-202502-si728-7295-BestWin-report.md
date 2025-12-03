@@ -7,7 +7,7 @@
     1ASI0728
     <br><strong>NRC: 7295</strong><br>
     <br><strong>Profesor: Royer Edelwer Rojas Malasquez</strong><br>
-    <br><strong>"Informe de Trabajo Parcial"</strong><br>
+    <br><strong>"Informe de Trabajo Final"</strong><br>
     <br><strong>BestWin Startup</strong><br>
     <strong>Betalyze</strong>
     <br><h3> Integrantes: </h3>
@@ -63,14 +63,12 @@ En esta sección se resumen los avances y modificaciones realizadas durante el c
       <td>BestWin</td>
       <td> Elaboración de la segunda versión del informe que comprende la implementación de productos Web, Móvil y los Servicios Web. Las funcionalidades principales, como Dashboard, Value Bets, Filtros, Favoritos y Detalles de Partido, fueron desarrolladas para ambas plataformas, a la par de realizar la documentación del desarrollo realizado en el reporte. Finalmente, se describieron las entrevistas de validación y se redactó la evaluación según heurísticas para los productos. </td>
     </tr>
-    <!--
     <tr>
       <td>4.0</td>
-      <td>Fecha</td>
+      <td>1/12/2025</td>
       <td>BestWin</td>
       <td>...</td>
     </tr>
-    -->
   </tbody>
 </table>
 <br>
@@ -264,6 +262,16 @@ Se utilizaron Git y Github para el versionamiento y gestión del proyecto, lo cu
     - [7.2.1.6. Services Documentation Evidence for Sprint Review](#7216-services-documentation-evidence-for-sprint-review)
     - [7.2.1.7. Software Deployment Evidence for Sprint Review](#7217-software-deployment-evidence-for-sprint-review)
     - [7.2.1.8. Team Collaboration Insights during Sprint](#7218-team-collaboration-insights-during-sprint)
+  - [7.2.2. Sprint 2](#722-sprint-2)
+    - [7.2.2.1. Sprint Planning 2](#7221-sprint-planning-2)
+    - [7.2.2.2. Sprint Backlog 2](#7222-sprint-backlog-2)
+    - [7.2.2.3. Development Evidence for Sprint Review](#7223-development-evidence-for-sprint-review)
+    - [7.2.2.4. Testing Suite Evidence for Sprint Review](#7224-testing-suite-evidence-for-sprint-review)
+    - [7.2.2.5. Execution Evidence for Sprint Review](#7225-execution-evidence-for-sprint-review)
+    - [7.2.2.6. Services Documentation Evidence for Sprint Review](#7226-services-documentation-evidence-for-sprint-review)
+    - [7.2.2.7. Software Deployment Evidence for Sprint Review](#7227-software-deployment-evidence-for-sprint-review)
+    - [7.2.2.8. Team Collaboration Insights during Sprint](#7228-team-collaboration-insights-during-sprint)
+
 - [7.3. Validation Interviews](#73-validation-interviews)
   - [7.3.1. Diseño de Entrevistas](#731-diseño-de-entrevistas)
   - [7.3.2. Registro de Entrevistas](#732-registro-de-entrevistas)
@@ -3809,24 +3817,23 @@ En esta sección se presenta un resumen conciso de los logros alcanzados durante
 
 [![back.jpg](https://i.postimg.cc/BQk2pPD4/back.jpg)](https://postimg.cc/WhmDb3XH)
 
-link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/IQDOQi_6C5erTZWgQ-4jYqAyAbGYUA0S7kBSx2O0wMsbfSA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=UnCsLe
+link: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/IQDOQi_6C5erTZWgQ-4jYqAyAbGYUA0S7kBSx2O0wMsbfSA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=UnCsLe>
 
 - **Web Application**
 
   [![web.jpg](https://i.postimg.cc/gJzhjV96/web.jpg)](https://postimg.cc/JyF0dBz1)
 
-link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/IQA1ShkQqyKfR5jXEkoSUTJXAUiFGU00qKf-N0ylWpuZobQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=z0qWIp
+link: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/IQA1ShkQqyKfR5jXEkoSUTJXAUiFGU00qKf-N0ylWpuZobQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=z0qWIp>
 
 - **Mobile Application**
 
   [![mov.jpg](https://i.postimg.cc/Z5NpMYFY/mov.jpg)](https://postimg.cc/QFXFB3yv)
 
-link: https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/IQDAXHOQVwFiSqatdSofGbWoAUYTAkaW9HITPJtH3haBDlc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uQBl58
+link: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/IQDAXHOQVwFiSqatdSofGbWoAUYTAkaW9HITPJtH3haBDlc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uQBl58>
 
 
 
 #### 7.2.1.6. Services Documentation Evidence for Sprint Review
-**Introducción**
 
 Durante este Sprint se logró implementar y documentar completamente la API REST de Betalyze utilizando el estándar OpenAPI 3.0.1. Se desarrollaron un total de 19 endpoints distribuidos en 5 bounded contexts funcionales: Users, DataRetrieval, Notifications, Favorites y Prediction & Analytics. Todos los endpoints fueron documentados con especificaciones detalladas incluyendo parámetros, esquemas de request/response y configuración de seguridad mediante JWT. Este trabajo establece la base completa de los servicios web que soportan nuestra plataforma de predicción y análisis deportivo.
 
@@ -3922,46 +3929,46 @@ A continuación, se presenta la relación de endpoints documentados con OpenAPI,
 
 <img src="assets/swagger-auth-endpoints.png"/>
 
-*Documentación OpenAPI de endpoints de autenticación y registro de usuarios*
-
 <br>
+
+*Documentación OpenAPI de endpoints de autenticación y registro de usuarios*
 
 <img src="assets/swagger-teams-endpoints.png"/>
 
-*Documentación OpenAPI de endpoints del bounded context DataRetrieval (Teams)*
-
 <br>
+
+*Documentación OpenAPI de endpoints del bounded context DataRetrieval (Teams)*
 
 <img src="assets/swagger-matches-endpoints.png"/>
 
-*Documentación OpenAPI de endpoints del bounded context DataRetrieval (Matches)*
-
 <br>
+
+*Documentación OpenAPI de endpoints del bounded context DataRetrieval (Matches)*
 
 <img src="assets/swagger-notifications-endpoints.png"/>
 
-*Documentación OpenAPI de endpoints del bounded context Notifications*
-
 <br>
+
+*Documentación OpenAPI de endpoints del bounded context Notifications*
 
 <img src="assets/swagger-favorites-endpoints.png"/>
 
-*Documentación OpenAPI de endpoints del bounded context Favorites*
-
 <br>
+
+*Documentación OpenAPI de endpoints del bounded context Favorites*
 
 <img src="assets/swagger-predictions-endpoints.png"/>
 
-*Documentación OpenAPI de endpoints del bounded context Prediction & Analytics*
-
 <br>
+
+*Documentación OpenAPI de endpoints del bounded context Prediction & Analytics*
 
 - **Información del Repositorio**
 
-**URL del Repositorio Backend:** 
-```
-https://github.com/upc-pre-202520-7295/Backend
-```
+  **URL del Repositorio Backend:** 
+
+    - <https://github.com/upc-pre-202520-7295/Backend>
+
 
 **Commits Relacionados con la Documentación del Sprint:**
 
@@ -3982,30 +3989,30 @@ https://github.com/upc-pre-202520-7295/Backend
 
 Durante el Sprint 1, el equipo de Betalyze completó el proceso de despliegue de la aplicación web frontend, estableciendo la infraestructura necesaria para que la plataforma esté accesible públicamente. Este proceso incluyó la configuración de la cuenta en Vercel y la conexión con el repositorio de GitHub para habilitar deployments automáticos. A continuación, se detallan los pasos realizados para el despliegue de la aplicación web.
 
-### Deployment de Aplicación Web - Vercel
+**Deployment de Aplicación Web - Vercel**
 
-#### Paso 1: Conexión de GitHub con Vercel
+  - **Paso 1: Conexión de GitHub con Vercel**
 
-Se accedió a [vercel.com](https://vercel.com) y se creó una cuenta vinculada con GitHub. Desde el dashboard de Vercel, se seleccionó "Add New Project" y se autorizó el acceso al repositorio de la organización `upc-pre-202520-7295`.
+    Se accedió a [vercel.com](https://vercel.com) y se creó una cuenta vinculada con GitHub. Desde el dashboard de Vercel, se seleccionó "Add New Project" y se autorizó el acceso al repositorio de la organización `upc-pre-202520-7295`.
 
-#### Paso 2: Configuración y Deploy
+  - **Paso 2: Configuración y Deploy**
 
-Vercel detectó automáticamente que el proyecto es una aplicación Angular. Se presionó el botón **"Deploy"** y Vercel realizó automáticamente:
-- Instalación de dependencias
-- Build del proyecto
-- Despliegue en producción
+    Vercel detectó automáticamente que el proyecto es una aplicación Angular. Se presionó el botón **"Deploy"** y Vercel realizó automáticamente:
+    - Instalación de dependencias
+    - Build del proyecto
+    - Despliegue en producción
 
-El deployment se completó exitosamente en aproximadamente 2 minutos.
+    El deployment se completó exitosamente en aproximadamente 2 minutos.
 
-#### Resultado del Deployment
+  - **Resultado del Deployment**
 
-La aplicación web quedó desplegada y accesible públicamente en la siguiente URL:
+    La aplicación web quedó desplegada y accesible públicamente en la siguiente URL:
 
-**URL de producción:** `https://betalyze-web-aadt.vercel.app/`
+    **URL de producción:** <https://betalyze-web-aadt.vercel.app/>
 
-Vercel quedó configurado para realizar deployments automáticos cada vez que se realiza un commit a la rama `main` del repositorio.
+    Vercel quedó configurado para realizar deployments automáticos cada vez que se realiza un commit a la rama `main` del repositorio.
 
-[![web-deploy.jpg](https://i.postimg.cc/zDpjCfpQ/web-deploy.jpg)](https://postimg.cc/JtDZmMf3)
+    [![web-deploy.jpg](https://i.postimg.cc/zDpjCfpQ/web-deploy.jpg)](https://postimg.cc/JtDZmMf3)
 
 
 
@@ -4020,6 +4027,415 @@ Vercel quedó configurado para realizar deployments automáticos cada vez que se
 
 [![backend-contributors-insight.png](https://i.postimg.cc/Nf6pKxS6/backend-contributors-insight.png)](https://postimg.cc/SJKW5cyR)
 
+<br>
+
+### 7.2.2. Sprint 2
+
+#### 7.2.2.1. Sprint Planning 2
+
+Este segundo y último Sprint se ha orientado a alcanzar la versión final y completamente funcional de Betalyze, integrando todos sus componentes y asegurando la calidad y coherencia de la solución. El foco principal fue la integración total de los productos y la incorporación de mejoras basadas en el feedback de validación, finalizando el desarrollo e implementación de la **Landing Page (HTML/CSS/JS)**, el **Frontend Web (Angular)**, la **App Móvil (Flutter/Dart)** y los **Servicios Web (Backend)**.
+
+<table>
+  <thead>
+    <tr><th>Sprint #</th><th>Sprint 2</th></tr>
+  </thead>
+  <tbody>
+    <tr><td colspan="2"><strong>Sprint Planning Background</strong></td></tr>
+    <tr><td>Date</td><td>2025-11-27</td></tr>
+    <tr><td>Time</td><td>22:00</td></tr>
+    <tr><td>Location</td><td>Virtual</td></tr>
+    <tr>
+      <td>Prepared By</td>
+      <td>Equipo BestWin</td>
+    </tr>
+    <tr>
+      <td>Attendees (to planning meeting)</td>
+      <td>
+        Bernaola Pérez, André Arturo / Loli Ruiz, Renzo Javier / Soriano Medrano, Diego
+      </td>
+    </tr>
+    <tr>
+      <td><strong>Sprint 2 – 1 Review Summary</strong></td>
+      <td><em> Se completó el MVP de Betalyze, incluyendo la arquitectura inicial de todos los componentes parte de la solución. Se realizaron despliegues preliminares, documentación de servicios y pruebas iniciales. Se logró la funcionalidad de gestión de usuarios, el objetivo de desarrollar el MVP y desplegar la primera versión preliminar. Como parte del trabajo pendiente debemos realizar la integración completa entre los productos y mejoras de usabilidad según la entrevista de validación. Ahora durante el desarrollo del Sprint 2 nos centraremos en los elementos de integración, ajustes de feedback y la finalización de las características restantes para la versión funcional completa. </em></td>
+    </tr>
+    <tr>
+      <td><strong>Sprint 2 – 1 Retrospective Summary</strong></td>
+      <td><em> En relación al desarrollo del MVP y despliegue inicial el equipo logró poner en marcha la solución en todas sus capas, la documentación del backend y mantener el enfoque en la documentación continua de los componentes. Se reconoce que el tiempo invertido fue mayor al planificado y se debe asignar tiempos fijos para tareas de desarrollo y QA. Para el desarrollo del Sprint 2 se considera abordar de manera adecuada el feedbak recibido y coornidar sesiones de trabajo dedicadas a la integración y desarrollo final de pruebas. </em></td>
+    </tr>
+    <tr><td colspan="2"><strong>Sprint Goal &amp; User Stories</strong></td></tr>
+    <tr>
+      <td>Sprint 2 Goal</td>
+      <td>
+        Nuestro foco es completar el desarrollo, la implementación y la integración de todas las funcionalidades clave de Betalyze, incorporando los ajustes derivados del feedback de validación, para entregar una solución unificada y lista para su lanzamiento. Creemos que esto entregará a nuestros stakeholders, una solución completa, funcional y estable que cumpla con los requerimientos del proyecto, lo que nos permitirá pasar a la fase de producción. Esto será confirmado cuando se logre la integración fluida entre la App Móvil, el Frontend Web y el Backend, y los test se ejecuten exitosamente, validando que el flujo de datos y la experiencia de usuario corresponden con la solución final planteada.
+      </td>
+    </tr>
+    <tr>
+      <td>Sprint 2 Velocity</td>
+      <td><strong> 35 </strong></td>
+    </tr>
+    <tr>
+      <td>Sum of Story Points</td>
+      <td><strong> 35 </strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
+
+#### 7.2.2.2. Sprint Backlog 2
+
+Para este Sprint se especifica el conjunto final de tareas priorizadas y detalladas a completar para alcanzar el Objetivo planteado. Este backlog está enfocado completar el total de user stories planteadas para todos los productos, la integración de los productos desarrollados, la implementación de ajustes derivados del feedback de validación y la finalización de funcionalidades pendientes, Frontend Web, App Móvil y Servicios Web. Cada elemento busca asegurar que Betalyze se complete como una solución consistente y lista para su paso a producción.
+
+[![image.png](./assets/cap-7/trello-backlog.png)]()
+
+**URL publico de trello:** <https://trello.com/b/xOXH5kca/betalyze>
+
+<table border="1">
+    <thead>
+        <tr>
+            <td>Sprint #</td>
+            <td colspan="7" >Sprint 1</td>
+        </tr>
+        <tr>
+            <td colspan="2" > User Story</td>
+            <td colspan="6" > Work-Item / Task </td>
+        </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td> Id </td>
+        <td> Title </td>
+        <td> Id </td>
+        <td> Title </td>
+        <td> Description </td>
+        <td> Estimation (Hours) </td>
+        <td> Assigned To </td>
+        <td> Status (To-do / In-Process / To-Review / Done) </td>
+      </tr>
+      <tr>
+        <td>US15</td>
+        <td> Identificación de la Propuesta de Valor </td>
+        <td>TA1</td>
+        <td> Desarrollo de Hero section </td>
+        <td> Implementación y verificación de textos clave (título, subtítulo, insignia ML) y estadísticas en la sección principal para comunicar la propuesta de valor. </td>
+        <td>02</td>
+        <td> Diego Soriano </td>
+        <td> Done </td>
+      </tr>
+      <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Desarrollo de Benefits section </td>
+        <td> Implementación y verificación de los 6 "Benefit Cards" para detallar el valor de Betalyze. </td>
+        <td>02</td>
+        <td> Renzo Loli </td>
+        <td> Done </td>
+    </tr>
+    <tr>
+        <td>US16</td>
+        <td> Validación del Funcionamiento </td>
+        <td>TA1</td>
+        <td> Desarrollo de How It Works section </td>
+        <td> Implementación y verificación de los 3 pasos de funcionamiento (Seleccionar, Comprobar, Decidir) en la sección "How does it work?". </td>
+        <td>03</td>
+        <td> Renzo Loli </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Enlace del CTA del Proceso </td>
+        <td> Conexión del botón "Try the app" en la sección "How It Works" con la acción o URL de acceso al producto/app. </td>
+        <td>01</td>
+        <td> André Bernaola </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td>US17</td>
+        <td> Disponibilidad y Acceso Móvil </td>
+        <td>TA1</td>
+        <td> Inclusión de Mockups Móvil/Web en Hero </td>
+        <td> Implementación de los mockups (Mobile Mockup y Desktop Mockup) en la Hero Section para mostrar la disponibilidad en ambos dispositivos. </td>
+        <td>02</td>
+        <td> André Bernaola </td>
+        <td>Done</td>
+    </tr>
+    <tr>
+        <td></td><td></td>
+        <td>TA2</td>
+        <td> Desarrollo de Sección CTA Principal </td>
+        <td> Implementación y verificación de los botones de descarga de la aplicación móvil y acceso web en la sección CTA final. </td>
+        <td>01</td>
+        <td> André Bernaola </td>
+        <td>Done</td>
+    </tr>
+    </tbody>
+</table>
+
+<br>
+
+#### 7.2.2.3. Development Evidence for Sprint Review
+
+Como segundo y último Sprint se detalla que se ha completado el ciclo de vida del producto Betalyze. Esta sección presenta la documentación por repositorio de cada producto de los commits de esta etapa de desarrollo que reflejan la implementación de las funcionalidades restantes y, la integración de los productos en el ambiente de producción para las aplicaciones Web y Móvil con la Landing Page y los servicios Backend.
+
+- **Landign Page**
+
+| Repository | Branch | Commit Id | Commit Message | Commited on (Date) |
+|------------|--------|-----------|----------------|--------------------|
+| https://github.com/upc-pre-202520-7295/Landing-Page | main | 6002943 | feat: index.html | 12/11/2025 |
+| https://github.com/upc-pre-202520-7295/Landing-Page | develop | b5b81f8 | chore: add logo | 12/11/2025 |
+| https://github.com/upc-pre-202520-7295/Landing-Page | develop | 3f1e169 | feat: language-switcher | 12/11/2025 |
+
+- **Web Application**
+
+| Repository | Branch | Commit Id | Commit Message | Commited on (Date) |
+|------------|--------|-----------|----------------|--------------------|
+| https://github.com/upc-pre-202520-7295/Web-Application | master | 8a59e4d | chore: initial commit | 01/11/2025 |
+| https://github.com/upc-pre-202520-7295/Web-Application | develop | d08da0f | chore: add logo | 12/11/2025 |
+| https://github.com/upc-pre-202520-7295/Web-Application | develop | 0851794 | feat: project configuration | 12/11/2025 |
+
+- **Mobile Application**
+
+| Repository | Branch | Commit Id | Commit Message | Commited on (Date) |
+|------------|--------|-----------|----------------|--------------------|
+| https://github.com/upc-pre-202520-7295/Mobile-Application | main | de0a414 | first commit | 13/11/2025 |
+| https://github.com/upc-pre-202520-7295/Mobile-Application | main | d43ad42 | chore: add initial setup | 13/11/2025 |
+| https://github.com/upc-pre-202520-7295/Mobile-Application | develop | 7056ddb | feat: add favorite bc | 13/11/2025 |
+
+- **Web Services**
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|------------|--------|-----------|----------------|---------------------|--------------------|
+| https://github.com/upc-pre-202520-7295/Backend | develop | 47c51ca | chore: added base of project | - | 13/11/2025 |
+| https://github.com/upc-pre-202520-7295/Backend | develop | 4f2d9dc | feat: added shared kernel | - | 13/11/2025 |
+| https://github.com/upc-pre-202520-7295/Backend | develop | 1ec2c05 | feat: add user management bounded context | - | 13/11/2025 |
+
+<br>
+
+#### 7.2.2.4. Testing Suite Evidence for Sprint Review
+
+Esta sección resume la evidencia de las pruebas realizadas durante el *Sprint 2*. Esta fase de desarrollo se centró en la calidad total y la robustez de la solución integrada. A diferencia del Sprint 1, que se enfocó en pruebas unitarias del MVP, esta fase incluye principalmente las pruebas de extremo a extremo y las pruebas en lenguaje Gherkin. Esta sección documenta los archivos de prueba, sus repositorios y commits correspondientes. Asegurando que los ajustes basados en el feedback han sido implementados correctamente y que la experiencia del usuario final es fluida.
+
+| Repository | Branch | Commit Id | Commit Message | Committed on (Date) |
+|------------|--------|-----------|----------------|---------------------|
+| upc-pre-202520-7295/Acceptance-Criteria | main | 2c1238c | chore: update README.md | 15/11/2025 |
+| upc-pre-202520-7295/Acceptance-Criteria | main | 11e99d0 | feat: add feature and scenarios for US19 | 15/11/2025 |
+| upc-pre-202520-7295/Acceptance-Criteria | main | f474672 | feat: add feature and scenarios for US18 | 15/11/2025 |
+
+<br>
+
+#### 7.2.2.5. Execution Evidence for Sprint Review
+
+En esta sección se presenta un resumen conciso de los logros alcanzados durante el Sprint que confirma la funcionalidad operativa de la solución Betalyze en su versión final. Esta sección proporciona capturas de pantalla y videos de los entornos producción que demuestran la ejecución en tiempo real de cada producto. Se muestran los flujos de la aplicación funcionando de manera consistente en la App Móvil, el Frontend Web y los servicios, validando que el objetivo de completar la implementación ha sido alcanzado.
+
+- **App Service**
+
+[![back.jpg](https://i.postimg.cc/BQk2pPD4/back.jpg)](https://postimg.cc/WhmDb3XH)
+
+link: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/IQDOQi_6C5erTZWgQ-4jYqAyAbGYUA0S7kBSx2O0wMsbfSA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=UnCsLe>
+
+- **Web Application**
+
+  [![web.jpg](https://i.postimg.cc/gJzhjV96/web.jpg)](https://postimg.cc/JyF0dBz1)
+
+link: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/IQA1ShkQqyKfR5jXEkoSUTJXAUiFGU00qKf-N0ylWpuZobQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=z0qWIp>
+
+- **Mobile Application**
+
+  [![mov.jpg](https://i.postimg.cc/Z5NpMYFY/mov.jpg)](https://postimg.cc/QFXFB3yv)
+
+link: <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202114192_upc_edu_pe/IQDAXHOQVwFiSqatdSofGbWoAUYTAkaW9HITPJtH3haBDlc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=uQBl58>
+
+<br>
+
+#### 7.2.2.6. Services Documentation Evidence for Sprint Review
+
+Durante este segundo Sprint se logró implementar y documentar completamente la API REST de Betalyze utilizando el estándar OpenAPI 3.0.1. El foco aquí es entregar la documentación finalizada del backend, incluyendo las especificaciones de todas las APIs utilizadas para la versión final de los componentes de la solución. Esto abarca la descripción detallada de todos los endpoints y los flujos de autenticación implementados para soportar la versión de lanzamiento de Betalyze. Este detalle establece la base completa de los servicios web que soportan nuestra plataforma de predicción y análisis deportivo, garantizando el mantenimiento del sistema.
+
+A continuación, se presenta la relación de endpoints documentados con OpenAPI, dentro del alcance de nuestro Sprint:
+
+- **Bounded Context: Users** 
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/auth/register | Registro de nuevos usuarios | POST | POST /api/v1/auth/register | Request body: email, password, fullName |
+| /api/v1/auth/login | Autenticación de usuarios | POST | POST /api/v1/auth/login | Request body: email, password |
+| /api/v1/users/user/{userId}/profile | Obtener perfil de usuario | GET | GET /api/v1/users/user/{userId}/profile | userId (path) \ Bearer token |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+| Petición | Respuesta |
+|----------|-----------|
+| POST /api/v1/auth/register { "email": "usuario@ejemplo.com", "password": "Pass123!", "fullName": "Juan Pérez" } | 200 OK - Retorna los datos del usuario registrado con su token JWT en formato JSON. |
+| POST /api/v1/auth/login { "email": "usuario@ejemplo.com", "password": "Pass123!" } | 200 OK - Retorna los datos del usuario autenticado con su token JWT en formato JSON. |
+| GET /api/v1/users/user/550e8400-e29b-41d4-a716-446655440000/profile | 200 OK - Retorna el email y nombre completo del usuario en formato JSON. |
+
+- **Bounded Context: DataRetrieval**
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/teams | Listar todos los equipos | GET | GET /api/v1/teams | Bearer token |
+| /api/v1/teams/{teamId} | Obtener equipo por ID | GET | GET /api/v1/teams/{teamId} | teamId (path) \ Bearer token |
+| /api/v1/matches/ | Listar todos los partidos | GET | GET /api/v1/matches/ | Bearer token |
+| /api/v1/matches/today | Obtener partidos del día | GET | GET /api/v1/matches/today | Bearer token |
+| /api/v1/matches/refresh/{season} | Actualizar partidos manualmente | POST | POST /api/v1/matches/refresh/{season} | season (path) \ Bearer token |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+| Petición | Respuesta |
+|----------|-----------|
+| GET /api/v1/teams | 200 OK - Retorna la lista completa de equipos con id, nombre e imagen en formato JSON. |
+| GET /api/v1/teams/550e8400-e29b-41d4-a716-446655440000 | 200 OK - Retorna los datos del equipo específico en formato JSON. |
+| GET /api/v1/matches/ | 200 OK - Retorna todos los partidos con información de equipos, scores y fechas en formato JSON. |
+| GET /api/v1/matches/today | 200 OK - Retorna los partidos programados para hoy en formato JSON. |
+| POST /api/v1/matches/refresh/2025 | 200 OK - Actualiza los datos de partidos de la temporada especificada. |
+
+- **Bounded Context: Notifications**
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/notifications/user/{userId}/notifications | Obtener todas las notificaciones | GET | GET /api/v1/notifications/user/{userId}/notifications | userId (path) \ Bearer token |
+| /api/v1/notifications/user/{userId}/unread | Obtener notificaciones no leídas | GET | GET /api/v1/notifications/user/{userId}/unread | userId (path) \ Bearer token |
+| /api/v1/notifications/user/{userId}/notification | Enviar notificación | POST | POST /api/v1/notifications/user/{userId}/notification | userId (path) \ Request body: title, message, imageUrl \ Bearer token |
+| /api/v1/notifications/user/{userId}/notification/{id}/read | Marcar como leída | PUT | PUT /api/v1/notifications/user/{userId}/notification/{id}/read | userId (path), id (path) \ Bearer token |
+| /api/v1/notifications/user/{userId}/fcm-token/{token} | Actualizar token FCM | PUT | PUT /api/v1/notifications/user/{userId}/fcm-token/{token} | userId (path), token (path) \ Bearer token |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+| Petición | Respuesta |
+|----------|-----------|
+| GET /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/notifications | 200 OK - Retorna el historial completo de notificaciones del usuario en formato JSON. |
+| GET /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/unread | 200 OK - Retorna las notificaciones no leídas en formato JSON. |
+| POST /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/notification { "title": "Nuevo partido", "message": "Real Madrid vs Barcelona", "imageUrl": "..." } | 200 OK - Notificación enviada exitosamente. |
+| PUT /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/notification/notification-id/read | 200 OK - Notificación marcada como leída. |
+| PUT /api/v1/notifications/user/550e8400-e29b-41d4-a716-446655440000/fcm-token/fcm-token-123 | 200 OK - Token FCM actualizado correctamente. |
+
+- **Bounded Context: Favorites**
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/teams/user/{userId}/favorite | Listar equipos favoritos | GET | GET /api/v1/teams/user/{userId}/favorite | userId (path) |
+| /api/v1/teams/user/{userId}/favorite/{teamId} | Agregar equipo a favoritos | POST | POST /api/v1/teams/user/{userId}/favorite/{teamId} | userId (path), teamId (path) |
+| /api/v1/teams/user/{userId}/favorite/{teamId} | Eliminar equipo de favoritos | DELETE | DELETE /api/v1/teams/user/{userId}/favorite/{teamId} | userId (path), teamId (path) |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+| Petición | Respuesta |
+|----------|-----------|
+| GET /api/v1/teams/user/550e8400-e29b-41d4-a716-446655440000/favorite | 200 OK - Retorna la lista de equipos favoritos del usuario en formato JSON. |
+| POST /api/v1/teams/user/550e8400-e29b-41d4-a716-446655440000/favorite/team-id-123 | 200 OK - Equipo agregado a favoritos exitosamente. |
+| DELETE /api/v1/teams/user/550e8400-e29b-41d4-a716-446655440000/favorite/team-id-123 | 200 OK - Equipo eliminado de favoritos exitosamente. |
+
+- **Bounded Context: Prediction & Analytics**
+
+| Endpoint | Acciones implementadas | Verbo HTTP | Sintaxis de Llamada | Parámetros |
+|----------|------------------------|------------|---------------------|------------|
+| /api/v1/predictions/predict/{homeTeamId}/{awayTeamId} | Generar predicción de partido | POST | POST /api/v1/predictions/predict/{homeTeamId}/{awayTeamId} | homeTeamId (path), awayTeamId (path) \ Bearer token |
+| /api/v1/predictions/train | Entrenar modelo ML | POST | POST /api/v1/predictions/train | Bearer token |
+
+**Ejemplos de Ejecución y Respuesta:**
+
+| Petición | Respuesta |
+|----------|-----------|
+| POST /api/v1/predictions/predict/team-001/team-002 | 200 OK - Retorna la predicción con ganador, precisión y goles estimados en formato JSON. |
+| POST /api/v1/predictions/train | 200 OK - Modelo de Machine Learning reentrenado exitosamente. |
+
+- **Imágenes y documentación:**
+
+<img src="assets/swagger-auth-endpoints.png"/>
+
+<br>
+
+*Documentación OpenAPI de endpoints de autenticación y registro de usuarios*
+
+<img src="assets/swagger-teams-endpoints.png"/>
+
+<br>
+
+*Documentación OpenAPI de endpoints del bounded context DataRetrieval (Teams)*
+
+<img src="assets/swagger-matches-endpoints.png"/>
+
+<br>
+
+*Documentación OpenAPI de endpoints del bounded context DataRetrieval (Matches)*
+
+<img src="assets/swagger-notifications-endpoints.png"/>
+
+<br>
+
+*Documentación OpenAPI de endpoints del bounded context Notifications*
+
+<img src="assets/swagger-favorites-endpoints.png"/>
+
+<br>
+
+*Documentación OpenAPI de endpoints del bounded context Favorites*
+
+<img src="assets/swagger-predictions-endpoints.png"/>
+
+<br>
+
+*Documentación OpenAPI de endpoints del bounded context Prediction & Analytics*
+
+- **Información del Repositorio**
+
+  **URL del Repositorio Backend:** 
+
+    - <https://github.com/upc-pre-202520-7295/Backend>
+
+
+**Commits Relacionados con la Documentación del Sprint:**
+
+| Commit ID | Descripción | Autor | Fecha |
+|-----------|-------------|-------|-------|
+| `c9ed27b` | added data retrieval and predictions | 0renzo0loli0 | Nov 14, 2025 |
+| `80de1b3` | Merge branch 'notifications' into develop | diego5m | Nov 13, 2025 |
+| `8e13385` | feat: add notifications | diego5m | Nov 13, 2025 |
+| `f395a6d` | Merge branch 'favorites' into develop | diego5m | Nov 13, 2025 |
+| `189048f` | feat: add favorites | diego5m | Nov 13, 2025 |
+| `1ec2c05` | feat: add user management bounded context | Andr0ita0 | Nov 13, 2025 |
+| `4f2d9dc` | added shared kernel | 0renzo0loli0 | Nov 13, 2025 |
+| `47e51ea` | added base of project | 0renzo0loli0 | Nov 13, 2025 |
+
+<br>
+
+#### 7.2.2.7. Software Deployment Evidence for Sprint Review
+
+Durante el Sprint 1, el equipo de Betalyze completó el proceso de despliegue de la aplicación web frontend, estableciendo la infraestructura necesaria para que la plataforma esté accesible públicamente. Este proceso incluyó la configuración de la cuenta en Vercel y la conexión con el repositorio de GitHub para habilitar deployments automáticos. A continuación, se detallan los pasos realizados para el despliegue de la aplicación web.
+
+**Deployment de Aplicación Web - Vercel**
+
+  - **Paso 1: Conexión de GitHub con Vercel**
+
+    Se accedió a [vercel.com](https://vercel.com) y se creó una cuenta vinculada con GitHub. Desde el dashboard de Vercel, se seleccionó "Add New Project" y se autorizó el acceso al repositorio de la organización `upc-pre-202520-7295`.
+
+  - **Paso 2: Configuración y Deploy**
+
+    Vercel detectó automáticamente que el proyecto es una aplicación Angular. Se presionó el botón **"Deploy"** y Vercel realizó automáticamente:
+    - Instalación de dependencias
+    - Build del proyecto
+    - Despliegue en producción
+
+    El deployment se completó exitosamente en aproximadamente 2 minutos.
+
+  - **Resultado del Deployment**
+
+    La aplicación web quedó desplegada y accesible públicamente en la siguiente URL:
+
+    **URL de producción:** <https://betalyze-web-aadt.vercel.app/>
+
+    Vercel quedó configurado para realizar deployments automáticos cada vez que se realiza un commit a la rama `main` del repositorio.
+
+    [![web-deploy.jpg](https://i.postimg.cc/zDpjCfpQ/web-deploy.jpg)](https://postimg.cc/JtDZmMf3)
+
+<br>
+
+#### 7.2.2.8. Team Collaboration Insights during Sprint
+
+
+
+<br>
 
 ## 7.3. Validation Interviews
 ### 7.3.1. Diseño de Entrevistas
